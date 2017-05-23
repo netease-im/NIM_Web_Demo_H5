@@ -1,0 +1,32 @@
+  /* 切页动画，可根据开发这需要自由开发 */
+  .slide-enter-active, .slide-leave-active {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 0;
+  }
+  .slide-leave {
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .slide-leave-to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+       -moz-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  .slide-enter {
+    -webkit-transform: translate3d(100%, 0, 0);
+       -moz-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  .slide-enter-to {
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy90aGVtZXMvY29tbW9uL2FuaW1hdGlvbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkVBQUUsdUJBQXVCO0VBQ3ZCO0lBQ0UsbUJBQW1CO0lBQ25CLFFBQVE7SUFDUixPQUFPO0lBQ1AsNkJBQXFCO0lBQXJCLDBCQUFxQjtJQUFyQixxQkFBcUI7SUFDckIsV0FBVztHQUNaO0VBQ0Q7SUFDRSx3Q0FBZ0M7T0FBaEMscUNBQWdDO1lBQWhDLGdDQUFnQztHQUNqQztFQUNEO0lBQ0UsNENBQW9DO09BQXBDLHlDQUFvQztZQUFwQyxvQ0FBb0M7R0FDckM7RUFDRDtJQUNFLDJDQUFtQztPQUFuQyx3Q0FBbUM7WUFBbkMsbUNBQW1DO0dBQ3BDO0VBQ0Q7SUFDRSx3Q0FBZ0M7T0FBaEMscUNBQWdDO1lBQWhDLGdDQUFnQztHQUNqQyIsImZpbGUiOiJhbmltYXRpb24uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiICAvKiDliIfpobXliqjnlLvvvIzlj6/moLnmja7lvIDlj5Hov5npnIDopoHoh6rnlLHlvIDlj5EgKi9cclxuICAuc2xpZGUtZW50ZXItYWN0aXZlLCAuc2xpZGUtbGVhdmUtYWN0aXZlIHtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICB0b3A6IDA7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMC41cztcclxuICAgIHotaW5kZXg6IDA7XHJcbiAgfVxyXG4gIC5zbGlkZS1sZWF2ZSB7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDAsIDAsIDApO1xyXG4gIH1cclxuICAuc2xpZGUtbGVhdmUtdG8ge1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgtMTAwJSwgMCwgMCk7XHJcbiAgfVxyXG4gIC5zbGlkZS1lbnRlciB7XHJcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZTNkKDEwMCUsIDAsIDApO1xyXG4gIH1cclxuICAuc2xpZGUtZW50ZXItdG8ge1xyXG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUzZCgwLCAwLCAwKTtcclxuICB9XHJcbiJdfQ== */
