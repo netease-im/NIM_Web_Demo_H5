@@ -63,7 +63,8 @@
     data () {
       return {
         msg: '',
-        isFullImgShow: false
+        isFullImgShow: false,
+        currentAudio: null
       }
     },
     beforeMount () {
@@ -226,7 +227,13 @@
         })
       },
       playAudio (src) {
-        new Audio(src).play()
+        if (!this.currentAudio) {
+          this.currentAudio = new Audio(src)
+          this.currentAudio.play()
+          this.currentAudio.onended = () => {
+            this.currentAudio = null
+          }
+        }
       }
     }
   }

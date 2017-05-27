@@ -14,12 +14,6 @@ Vue.use(VueTouch)
 import store from './store'
 import router from './router'
 
-// 单页应用模拟页面浏览历史记录
-let history = window.sessionStorage
-history.clear()
-let historyCount = history.getItem('count') * 1 || 0
-history.setItem('/', 0)
-
 new Vue({
   router,
   store,

@@ -29,14 +29,15 @@ h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动�
 ## 工程初始化
 ### 开发环境部署
 - 开发环境前端实时编译
+  - 本示例由于使用了let、箭头描述符等，需要使用nodejs 6及以上版本
   - 本示例demo使用webpack + babel作为前端模块化管理和打包工具
     - 控制台执行 npm install 安装相关依赖（仅需在工程第一次初始化时运行）
-    - 控制台执行 npm install postcss-cli -g (windows环境需要全局安装)用于demo皮肤及个性化样式生成
     - 控制台执行 npm run dev 运行工程打包工作
+      - **如果编译报postcss 未定义的错误**，控制台执行 npm install postcss-cli -g 用于demo皮肤及个性化样式生成，不报错则无需执行
 
 - 开发环境后端服务
   - 本示例demo使用nodejs作为示例后台服务编程语言
-    - 控制台执行 node server 运行后台服务，默认端口为2001，可在main.js文件中修改
+    - 控制台执行 node server 运行后台服务，默认端口为2001，可在server.js文件中修改
     - 浏览器访问http://localhost:2001/webdemo/h5/index.html
 
 - 开发环境真机调试
@@ -111,24 +112,39 @@ h5 demo主要工程目录结构如下：
 ``` shell
   |- root
     |- build 前端工程构建文件夹，诸如webpack、postcss的配置文件
+
   |- dist 前端生成的资源文件
     |- js 通过npm run dev/npm run prod 生成的目标js文件
     |- css 通过npm run dev/npm run prod 生成的目标css文件
     |- nim 从云信官网上下载的[web sdk](http://netease.im/im-sdk-demo)
+
   |- res 图片资源文件(目前nos的资源全在网易的cdn服务器上，这里是给开发者的一个备份示例)
+
   |- src h5 demo 开发工程
+    |- main.js 应用页面主入口
+    |- App.vue 应用页面模板入口，即被main.js挂载
+    |- login.js
+    |- regist.js
+
     |- configs demo基本配置，可参考教程[牛刀小试](./docs/h5-demo-guide-1.md)
+
     |- pages demo具体页面UI逻辑，可参考教程[登堂入市](./docs/h5-demo-guide-2.md)
       |- components demo UI组件，如聊天控件、表情控件等
+
     |- plugins 适配于vue的插件
+
     |- router 前端路由
+
     |- store h5 demo数据驱动的管理中心，可参考教程[出神入化](./docs/h5-demo-guide-3.md)
       |- index.js vuex数据中心入口
       |- state.js 数据中心变量声明
       |- actions 异步数据变更请求提交
       |- mutations 同步操作数据变更
+
     |- themes h5 demo的主要公共UI样式库，可参考教程[牛刀小试](./docs/h5-demo-guide-1.md)
+
     |- utils 工具函数
+
   |- login.html 登录页面
   |- regist.html 注册页面
   |- index.html 主页面
@@ -185,7 +201,7 @@ html 结构
   </body>
 ```
 
-### fixed样式问题
+### 滑动迟滞问题
 - 问题：在ios下，非body下直接出现的滚动条，出现滑动迟滞
 - 解决：添加样式："-webkit-overflow-scrolling: touch;" 可以让页面在Native端滚动时模拟原生的弹性滚动效果
 

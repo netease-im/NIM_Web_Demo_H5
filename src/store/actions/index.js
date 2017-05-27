@@ -58,6 +58,7 @@ export default {
     commit('updateRefreshState')
   },
 
+  // UI 及页面状态变更
   showLoading,
   hideLoading,
   showFullscreenImg,

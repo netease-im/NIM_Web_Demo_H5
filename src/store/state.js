@@ -8,6 +8,8 @@ export default {
   // 全屏显示的原图
   isFullscreenImgShow: false,
   fullscreenImgSrc: '',
+  // 切页动画 forward，backward
+  transitionName: 'forward',
 
   // IM相关
   // NIM SDK 实例

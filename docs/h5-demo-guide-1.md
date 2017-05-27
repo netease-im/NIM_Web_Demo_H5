@@ -29,7 +29,8 @@
   - h5 demo的路由文件为 src/router/index.js文件，内部描述了不同的页面url所对应展示的页面组件
   - 如果开发者需要对导航条进行修改，还需要修改两个文件
     1. NavBar组件，即导航条组件，在src/pages/components/NavBar.vue，可以更改导航条文案、图标甚至是路由关系
-    2. App入口，即src/App.vue，在script中的computed属性中，确认哪些页面需要展示导航条
+    2. main.js入口，及src/main.js，该处会挂载App.vue，App.vue为实际vue模板入口
+    3. App入口，即src/App.vue，在script中的computed属性中，确认哪些页面需要展示导航条
 
 ## 更多设置
 - 恭喜你，已经可以自由的更改应用配置和皮肤啦，希望能对页面交互进行深入订制，请移步[登堂入市](./h5-demo-guide-2.md)

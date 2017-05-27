@@ -8,7 +8,8 @@ const pageMap = {
 var scrollTimer = null
 
 var page = {
-  turnPage: function (message, url) {
+  // 切换页面，并错误提示
+  turnPage: (message, url) => {
     if (message) {
       alert(message)
     }
@@ -19,7 +20,25 @@ var page = {
       window.location.href = url
     }
   },
-  scrollChatListDown: function (pos, initCount) {
+  // 确定导航tab页，是否show nav
+  showNav: path => {
+    switch (path) {
+      case '/':
+        return true
+      case '/session':
+        return true
+      case '/contacts':
+        return true
+      case '/room':
+        return true
+      case '/general':
+        return true
+      default:
+        return false
+    }
+  },
+  // 滚动聊天列表到底部
+  scrollChatListDown: (pos, initCount) => {
     let dom = document.getElementById('chat-list')
     if (!dom) {
       return
@@ -38,10 +57,10 @@ var page = {
       }, 200)
     }
   },
-  getChatListHeight: function () {
+  getChatListHeight: () => {
     return document.getElementById('chat-list').scrollHeight
   },
-  getChatListScroll: function () {
+  getChatListScroll: () => {
     return document.getElementById('chat-list').scrollTop
   },
 }

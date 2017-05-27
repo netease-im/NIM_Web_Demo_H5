@@ -1,16 +1,13 @@
+import pageUtil from '../../utils/page'
 
 // 显示加载中进度条
 export function showLoading ({state, commit}) {
-  commit('updateLoadingBar', {
-    process: 0
-  })
+  commit('updateLoading', true)
 }
 
 // 隐藏加载中进度条
 export function hideLoading ({state, commit}) {
-  commit('updateLoadingBar', {
-    process: 100
-  })
+  commit('updateLoading', false)
 }
 
 // 显示原图片

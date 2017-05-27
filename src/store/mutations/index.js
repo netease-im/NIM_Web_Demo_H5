@@ -10,18 +10,11 @@ export default {
   updateRefreshState (state) {
     state.isRefresh = false
   },
-  updateLoadingBar (state, obj) {
-    if (obj) {
-      let process = parseFloat(obj.process)
-      clearTimeout(state.loadingTimer)
-      state.loadingTimer = setTimeout(() => {
-        if (process >= 100 && state.isLoading === true) {
-          state.isLoading = false
-        } else if (process < 100 && state.isLoading === false) {
-          state.isLoading = true
-        }
-      }, 20)
-    }
+  updateLoading (state, status) {
+    clearTimeout(state.loadingTimer)
+    state.loadingTimer = setTimeout(() => {
+      state.isLoading = status
+    }, 20)
   },
   updateFullscreenImage (state, obj) {
     obj = obj || {}
