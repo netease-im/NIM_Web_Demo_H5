@@ -41,16 +41,16 @@ h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动�
     - 浏览器访问http://localhost:2001/webdemo/h5/index.html
 
 - 开发环境真机调试
-	- 控制台执行 npm install weinre -g
-	- 进入demo根目录，控制台执行 weinre --httpPort 2002 -boundHost -all-
-	- 获取本电脑局域网ip地址(同一路由器网段也可以)，如：192.168.0.146，windows环境下可通过ipconfig查看
-	- 在webdemo工程的index.html/login.html/regist.html文件中加入以下代码：
-		``` html
-		<!-- 192.168.0.146 为举例，填写开发者的局域网IP地址 --> 
-		<script src="http://192.168.0.146:2002/target/target-script-min.js#anonymous"></script>
-		```
-	- 手机访问，例如：http://192.168.0.146:2001/webdemo/h5/index.html网址即可真机调试(此网址为工程web服务地址)
-	- [参考资料](https://www.npmjs.com/package/weinre)
+  - 控制台执行 npm install weinre -g
+  - 进入demo根目录，控制台执行 weinre --httpPort 2002 -boundHost -all-
+  - 获取本电脑局域网ip地址(同一路由器网段也可以)，如：192.168.0.146，windows环境下可通过ipconfig查看
+  - 在webdemo工程的index.html/login.html/regist.html文件中加入以下代码：
+    ``` html
+    <!-- 192.168.0.146 为举例，填写开发者的局域网IP地址 --> 
+    <script src="http://192.168.0.146:2002/target/target-script-min.js#anonymous"></script>
+    ```
+  - 手机访问，例如：http://192.168.0.146:2001/webdemo/h5/index.html网址即可真机调试(此网址为工程web服务地址)
+  - [参考资料](https://www.npmjs.com/package/weinre)
 
 ### 生产环境部署
 - 生产环境前端代码生成
@@ -69,7 +69,7 @@ h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动�
 
 ### 开发调试工具
 - h5 demo使用了vue全家桶进行开发，推荐使用chrome浏览器加相应的插件(Vue.js devtools)进行调试。
-	- 如果谷歌被墙，可以从该地址下载[https://github.com/vuejs/vue-devtools](https://github.com/vuejs/vue-devtools)
+  - 如果谷歌被墙，可以从该地址下载[https://github.com/vuejs/vue-devtools](https://github.com/vuejs/vue-devtools)
   - ![vue-devtool-1](http://yx-web.nos.netease.com/webdoc/h5/docs/vue-devtool-1.png)
   - ![vue-devtool-2](http://yx-web.nos.netease.com/webdoc/h5/docs/vue-devtool-2.png)
 - 于此同时，开发者也可以在webpack配置文件(build/webpack.config.js)中开启自己喜欢的source-map，对代码进行断点调试。

@@ -178,7 +178,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v(_vm._s(_vm.userInfo.alias))]), _vm._v(" "), _c('a', {
     slot: "left"
   })]), _vm._v(" "), (_vm.isRobot) ? _c('div', {
-    staticClass: "m-robot"
+    staticClass: "m-list m-robot"
   }, [_c('div', {
     staticClass: "u-logo"
   }, [_c('img', {

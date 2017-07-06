@@ -4,7 +4,7 @@
       <h1 class="m-tab-top">{{userInfo.alias}}</h1>
       <a slot="left"></a>
     </x-header>
-    <div v-if="isRobot" class="m-robot">
+    <div v-if="isRobot" class="m-list m-robot">
       <div class="u-logo">
         <img class="logo" :src="userInfo.avatar">
         <h3>{{userInfo.alias}}</h3>
