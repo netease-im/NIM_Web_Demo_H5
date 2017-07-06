@@ -75,12 +75,13 @@ h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动�
 - 于此同时，开发者也可以在webpack配置文件(build/webpack.config.js)中开启自己喜欢的source-map，对代码进行断点调试。
   - h5 demo 默认配置的是在开发环境中使用"source-map"
   - ![vue-sourcemap-1](http://yx-web.nos.netease.com/webdoc/h5/docs/vue-sourcemap-1.png)
+- 为了方便开发者在手机上调试，在webdemo的index.html增加了vconsole.js调试工具，可以在手机端查看console.log输出
 
 ## h5 demo 所使用的开发工具
 ### vue
 vue的目标是通过尽可能简单的API实现"响应的数据绑定"和"组合的视图组件"。
 
-- 如果您使用过诸如Angular、React这类MVVM模式的前端框架，那么vue对您而言，也仅仅是小菜一碟而已。详细的对比可以参考[Angular React 和 Vue的比较](http://blog.csdn.net/haoshidai/article/details/52346865)或百度之
+- 如果您使用过诸如Angular、React这类MVVM模式的前端框架，那么vue对您而言，也仅仅是小菜一碟而已。详细的对比可以参考[Angular React 和 Vue的比较](https://cn.vuejs.org/v2/guide/comparison.html)或百度之
 - 如果您一直简单的使用诸如Jquery这一类插件式编程框架，或一直借用后端页面渲染(如python-django、php、jsp...)来开发前端的，vue简单的工程结构也不会让您觉得陌生。一个.vue是由template、javascript、style三个部分组成，分别对应于html、js、css，是不是很熟悉？详细可参考[vue教程](https://cn.vuejs.org/v2/guide/)
 
 ### vuex
@@ -165,45 +166,67 @@ h5 demo主要工程目录结构如下：
 - [出神入化](./docs/h5-demo-guide-3.md)
 
 ## 移动端 html5 开发小技巧
-### fixed样式问题
+### 移动浏览器上fixed样式问题
 - 问题：在ios下，一个页面如果有fixed浮层，并且浮层里面有input，那么当input focused的时候，fiexed层的位置就会错乱。
 - 解决：在h5 demo中全盘放弃了fixed样式，而以父元素样式absolute替代，并占满全屏。
-- 操作：(以.app为例)
-css 样式
-``` css
-  body {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .app {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    padding-top: 4rem; /* 该处就可以留给导航tab位置 */
-    ...
-  }
-  .app .main {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    scroll-y: scroll; /* 该元素内部就可以留给滚动条了 */
-  }
-```
-html 结构
-``` html
-  <body>
-    <!-- 导航 -->
-    <div class="app">
-      <div class="main"></div>
-    </div>
-  </body>
-```
+  - (以.app样式为例)
+  - css 样式
+  ``` css
+    body {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .app {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding-top: 4rem; /* 该处就可以留给导航tab位置 */
+      ...
+    }
+    .app .main {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      scroll-y: scroll; /* 该元素内部就可以留给滚动条了 */
+    }
+  ```
+  - html 结构
+  ``` html
+    <body>
+      <!-- 导航 -->
+      <div class="app">
+        <div class="main"></div>
+      </div>
+    </body>
+  ```
 
 ### 滑动迟滞问题
 - 问题：在ios下，非body下直接出现的滚动条，出现滑动迟滞
 - 解决：添加样式："-webkit-overflow-scrolling: touch;" 可以让页面在Native端滚动时模拟原生的弹性滚动效果
+
+### HTML切页过渡动效
+- 问题：在移动端页面上为了更贴近于原生应用般的交互模式，如何制作切页动效
+- 解决：首先我们确定切页动效的基本思路是由css3的transform实现：
+  - 例如：在页面进入前瞬间对父元素添加样式forward-enter，再在进入一段时间以后替换样式forward-enter-to
+    ``` css
+      .forward-enter-active {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: all 0.5s;
+        z-index: 0;
+      }
+      .forward-enter {
+        transform: translate3d(100%, 0, 0);
+      }
+      .forward-enter-to {
+        transform: translate3d(0, 0, 0);
+      }
+    ```
+  - 本h5 demo 利用了vue-router插件，充分利用了页面路由加载时机，配合css3做了动效管理。可以参见：src/App.vue、src/themes/common/animation.css
+  - 参考阅读：[vue-router过渡动效](https://router.vuejs.org/zh-cn/advanced/transitions.html)
 
 ### 异步数据请求等待
 - 问题：异步组件加载，在网络慢时等待时间会很长

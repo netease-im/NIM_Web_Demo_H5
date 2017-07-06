@@ -25,6 +25,11 @@ export default {
 
   // 好友列表
   friendslist: [],
+  // 机器人列表
+  robotslist: [],
+  // 用于判定帐号是否是robots
+  robotInfos: {},
+  robotInfosByNick: {},
   // 黑名单列表
   blacklist: [],
   // 禁言列表
@@ -47,6 +52,8 @@ export default {
   currSessionMsgs: [],
   // 是否有更多历史消息，用于上拉加载更多
   noMoreHistoryMsgs: false,
+  // 继续对话的机器人id
+  continueRobotAccid: '',
 
   // 系统消息
   sysMsgs: [],

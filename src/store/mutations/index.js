@@ -51,6 +51,31 @@ export default {
     // state.friendslist = nim.cutFriends(state.friendslist, cutFriends)
     state.friendslist = nim.cutFriends(state.friendslist, friends.invalid)
   },
+  updateRobots (state, robots) {
+    const nim = state.nim
+    robots = robots.map(item => {
+      if (item.avatar) {
+        item.originAvatar = item.avatar
+        item.avatar = nim.viewImageSync({
+          url: item.avatar, // 必填
+          thumbnail: { // 生成缩略图， 可选填
+            width: 40,
+            height: 40,
+            mode: 'cover'
+          }
+        })
+      } else {
+        item.avatar = config.defaultUserIcon
+      }
+      return item
+    })
+    state.robotslist = robots
+    state.robotInfos = Object.create(null)
+    robots.forEach(robot => {
+      state.robotInfos[robot.account] = robot
+      state.robotInfosByNick[robot.nick] = robot
+    })
+  },
   updateBlacklist (state, blacks) {
     const nim = state.nim
     state.blacklist = nim.cutFriends(state.blacklist, blacks.invalid)
@@ -121,6 +146,17 @@ export default {
     store.commit('updateMsgByIdClient', msgs)
     for (let sessionId in tempSessionMap) {
       state.msgs[sessionId].sort((a, b) => {
+        if (a.time === b.time) {
+          // 机器人消息，回复消息时间和提问消息时间相同，提问在前，回复在后
+          if (a.type === 'robot' && b.type === 'robot') {
+            if (a.content && a.content.msgOut) {
+              return 1
+            }
+            if (b.content && b.content.msgOut) {
+              return -1
+            }
+          }
+        }
         return a.time - b.time
       })
       if (sessionId === state.currSessionId) {
@@ -357,6 +393,10 @@ export default {
   },
   resetNoMoreHistoryMsgs (state) {
     state.noMoreHistoryMsgs = false
+  },
+  // 继续与机器人会话交互
+  continueRobotMsg (state, robotAccid) {
+    state.continueRobotAccid = robotAccid
   },
 
   initChatroomInfos (state, obj) {

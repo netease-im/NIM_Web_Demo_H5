@@ -56,6 +56,7 @@
     "vue": "^2.2.4",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^11.1.4",
+    "vue-recyclerview": "^0.4.0",
     "vue-router": "^2.3.0",
     "vue-style-loader": "^2.0.5",
     "vue-template-compiler": "^2.2.4",

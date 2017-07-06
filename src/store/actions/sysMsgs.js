@@ -33,6 +33,7 @@ export function onSysMsgUnread (obj) {
 }
 
 export function onCustomSysMsgs (customSysMsgs) {
+    console.log(customSysMsgs)
   if (!Array.isArray(customSysMsgs)) {
     customSysMsgs = [customSysMsgs]
   }
@@ -42,7 +43,7 @@ export function onCustomSysMsgs (customSysMsgs) {
         try {
           let content = JSON.parse(msg.content)
           // 消息正在输入中
-          if (content.id === 1) {
+          if ((content.id + '') === '1') {
             return false
           }
         } catch (e) {}

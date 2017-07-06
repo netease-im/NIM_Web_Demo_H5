@@ -10,7 +10,9 @@
       v-for="msg in msglist"
       :type="type"
       :rawMsg="msg"
+      :isRobot="isRobot"
       :userInfos="userInfos"
+      :robotInfos="robotInfos"
       :myInfo="myInfo"
       :key="msg.idClient"
       @msg-loaded="msgLoaded"
@@ -30,6 +32,12 @@
     props: {
       type: String, // 类型，chatroom, session
       canLoadMore: [String, Boolean],
+      isRobot: {
+        type: Boolean,
+        default () {
+          return false
+        }
+      },
       msglist: {
         type: Array,
         default () {
@@ -43,6 +51,12 @@
         }
       },
       myInfo: {
+        type: Object,
+        default () {
+          return {}
+        }
+      },
+      robotInfos: {
         type: Object,
         default () {
           return {}

@@ -4,7 +4,20 @@
       <h1 class="m-tab-top">{{userInfo.alias}}</h1>
       <a slot="left"></a>
     </x-header>
-    <div class="m-list">
+    <div v-if="isRobot" class="m-robot">
+      <div class="u-logo">
+        <img class="logo" :src="userInfo.avatar">
+        <h3>{{userInfo.alias}}</h3>
+        <p>@{{userInfo.account}}</p>
+      </div>
+      <div class="u-desc">
+        <p>{{userInfo.intro}}</p>
+      </div>
+      <div class="u-bottom">
+        <x-button type="primary" action-type="button" @click.native="enterChat">开始对话</x-button>
+      </div>
+    </div>
+    <div v-else class="m-list">
       <group class="u-card">
         <cell :title="userInfo.account" :inline-desc="'昵称: '+userInfo.nick" :value="userInfo.gender=='不显示'?'':userInfo.gender">
           <img class="icon" slot="icon" width="20" :src="userInfo.avatar">
@@ -47,15 +60,31 @@ export default {
       return this.$route.params.userId
     },
     userInfo () {
-      let info = this.$store.state.userInfos[this.account] || {}
-      info.alias = util.getFriendAlias(info)
-      this.isBlack = info.isBlack
+      let info = {}
+      if (this.isRobot) {
+        info = this.robotInfos[this.account] || {}
+        info.alias = info.nick || account
+        info.avatar = info.originAvatar || item.avatar
+      } else {
+        info = this.$store.state.userInfos[this.account] || {}
+        info.alias = util.getFriendAlias(info)
+        this.isBlack = info.isBlack
+      }
       return info
+    },
+    robotInfos () {
+      return this.$store.state.robotInfos
     },
     // 是否是联系人，黑名单和好友都算
     isFriend () {
       let userInfo = this.userInfo
       return userInfo.isFriend
+    },
+    isRobot () {
+      if (this.robotInfos[this.account]) {
+        return true
+      }
+      return false
     },
     remarkLink () {
       return `/namecardremark/${this.account}`

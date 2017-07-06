@@ -11,7 +11,7 @@ import {updateBlack} from './blacks'
 import {updateFriend, addFriend, deleteFriend} from './friends'
 import {resetSearchResult, searchUsers} from './search'
 import {deleteSession, setCurrSession, resetCurrSession} from './session'
-import {sendMsg, sendFileMsg, sendMsgReceipt, revocateMsg, getHistoryMsgs, resetNoMoreHistoryMsgs} from './msgs'
+import {sendMsg, sendFileMsg, sendMsgReceipt, sendRobotMsg, revocateMsg, getHistoryMsgs, resetNoMoreHistoryMsgs, continueRobotMsg} from './msgs'
 import {markSysMsgRead, resetSysMsgs, markCustomSysMsgRead} from './sysMsgs'
 import {sendChatroomMsg, sendChatroomFileMsg, getChatroomHistoryMsgs} from './chatroomMsgs'
 import {initChatroomInfos, getChatroomInfo, getChatroomMembers, clearChatroomMembers} from './chatroomInfos'
@@ -63,6 +63,7 @@ export default {
   hideLoading,
   showFullscreenImg,
   hideFullscreenImg,
+  continueRobotMsg,
 
   // 连接sdk请求，false表示强制重连
   connect (store, obj) {
@@ -110,6 +111,7 @@ export default {
   // 发送消息
   sendMsg,
   sendFileMsg,
+  sendRobotMsg,
   // 发送消息已读回执
   sendMsgReceipt,
   // 消息撤回

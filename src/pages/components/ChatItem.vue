@@ -14,9 +14,12 @@
       :idClient="msg.idClient"
       :time="msg.time"
       :flow="msg.flow"
+      :type="msg.type"
       v-touch:hold="revocateMsg"
     >
-      <a class="msg-head" v-if="msg.avatar" :href="msg.link"><img :src="msg.avatar"></a>
+      <a class="msg-head" v-if="msg.avatar" :href="msg.link">
+        <img :src="msg.avatar">
+      </a>
       <p class="msg-user" v-else-if="msg.type!=='notification'"><em>{{msg.showTime}}</em>{{msg.from}}</p>
 
       <span v-if="msg.type==='text'" class="msg-text" v-html="msg.showText"></span>
@@ -26,8 +29,58 @@
       <span v-else-if="msg.type==='video'" class="msg-text" ref="mediaMsg"></span>
       <span v-else-if="msg.type==='audio'" class="msg-text" @click="playAudio(msg.audioSrc)">{{msg.showText}}</span>
       <span v-else-if="msg.type==='file'" class="msg-text"><a :href="msg.fileLink" target="_blank"><i class="u-icon icon-file"></i>{{msg.showText}}</a></span>
-      <span class="msg-text notify" v-else-if="msg.type==='notification'">{{msg.showText}}</span>
-      <span class="msg-text" v-else v-html="msg.showText"></span>
+      <span v-else-if="msg.type==='robot'" class="msg-text" :class="{'msg-robot': msg.robotFlow!=='out' && !isRobot}">
+        <div v-if="msg.robotFlow==='out'">{{msg.showText}}</div>
+        <div v-else-if="msg.subType==='bot'">
+          <!-- 多次下发的机器人消息 -->
+          <div v-for="tmsgs in msg.message">
+            <!-- 多个机器人模板 -->
+            <div v-for="tmsg in tmsgs">
+              <div v-if="tmsg.type==='text'">
+                <p>{{tmsg.text}}</p>
+              </div>
+              <div v-else-if="tmsg.type==='image'">
+                <p>
+                  <img :src="tmsg.url">
+                </p>
+              </div>
+              <div v-else-if="tmsg.type==='url'">
+                <a :class="tmsg.style" :href="tmsg.target" target="_blank">
+                  <div v-if="tmsg.image">
+                    <p v-for="tmsg2 in tmsg.image">
+                      <img :src="tmsg2.url">
+                    </p>
+                  </div>
+                  <div v-if="tmsg.text">
+                    <p v-for="tmsg2 in tmsg.text">{{tmsg2.text}}</p>
+                  </div>
+                </a>
+              </div>
+              <div v-else-if="tmsg.type==='block'">
+                <a :class="tmsg.style" :params="tmsg.params" :target="tmsg.target" @click="sendRobotBlockMsg(tmsg, msg)">
+                  <div v-if="tmsg.image">
+                    <p v-for="tmsg2 in tmsg.image">
+                      <img :src="tmsg2.url">
+                    </p>
+                  </div>
+                  <div v-if="tmsg.text">
+                    <p v-for="tmsg2 in tmsg.text">{{tmsg2.text}}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-else-if="msg.subType==='faq'">
+          <!--p>{{msg.message.question}}</p-->
+          <p>{{msg.message.answer}}</p>
+        </div>
+        <span v-if="msg.robotFlow!=='out' && !isRobot" class="msg-link">
+          <a class="link-right" @click="continueRobotMsg(msg.content.robotAccid)">继续对话</a>
+        </span>
+      </span>
+      <span v-else-if="msg.type==='notification'" class="msg-text notify">{{msg.showText}}</span>
+      <span v-else class="msg-text" v-html="msg.showText"></span>
       <span v-if="msg.status==='fail'" class="msg-failed"><i class="weui-icon-warn"></i></span>
     </div>
   </li>
@@ -58,6 +111,18 @@
         default () {
           return {}
         }
+      },
+      isRobot: {
+        type: Boolean,
+        default () {
+          return false
+        }
+      },
+      robotInfos: {
+        type: Object,
+        default () {
+          return {}
+        }
       }
     },
     data () {
@@ -67,17 +132,28 @@
         currentAudio: null
       }
     },
+    computed: {
+      robotInfos () {
+        return this.$store.state.robotInfos
+      }
+    },
     beforeMount () {
       let item = Object.assign({}, this.rawMsg)
       // 标记用户，区分聊天室、普通消息
       if (this.type === 'session') {
         if (item.flow === 'in') {
-          if (item.from !== this.$store.state.userUID) {
+          if (item.type === 'robot' && item.content && item.content.msgOut) {
+            // 机器人下行消息
+            let robotAccid = item.content.robotAccid
+            item.avatar = this.robotInfos[robotAccid].avatar
+            item.isRobot = true
+            item.link = `#/namecard/${robotAccid}`
+          } else if (item.from !== this.$store.state.userUID) {
             item.avatar = this.userInfos[item.from].avatar
+            item.link = `#/namecard/${item.from}`
           } else {
             item.avatar = this.myInfo.avatar
           }
-          item.link = `#/namecard/${item.from}`
         } else if (item.flow === 'out') {
           item.avatar = this.myInfo.avatar
         }
@@ -142,6 +218,43 @@
       } else if (item.type === 'tip') {
         //对于系统通知，更新下用户信息的状态
         item.showText = item.tip
+      } else if (item.type === 'robot') {
+        let content = item.content || {}
+        let message = content.message || []
+        if (!content.msgOut) {
+          // 机器人上行消息
+          item.robotFlow = 'out'
+          item.showText = item.text
+        } else if (content.flag === 'bot') {
+          item.subType = 'bot'
+          message = message.map(item => {
+            if (item.type === 'template') {
+              // 在vuex(store/actions/msgs.js)中已调用sdk方法做了转换
+              return item.content.json
+            } else if (item.type === 'text' || item.type === 'answer') {
+              // 保持跟template结构一致
+              return [{
+                type: 'text',
+                text: item.content
+              }]
+            } else if (item.type === 'image') {
+              // 保持跟template结构一致
+              return [{
+                type: 'image',
+                url: item.content
+              }]
+            }
+          })
+          item.message = message
+        } else if (item.content.flag === 'faq') {
+          item.subType = 'faq'
+          item.query = message.query
+          let match = message.match.sort((a, b) => {
+            // 返回最匹配的答案
+            return b.score - a.score
+          })
+          item.message = match[0]
+        }
       } else {
         item.showText = `[${util.mapMsgType(item)}],请到手机或电脑客户端查看`
       }
@@ -204,6 +317,9 @@
         if (this.$store.state.currSessionId) {
           if (vNode && vNode.data && vNode.data.attrs) {
             let attrs = vNode.data.attrs
+            if (attrs.type === 'robot') {
+              return
+            }
             // 自己发的消息
             if (attrs.flow === 'out') {
               let that = this
@@ -220,6 +336,30 @@
             }
           }
         }
+      },
+      sendRobotBlockMsg (msg, originMsg) {
+        let body = '[复杂按钮模板触发消息]'
+        if (msg.text && msg.text.length === 1) {
+          body = msg.text[0].text
+        }
+        let robotAccid = originMsg.content.robotAccid
+        if (!this.isRobot) {
+          body = `@${this.robotInfos[robotAccid].nick} ${body}`
+        }
+        this.$store.dispatch('sendRobotMsg', {
+          type: 'link',
+          scene: originMsg.scene,
+          to: originMsg.to,
+          robotAccid,
+          // 机器人后台消息
+          params: msg.params,
+          target: msg.target,
+          // 显示的文本消息
+          body
+        })
+      },
+      continueRobotMsg (robotAccid) {
+        this.$store.dispatch('continueRobotMsg', robotAccid)
       },
       showFullImg (src) {
         this.$store.dispatch('showFullscreenImg', {
@@ -238,3 +378,13 @@
     }
   }
 </script>
+
+<style scoped>
+  .p-chat-history {
+    .u-msg {
+      .msg-link {
+        display: none;
+      }
+    }
+  }
+</style>

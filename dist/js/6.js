@@ -1,6 +1,6 @@
 webpackJsonp([6],{
 
-/***/ 285:
+/***/ 287:
 /* unknown exports provided */
 /* all exports used */
 /*!********************************!*\
@@ -10,19 +10,19 @@ webpackJsonp([6],{
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-rewriter?{"id":"data-v-43d976ab","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./NameCard.vue */ 390)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-654b9b5d","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./NameCard.vue */ 397)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCard.vue */ 356),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCard.vue */ 362),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler?{"id":"data-v-43d976ab"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCard.vue */ 378),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-654b9b5d"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCard.vue */ 387),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\NameCard.vue"
+Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\NameCard.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NameCard.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -33,9 +33,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-43d976ab", Component.options)
+    hotAPI.createRecord("data-v-654b9b5d", Component.options)
   } else {
-    hotAPI.reload("data-v-43d976ab", Component.options)
+    hotAPI.reload("data-v-654b9b5d", Component.options)
   }
 })()}
 
@@ -44,7 +44,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 356:
+/***/ 362:
 /* unknown exports provided */
 /* all exports used */
 /*!********************************************************************************************************************************************!*\
@@ -57,7 +57,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _utils = __webpack_require__(/*! ../utils */ 38);
+var _utils = __webpack_require__(/*! ../utils */ 41);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -75,14 +75,30 @@ exports.default = {
       return this.$route.params.userId;
     },
     userInfo: function userInfo() {
-      var info = this.$store.state.userInfos[this.account] || {};
-      info.alias = _utils2.default.getFriendAlias(info);
-      this.isBlack = info.isBlack;
+      var info = {};
+      if (this.isRobot) {
+        info = this.robotInfos[this.account] || {};
+        info.alias = info.nick || account;
+        info.avatar = info.originAvatar || item.avatar;
+      } else {
+        info = this.$store.state.userInfos[this.account] || {};
+        info.alias = _utils2.default.getFriendAlias(info);
+        this.isBlack = info.isBlack;
+      }
       return info;
+    },
+    robotInfos: function robotInfos() {
+      return this.$store.state.robotInfos;
     },
     isFriend: function isFriend() {
       var userInfo = this.userInfo;
       return userInfo.isFriend;
+    },
+    isRobot: function isRobot() {
+      if (this.robotInfos[this.account]) {
+        return true;
+      }
+      return false;
     },
     remarkLink: function remarkLink() {
       return '/namecardremark/' + this.account;
@@ -119,12 +135,12 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 367:
+/***/ 374:
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-rewriter.js?{"id":"data-v-43d976ab","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/NameCard.vue ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-654b9b5d","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/NameCard.vue ***!
+  \************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 4)(true);
@@ -132,19 +148,19 @@ exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-ba
 
 
 // module
-exports.push([module.i, "\n.p-namecard .m-list {\n    padding-top: 3.6rem;\n}\n.p-namecard .u-bottom {\n    margin-bottom: 2rem;\n}\n\n", "", {"version":3,"sources":["D:/web/node/nim-web-demo-h5/src/pages/NameCard.vue"],"names":[],"mappings":";AA8FE;IACE,oBAAoB;CACrB;AACD;IACE,oBAAoB;CACrB","file":"NameCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-namecard {\n  .m-list {\n    padding-top: 3.6rem;\n  }\n  .u-bottom {\n    margin-bottom: 2rem;\n  }\n}\n\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-namecard .m-list {\n    padding-top: 3.6rem;\n}\n.p-namecard .u-bottom {\n    margin-bottom: 2rem;\n}\n\n", "", {"version":3,"sources":["D:/web/node/NIM_Web_Demo_H5/src/pages/NameCard.vue"],"names":[],"mappings":";AA2HE;IACE,oBAAoB;CACrB;AACD;IACE,oBAAoB;CACrB","file":"NameCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-namecard {\n  .m-list {\n    padding-top: 3.6rem;\n  }\n  .u-bottom {\n    margin-bottom: 2rem;\n  }\n}\n\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 378:
+/***/ 387:
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler.js?{"id":"data-v-43d976ab"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/NameCard.vue ***!
-  \********************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-654b9b5d"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/NameCard.vue ***!
+  \*****************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -161,7 +177,30 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "m-tab-top"
   }, [_vm._v(_vm._s(_vm.userInfo.alias))]), _vm._v(" "), _c('a', {
     slot: "left"
-  })]), _vm._v(" "), _c('div', {
+  })]), _vm._v(" "), (_vm.isRobot) ? _c('div', {
+    staticClass: "m-robot"
+  }, [_c('div', {
+    staticClass: "u-logo"
+  }, [_c('img', {
+    staticClass: "logo",
+    attrs: {
+      "src": _vm.userInfo.avatar
+    }
+  }), _vm._v(" "), _c('h3', [_vm._v(_vm._s(_vm.userInfo.alias))]), _vm._v(" "), _c('p', [_vm._v("@" + _vm._s(_vm.userInfo.account))])]), _vm._v(" "), _c('div', {
+    staticClass: "u-desc"
+  }, [_c('p', [_vm._v(_vm._s(_vm.userInfo.intro))])]), _vm._v(" "), _c('div', {
+    staticClass: "u-bottom"
+  }, [_c('x-button', {
+    attrs: {
+      "type": "primary",
+      "action-type": "button"
+    },
+    nativeOn: {
+      "click": function($event) {
+        _vm.enterChat($event)
+      }
+    }
+  }, [_vm._v("开始对话")])], 1)]) : _c('div', {
     staticClass: "m-list"
   }, [_c('group', {
     staticClass: "u-card"
@@ -297,34 +336,34 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-43d976ab", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-654b9b5d", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 390:
+/***/ 397:
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-rewriter.js?{"id":"data-v-43d976ab","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/NameCard.vue ***!
-  \************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-654b9b5d","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/NameCard.vue ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-rewriter.js?{"id":"data-v-43d976ab","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./NameCard.vue */ 367);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-654b9b5d","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./NameCard.vue */ 374);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("4b5c0df4", content, false);
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("520e0f31", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-43d976ab\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NameCard.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-43d976ab\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NameCard.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-654b9b5d\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NameCard.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-654b9b5d\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NameCard.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

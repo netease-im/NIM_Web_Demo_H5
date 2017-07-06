@@ -7,6 +7,7 @@ import config from '../../configs'
 import util from '../../utils'
 
 export function formatUserInfo (obj) {
+  const nim = store.state.nim
   let gender = ''
   switch (obj.gender) {
     case 'male':
@@ -30,7 +31,15 @@ export function formatUserInfo (obj) {
   }
 
   if (obj.avatar) {
-    obj.avatar += '?imageView&thumbnail=40x40&quality=85'
+    obj.avatar = nim.viewImageSync({
+      url: obj.avatar, // 必填
+      thumbnail: { // 生成缩略图， 可选填
+        width: 40,
+        height: 40,
+        mode: 'cover'
+      }
+    })
+    // obj.avatar += '?imageView&thumbnail=40x40&quality=85'
   } else {
     obj.avatar = config.defaultUserIcon
   }

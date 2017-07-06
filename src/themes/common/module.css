@@ -203,6 +203,32 @@
     height: 100%;
     overflow: hidden;
   }
+  /* 名片页面 */
+  .m-robot {
+    .u-logo {
+      position: relative;
+      margin: 1rem auto;
+      text-align: center;
+      .logo {
+        display: inline-block;
+        margin: 1rem 0;
+        width: 40%;
+        height: auto;
+      }
+      h3 {
+        margin: 1rem 0;
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+    }
+    .u-desc {
+      position: relative;
+      margin: 1rem auto;
+      width: 80%;
+      text-align: left;
+      color: $color_input_light;
+    }
+  }
 
   /* 聊天页面 */
   .m-chat-main {

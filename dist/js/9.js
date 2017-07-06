@@ -1,6 +1,6 @@
 webpackJsonp([9],{
 
-/***/ 286:
+/***/ 288:
 /* unknown exports provided */
 /* all exports used */
 /*!**************************************!*\
@@ -10,15 +10,15 @@ webpackJsonp([9],{
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 357),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 363),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler?{"id":"data-v-2c4887ea"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 376),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-538fd986"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 385),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\NameCardRemark.vue"
+Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\NameCardRemark.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NameCardRemark.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -29,9 +29,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2c4887ea", Component.options)
+    hotAPI.createRecord("data-v-538fd986", Component.options)
   } else {
-    hotAPI.reload("data-v-2c4887ea", Component.options)
+    hotAPI.reload("data-v-538fd986", Component.options)
   }
 })()}
 
@@ -40,7 +40,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 357:
+/***/ 363:
 /* unknown exports provided */
 /* all exports used */
 /*!**************************************************************************************************************************************************!*\
@@ -53,7 +53,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _utils = __webpack_require__(/*! ../utils */ 38);
+var _utils = __webpack_require__(/*! ../utils */ 41);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -97,12 +97,12 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 376:
+/***/ 385:
 /* unknown exports provided */
 /* all exports used */
-/*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler.js?{"id":"data-v-2c4887ea"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/NameCardRemark.vue ***!
-  \**************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-538fd986"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/NameCardRemark.vue ***!
+  \***********************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -154,7 +154,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-2c4887ea", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-538fd986", module.exports)
   }
 }
 

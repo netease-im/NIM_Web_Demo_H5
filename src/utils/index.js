@@ -80,7 +80,8 @@ Utils.mapMsgType = function (msg) {
     geo: '地理位置消息',
     tip: '提醒消息',
     custom: '自定义消息',
-    notification: '系统通知'
+    notification: '系统通知',
+    robot: '机器人消息'
   }
   let type = msg.type
   return map[type] || '未知消息类型'

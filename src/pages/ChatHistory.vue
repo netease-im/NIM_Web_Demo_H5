@@ -15,6 +15,7 @@
         :msglist="msglist"
         :userInfos="userInfos"
         :myInfo="myInfo"
+        :robotInfos="robotInfos"
         v-touch:swipedown="loadMore"
       ></chat-list>
     </div>
@@ -66,12 +67,27 @@ export default {
         user = sessionId.replace(/^p2p-/, '')
         if (user === this.$store.state.userUID) {
           return '我的手机'
+        } else if (this.isRobot) {
+          return this.robotInfos[user].nick || user
+        } else {
+          let userInfo = this.userInfos[user] || {}
+          return util.getFriendAlias(userInfo)
         }
-        let userInfo = this.userInfos[user] || {}
-        return util.getFriendAlias(userInfo)  
       } else if (/^team-/.test(sessionId)) {
         return '群'
       }
+    },
+    // 判断是否是机器人
+    isRobot () {
+      let sessionId = this.sessionId
+      let user = null
+      if (/^p2p-/.test(sessionId)) {
+        user = sessionId.replace(/^p2p-/, '')
+        if (this.robotInfos[user]) {
+          return true
+        }
+      }
+      return false
     },
     myInfo () {
       return this.$store.state.myInfo
@@ -82,6 +98,9 @@ export default {
     msglist () {
       let msgs = this.$store.state.currSessionMsgs
       return msgs
+    },
+    robotInfos () {
+      return this.$store.state.robotInfos
     },
     scene () {
       return util.parseSession(this.sessionId).scene
@@ -115,7 +134,7 @@ export default {
 }
 </script>
 
-<style type="text/css">
+<style scoped>
   .p-chat-history {
     .m-chat-main {
       padding: 0;

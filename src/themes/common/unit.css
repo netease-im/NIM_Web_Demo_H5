@@ -192,6 +192,14 @@
       &.notify {
         max-width: 100%;
       }
+      .button {
+        margin: 0.1rem 0;
+        padding: 0.1rem 0.2rem;
+        border: 1px solid #fff;
+        border-radius: 0.2rem;
+        background-color: $color_nav_active_background;
+        color: #666;
+      }
     }
     .msg-failed {
       position: relative;
@@ -201,10 +209,32 @@
       font-size: 0.92rem;
       line-height: 2.0rem;
     }
+    .msg-link {
+      display: block;
+      position: absolute;
+      bottom: -2rem;
+      right: 0;
+      min-width: 4rem;
+      min-height: 1.2rem;
+      word-break: normal;
+      height: auto;
+      line-height: 1.2rem;
+      font-size: 1.0rem;
+      border: none;
+      a {
+        color: $color_nav_active_font;
+        text-decoration: underline;
+        float: right;
+      }
+    }
     &.session-chat .msg-text {
       padding: 0.4rem;
       margin-bottom: 0.8rem;
       border-radius: 0.4rem;
+    }
+    &.session-chat .msg-robot {
+      min-width: 3rem;
+      margin-bottom: 3rem;
     }
     &.session-chat.item-you {
       .msg-head, .msg-text {

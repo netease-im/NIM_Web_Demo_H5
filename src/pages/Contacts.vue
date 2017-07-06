@@ -23,6 +23,16 @@
         <cell v-for="friend in friendslist" :title="friend.alias" :key="friend.account" is-link :link="friend.link">
           <img class="icon" slot="icon" width="20" :src="userInfos[friend.account].avatar">
         </cell>
+        <!-- <RecyclerView
+          :prerender="5"
+          :item="Cell" 
+          :list="friendslist">
+        </RecyclerView> -->
+      </group>
+      <group class="u-card" title="机器人">
+        <cell v-for="robot in robotslist" :title="robot.nick" :key="robot.account" is-link :link="robot.link">
+          <img class="icon" slot="icon" width="20" :src="robot.avatar">
+        </cell>
       </group>
       <group class="u-card" title="黑名单">
         <cell v-for="friend in blacklist" :title="friend.alias" :key="friend.account" is-link :link="friend.link">
@@ -61,6 +71,12 @@ export default {
           return false
         }
         return true
+      })
+    },
+    robotslist () {
+      return this.$store.state.robotslist.map(item => {
+        item.link = `/namecard/${item.account}`
+        return item
       })
     },
     userInfos () {

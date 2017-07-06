@@ -12,13 +12,16 @@
         type="session"
         :msglist="msglist"
         :userInfos="userInfos"
+        :robotInfos="robotInfos"
         :myInfo="myInfo"
+        :isRobot="isRobot"
         @msgs-loaded="msgsLoaded"
       ></chat-list>
       <chat-editor
         type="session"
         :scene="scene"
         :to="to"
+        :isRobot="isRobot"
       ></chat-editor>
     </div>
   </div>
@@ -73,9 +76,12 @@ export default {
         user = sessionId.replace(/^p2p-/, '')
         if (user === this.$store.state.userUID) {
           return '我的手机'
+        } else if (this.isRobot) {
+          return this.robotInfos[user].nick
+        } else {
+          let userInfo = this.userInfos[user] || {}
+          return util.getFriendAlias(userInfo)
         }
-        let userInfo = this.userInfos[user] || {}
-        return util.getFriendAlias(userInfo)
       } else if (/^team-/.test(sessionId)) {
         return '群'
       }
@@ -86,11 +92,26 @@ export default {
     to () {
       return util.parseSession(this.sessionId).to
     },
+    // 判断是否是机器人
+    isRobot () {
+      let sessionId = this.sessionId
+      let user = null
+      if (/^p2p-/.test(sessionId)) {
+        user = sessionId.replace(/^p2p-/, '')
+        if (this.robotInfos[user]) {
+          return true
+        }
+      }
+      return false
+    },
     myInfo () {
       return this.$store.state.myInfo
     },
     userInfos () {
       return this.$store.state.userInfos
+    },
+    robotInfos () {
+      return this.$store.state.robotInfos
     },
     msglist () {
       let msgs = this.$store.state.currSessionMsgs

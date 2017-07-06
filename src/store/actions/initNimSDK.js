@@ -7,6 +7,7 @@ import pageUtil from '../../utils/page'
 import util from '../../utils'
 import store from '../'
 import {onFriends, onSyncFriendAction} from './friends'
+import {onRobots} from './robots'
 import {onBlacklist, onMarkInBlacklist} from './blacks'
 import {onMyInfo, onUserInfo} from './userInfo'
 import {onSessions, onUpdateSession} from './session'
@@ -26,7 +27,9 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     account: loginInfo.uid,
     token: loginInfo.sdktoken,
     db: false,
-    syncSessionUnread: false,
+    syncSessionUnread: true,
+    syncRobots: true,
+    autoMarkRead: true, // 默认为true
     onconnect: function onConnect (event) {
       if (loginInfo) {
         // 连接上以后更新uid
@@ -73,6 +76,8 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     // onsyncmarkinmutelist: onMarkInMutelist,
     onfriends: onFriends,
     onsyncfriendaction: onSyncFriendAction,
+    // 机器人
+    onrobots: onRobots,
     // 用户名片 - actions/userInfo
     onmyinfo: onMyInfo,
     onupdatemyinfo: onMyInfo,

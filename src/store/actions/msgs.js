@@ -2,15 +2,45 @@ import store from '../'
 import config from '../../configs'
 import util from '../../utils'
 
+function formatMsg (msg) {
+  const nim = store.state.nim
+  if (msg.type === 'robot') {
+    if (msg.content && msg.content.flag === 'bot') {
+      if (msg.content.message) {
+        msg.content.message = msg.content.message.map(item => {
+          switch (item.type) {
+            case 'template':
+              item.content = nim.parseRobotTemplate(item.content)
+              break
+            case 'text':
+            case 'image':
+            case 'answer':
+              break
+          }
+          return item
+        })
+      }
+    }
+  }
+  return msg
+}
+
 export function onRoamingMsgs (obj) {
-  store.commit('updateMsgs', obj.msgs)
+  let msgs = obj.msgs.map(msg => {
+    return formatMsg(msg)
+  })
+  store.commit('updateMsgs', msgs)
 }
 
 export function onOfflineMsgs (obj) {
-  store.commit('updateMsgs', obj.msgs)
+  let msgs = obj.msgs.map(msg => {
+    return formatMsg(msg)
+  })
+  store.commit('updateMsgs', msgs)
 }
 
 export function onMsg (msg) {
+  msg = formatMsg(msg)
   store.commit('putMsg', msg)
   if (msg.sessionId === store.state.currSessionId) {
     store.commit('updateCurrSessionMsgs', {
@@ -156,6 +186,50 @@ export function sendFileMsg ({state, commit}, obj) {
   })
 }
 
+// 发送机器人消息
+export function sendRobotMsg ({state, commit}, obj) {
+  const nim = state.nim
+  let {type, scene, to, robotAccid, content, params, target, body} = obj
+  scene = scene || 'p2p'
+  if (type === 'text') {
+    nim.sendRobotMsg({
+      scene,
+      to,
+      robotAccid: robotAccid || to,
+      content: {
+        type: 'text',
+        content,
+      },
+      body,
+      done: onSendMsgDone
+    })
+  } else if (type === 'welcome') {
+    nim.sendRobotMsg({
+      scene,
+      to,
+      robotAccid: robotAccid || to,
+      content: {
+        type: 'welcome',
+      },
+      body,
+      done: onSendMsgDone
+    })
+  } else if (type === 'link') {
+    nim.sendRobotMsg({
+      scene,
+      to,
+      robotAccid: robotAccid || to,
+      content: {
+        type: 'link',
+        params,
+        target
+      },
+      body,
+      done: onSendMsgDone
+    })
+  }
+}
+
 // 发送消息已读回执
 export function sendMsgReceipt ({state, commit}) {
   // 如果有当前会话
@@ -196,9 +270,12 @@ export function getHistoryMsgs ({state, commit}, obj) {
           if (obj.msgs.length === 0) {
             commit('setNoMoreHistoryMsgs')
           } else {
+            let msgs = obj.msgs.map(msg => {
+              return formatMsg(msg)
+            })
             commit('updateCurrSessionMsgs', {
               type: 'concat',
-              msgs: obj.msgs
+              msgs: msgs
             })
           }
         }
@@ -218,4 +295,9 @@ export function getHistoryMsgs ({state, commit}, obj) {
 
 export function resetNoMoreHistoryMsgs ({commit}) {
   commit('resetNoMoreHistoryMsgs')
+}
+
+// 继续与机器人会话交互
+export function continueRobotMsg ({commit}, robotAccid) {
+  commit('continueRobotMsg', robotAccid)
 }
