@@ -149,7 +149,7 @@
             item.isRobot = true
             item.link = `#/namecard/${robotAccid}`
           } else if (item.from !== this.$store.state.userUID) {
-            item.avatar = this.userInfos[item.from].avatar
+            item.avatar = (this.userInfos[item.from] && this.userInfos[item.from].avatar) || config.defaultUserIcon
             item.link = `#/namecard/${item.from}`
           } else {
             item.avatar = this.myInfo.avatar

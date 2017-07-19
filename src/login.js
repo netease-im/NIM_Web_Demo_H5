@@ -40,7 +40,8 @@ var formData = new Vue({
       // 本demo做一次假登录
       // 真实场景应在此向服务器发起ajax请求
       let sdktoken = md5(this.password)
-      cookie.setCookie('uid', this.account)
+      // 服务端帐号均为小写
+      cookie.setCookie('uid', this.account.toLowerCase())
       cookie.setCookie('sdktoken', sdktoken)
       location.href = config.homeUrl
     },

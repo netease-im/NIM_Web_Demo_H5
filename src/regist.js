@@ -52,12 +52,14 @@ var formData = new Vue({
       // 真实场景应在此向服务器发起ajax请求
       let sdktoken = md5(this.password)
 
+      let accountLowerCase = this.account.toLowerCase()
+
       let xhr = new XMLHttpRequest()
       xhr.open('POST', `${config.postUrl}/api/createDemoUser`, true)
       xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
       xhr.setRequestHeader('appkey', config.appkey)
       xhr.send(util.object2query({
-        username: this.account,
+        username: accountLowerCase,
         password: sdktoken,
         nickname: this.nickname
       }))
@@ -66,7 +68,7 @@ var formData = new Vue({
           if (xhr.status == 200) {
             let data = JSON.parse(xhr.responseText)
             if (data.res === 200) {
-              cookie.setCookie('uid', this.account)
+              cookie.setCookie('uid', accountLowerCase)
               cookie.setCookie('sdktoken', sdktoken)
               location.href = config.homeUrl
             } else if (data.res === 414) {
