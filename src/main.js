@@ -10,8 +10,8 @@ import App from './App'
 import VueTouch from './plugins/touchEvent'
 Vue.use(VueTouch)
 
-import VueRecyclerviewNew from 'vue-recyclerview'
-Vue.use(VueRecyclerviewNew)
+// import VueRecyclerviewNew from 'vue-recyclerview'
+// Vue.use(VueRecyclerviewNew)
 
 // 同步单页路由与数据中心
 import store from './store'

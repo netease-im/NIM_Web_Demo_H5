@@ -57,7 +57,7 @@ var _index = __webpack_require__(/*! vux/src/components/group/index.vue */ 113);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(/*! vux/src/components/cell/index.vue */ 137);
+var _index3 = __webpack_require__(/*! vux/src/components/cell/index.vue */ 136);
 
 var _index4 = _interopRequireDefault(_index3);
 

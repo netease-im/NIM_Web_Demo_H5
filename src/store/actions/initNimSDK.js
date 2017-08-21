@@ -14,6 +14,8 @@ import {onSessions, onUpdateSession} from './session'
 import {onRoamingMsgs, onOfflineMsgs, onMsg} from './msgs'
 import {onSysMsgs, onSysMsg, onSysMsgUnread, onCustomSysMsgs} from './sysMsgs'
 
+import SDK from '../../sdk/NIM_Web_SDK_v4.0.0.js'
+
 // 重新初始化 NIM SDK
 export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
   if (state.nim) {

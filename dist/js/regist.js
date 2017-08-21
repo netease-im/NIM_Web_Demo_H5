@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "dist/js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 273);
+/******/ 	return __webpack_require__(__webpack_require__.s = 272);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -13385,8 +13385,7 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 /* 269 */,
 /* 270 */,
 /* 271 */,
-/* 272 */,
-/* 273 */
+/* 272 */
 /* unknown exports provided */
 /* all exports used */
 /*!***********************!*\
