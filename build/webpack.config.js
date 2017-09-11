@@ -53,7 +53,7 @@ let webpackConfig = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')],
-        exclude: /NIM_Web_SDK.*\.js/,
+        exclude: resolve('src/sdk'),
         query: {
           presets: [
             ['stage-0'],
