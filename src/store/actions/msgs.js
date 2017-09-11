@@ -2,7 +2,7 @@ import store from '../'
 import config from '../../configs'
 import util from '../../utils'
 
-function formatMsg (msg) {
+export function formatMsg (msg) {
   const nim = store.state.nim
   if (msg.type === 'robot') {
     if (msg.content && msg.content.flag === 'bot') {

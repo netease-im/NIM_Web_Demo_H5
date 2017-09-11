@@ -1,11 +1,15 @@
 import store from '../'
 import config from '../../configs'
 import util from '../../utils'
+import {formatMsg} from './msgs'
 
 export function onChatroomMsgs (msgs) {
   if (!Array.isArray(msgs)) {
     msgs = [msgs]
   }
+  msgs = msgs.map(msg => {
+    return formatMsg(msg)
+  })
   if (store.state.currChatroomId) {
     store.commit('updateCurrChatroomMsgs', {
       type: 'put',
@@ -41,6 +45,42 @@ export function sendChatroomMsg ({state, commit}, obj) {
         pushContent: obj.pushContent,
         done: onSendMsgDone
       })
+  }
+}
+
+export function sendChatroomRobotMsg ({state, commit}, obj) {
+  const chatroom = state.currChatroom
+  let {type, robotAccid, content, params, target, body} = obj
+  if (type === 'text') {
+    chatroom.sendRobotMsg({
+      robotAccid,
+      content: {
+        type: 'text',
+        content,
+      },
+      body,
+      done: onSendMsgDone
+    })
+  } else if (type === 'welcome') {
+    chatroom.sendRobotMsg({
+      robotAccid,
+      content: {
+        type: 'welcome',
+      },
+      body,
+      done: onSendMsgDone
+    })
+  } else if (type === 'link') {
+    chatroom.sendRobotMsg({
+      robotAccid,
+      content: {
+        type: 'link',
+        params,
+        target
+      },
+      body,
+      done: onSendMsgDone
+    })
   }
 }
 
@@ -89,9 +129,12 @@ export function getChatroomHistoryMsgs ({state, commit}, obj) {
           if (obj.msgs.length === 0) {
             commit('setNoMoreHistoryMsgs')
           } else {
+            let msgs = obj.msgs.map(msg => {
+              return formatMsg(msg)
+            })
             commit('updateCurrChatroomMsgs', {
               type: 'concat',
-              msgs: obj.msgs
+              msgs
             })
           }
         }

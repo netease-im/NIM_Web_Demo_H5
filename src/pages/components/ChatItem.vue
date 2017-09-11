@@ -346,17 +346,29 @@
         if (!this.isRobot) {
           body = `@${this.robotInfos[robotAccid].nick} ${body}`
         }
-        this.$store.dispatch('sendRobotMsg', {
-          type: 'link',
-          scene: originMsg.scene,
-          to: originMsg.to,
-          robotAccid,
-          // 机器人后台消息
-          params: msg.params,
-          target: msg.target,
-          // 显示的文本消息
-          body
-        })
+        if (this.type === 'session') {
+          this.$store.dispatch('sendRobotMsg', {
+            type: 'link',
+            scene: originMsg.scene,
+            to: originMsg.to,
+            robotAccid,
+            // 机器人后台消息
+            params: msg.params,
+            target: msg.target,
+            // 显示的文本消息
+            body
+          })
+        } else if (this.type === 'chatroom') {
+          this.$store.dispatch('sendChatroomRobotMsg', {
+            type: 'link',
+            robotAccid,
+            // 机器人后台消息
+            params: msg.params,
+            target: msg.target,
+            // 显示的文本消息
+            body
+          })
+        } 
       },
       continueRobotMsg (robotAccid) {
         this.$store.dispatch('continueRobotMsg', robotAccid)

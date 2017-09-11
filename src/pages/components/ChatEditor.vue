@@ -21,7 +21,7 @@
         <span v-if="!isRobot" class="u-editor-icon" @click.stop="showEmoji">
           <i class="u-icon-img"><img :src="icon1"></i>
         </span>
-        <span v-if="type==='session' && !isRobot" class="u-editor-icon" @change="sendFileMsg">
+        <span v-if="!isRobot" class="u-editor-icon" @change="sendFileMsg">
           <i class="u-icon-img"><img :src="icon2"></i>
           <input type="file" ref="fileToSent">
         </span>
@@ -68,7 +68,7 @@ export default {
       this.$store.dispatch('continueRobotMsg', '')
     },
     msgToSent (curVal, oldVal) {
-      if (this.type === 'chatroom' || this.isRobot) {
+      if (this.isRobot) {
         return
       }
       let indexAt = this.msgToSent.indexOf('@')
@@ -179,10 +179,44 @@ export default {
           }
         }
       } else if (this.type === 'chatroom') {
-        this.$store.dispatch('sendChatroomMsg', {
-          type: 'text',
-          text: this.msgToSent
-        })
+        let robotAccid = ''
+        let robotText = ''
+
+        let atUsers = this.msgToSent.match(/@[^\s@$]+/g)
+        if (atUsers) {
+          for (let i = 0; i < atUsers.length; i++) {
+            let item = atUsers[i].replace('@', '')
+            if (this.robotInfosByNick[item]) {
+              robotAccid = this.robotInfosByNick[item].account
+              robotText = (this.msgToSent + '').replace(atUsers[i], '').trim()
+              break
+            }
+          }
+        }
+        if (robotAccid) {
+          if (robotText) {
+            this.$store.dispatch('sendChatroomRobotMsg', {
+              type: 'text',
+              robotAccid,
+              // 机器人后台消息
+              content: robotText,
+              // 显示的文本消息
+              body: this.msgToSent
+            })
+          } else {
+            this.$store.dispatch('sendChatroomRobotMsg', {
+              type: 'welcome',
+              robotAccid,
+              // 显示的文本消息
+              body: this.msgToSent
+            })
+          }
+        } else {
+          this.$store.dispatch('sendChatroomMsg', {
+            type: 'text',
+            text: this.msgToSent
+          })
+        }
       }
       this.msgToSent = ''
     },
@@ -259,12 +293,12 @@ export default {
 
 <style scoped>
   .robot.m-chat-editor-main {
-    .u-editor-input {
+    /*.u-editor-input {
       padding-right: 4.5rem;
     }
     .u-editor-icons {
       width: 4rem;
-    }
+    }*/
   }
   .m-chat-robot {
     overflow-y: scroll;

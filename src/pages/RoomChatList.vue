@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style type="text/css">
+<style scoped>
   .p-room-chat-list {
     .m-chat-editor-main {
       .u-editor-input {
@@ -63,6 +63,16 @@ export default {
       }
       .u-editor-icons {
         width: 8rem;
+      }
+    }
+    .u-msg {
+      .msg-text {
+        max-width: 80%;
+      }
+      .msg-link {
+        bottom: 0;
+        right: -4rem;
+        font-size: 0.9rem;
       }
     }
   }

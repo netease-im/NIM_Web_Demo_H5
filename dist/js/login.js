@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "dist/js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 270);
+/******/ 	return __webpack_require__(__webpack_require__.s = 272);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -9921,6 +9921,8 @@ var _assign2 = _interopRequireDefault(_assign);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var config = {
+  sdk: 'NIM_Web_SDK_v4.2.0.js',
+
   loginUrl: '/webdemo/h5/login.html',
   registUrl: '/webdemo/h5/regist.html',
   homeUrl: '/webdemo/h5/index.html#/session',
@@ -10062,7 +10064,7 @@ module.exports = function(key){
 
 /***/ }),
 
-/***/ 270:
+/***/ 272:
 /* unknown exports provided */
 /* all exports used */
 /*!**********************!*\
