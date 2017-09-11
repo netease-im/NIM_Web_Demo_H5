@@ -10,19 +10,19 @@ webpackJsonp([7],{
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-rewriter?{"id":"data-v-5271dec3","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./Contacts.vue */ 400)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./Contacts.vue */ 400)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
   __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Contacts.vue */ 361),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler?{"id":"data-v-5271dec3"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Contacts.vue */ 388),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-73e40375"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Contacts.vue */ 390),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\Contacts.vue"
+Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\Contacts.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Contacts.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -33,9 +33,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-5271dec3", Component.options)
+    hotAPI.createRecord("data-v-73e40375", Component.options)
   } else {
-    hotAPI.reload("data-v-5271dec3", Component.options)
+    hotAPI.reload("data-v-73e40375", Component.options)
   }
 })()}
 
@@ -106,9 +106,9 @@ module.exports = exports['default'];
 /***/ 377:
 /* unknown exports provided */
 /* all exports used */
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-rewriter.js?{"id":"data-v-5271dec3","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Contacts.vue ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Contacts.vue ***!
+  \************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 4)(true);
@@ -116,19 +116,19 @@ exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-ba
 
 
 // module
-exports.push([module.i, "\n.p-contacts .add-friend {\n    background-color: #fff;\n}\n.p-contacts .m-list {\n    padding-top: 8rem;\n}\n.p-contacts .u-search-box-wrap {\n    text-align: center;\n}\n.p-contacts .u-search-box {\n    position: relative;\n    display: inline-block;\n    -moz-box-sizing: border-box;\n         box-sizing: border-box;\n    min-width: 45%;\n    padding: 1em;\n    height: 3rem;\n    text-align: center;\n    border: 1px solid #ccc;\n    background-color: #fff;\n    font-size: 0.8rem;\n    box-shadow: 2px 2px 6px #ccc;\n}\n.p-contacts .u-search-box a {\n    display: inline-block;\n    -moz-box-sizing: border-box;\n         box-sizing: border-box;\n    height: 100%;\n    width: 100%;\n}\n.p-contacts .u-card .icon {\n    display: inline-block;\n    margin-right: 0.4rem;\n    width: 1.4rem;\n    height: 1.4rem;\n    background-size: 20rem;\n}\n.p-contacts .u-card .icon-team-advanced {\n    background-position: 0 -3rem;\n    background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n}\n.p-contacts .u-card .icon-team {\n    background-position: -2.1rem -3rem;\n    background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n}\n", "", {"version":3,"sources":["D:/web/node/nim-web-demo-h5/src/pages/Contacts.vue"],"names":[],"mappings":";AA2FE;IACE,uBAAuB;CACxB;AACD;IACE,kBAAkB;CACnB;AACD;IACE,mBAAmB;CACpB;AACD;IACE,mBAAmB;IACnB,sBAAsB;IACtB,4BAAuB;SAAvB,uBAAuB;IACvB,eAAe;IACf,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,uBAAuB;IACvB,kBAAkB;IAClB,6BAA6B;CAO9B;AANC;IACE,sBAAsB;IACtB,4BAAuB;SAAvB,uBAAuB;IACvB,aAAa;IACb,YAAY;CACb;AAGD;IACE,sBAAsB;IACtB,qBAAqB;IACrB,cAAc;IACd,eAAe;IACf,uBAAuB;CACxB;AACD;IACE,6BAA6B;IAC7B,4EAA4E;CAC7E;AACD;IACE,mCAAmC;IACnC,4EAA4E;CAC7E","file":"Contacts.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-contacts {\n  .add-friend {\n    background-color: #fff;\n  }\n  .m-list {\n    padding-top: 8rem;\n  }\n  .u-search-box-wrap {\n    text-align: center;\n  }\n  .u-search-box {\n    position: relative;\n    display: inline-block;\n    box-sizing: border-box;\n    min-width: 45%;\n    padding: 1em;\n    height: 3rem;\n    text-align: center;\n    border: 1px solid #ccc;\n    background-color: #fff;\n    font-size: 0.8rem;\n    box-shadow: 2px 2px 6px #ccc;\n    a {\n      display: inline-block;\n      box-sizing: border-box;\n      height: 100%;\n      width: 100%;\n    }\n  }\n  .u-card {\n    .icon {\n      display: inline-block;\n      margin-right: 0.4rem;\n      width: 1.4rem;\n      height: 1.4rem;\n      background-size: 20rem;\n    }\n    .icon-team-advanced {\n      background-position: 0 -3rem;\n      background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n    }\n    .icon-team {\n      background-position: -2.1rem -3rem;\n      background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n    }\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-contacts .add-friend {\n    background-color: #fff;\n}\n.p-contacts .m-list {\n    padding-top: 8rem;\n}\n.p-contacts .u-search-box-wrap {\n    text-align: center;\n}\n.p-contacts .u-search-box {\n    position: relative;\n    display: inline-block;\n    -moz-box-sizing: border-box;\n         box-sizing: border-box;\n    min-width: 45%;\n    padding: 1em;\n    height: 3rem;\n    text-align: center;\n    border: 1px solid #ccc;\n    background-color: #fff;\n    font-size: 0.8rem;\n    box-shadow: 2px 2px 6px #ccc;\n}\n.p-contacts .u-search-box a {\n    display: inline-block;\n    -moz-box-sizing: border-box;\n         box-sizing: border-box;\n    height: 100%;\n    width: 100%;\n}\n.p-contacts .u-card .icon {\n    display: inline-block;\n    margin-right: 0.4rem;\n    width: 1.4rem;\n    height: 1.4rem;\n    background-size: 20rem;\n}\n.p-contacts .u-card .icon-team-advanced {\n    background-position: 0 -3rem;\n    background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n}\n.p-contacts .u-card .icon-team {\n    background-position: -2.1rem -3rem;\n    background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n}\n", "", {"version":3,"sources":["D:/web/node/NIM_Web_Demo_H5/src/pages/Contacts.vue"],"names":[],"mappings":";AA2FE;IACE,uBAAuB;CACxB;AACD;IACE,kBAAkB;CACnB;AACD;IACE,mBAAmB;CACpB;AACD;IACE,mBAAmB;IACnB,sBAAsB;IACtB,4BAAuB;SAAvB,uBAAuB;IACvB,eAAe;IACf,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,uBAAuB;IACvB,kBAAkB;IAClB,6BAA6B;CAO9B;AANC;IACE,sBAAsB;IACtB,4BAAuB;SAAvB,uBAAuB;IACvB,aAAa;IACb,YAAY;CACb;AAGD;IACE,sBAAsB;IACtB,qBAAqB;IACrB,cAAc;IACd,eAAe;IACf,uBAAuB;CACxB;AACD;IACE,6BAA6B;IAC7B,4EAA4E;CAC7E;AACD;IACE,mCAAmC;IACnC,4EAA4E;CAC7E","file":"Contacts.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-contacts {\n  .add-friend {\n    background-color: #fff;\n  }\n  .m-list {\n    padding-top: 8rem;\n  }\n  .u-search-box-wrap {\n    text-align: center;\n  }\n  .u-search-box {\n    position: relative;\n    display: inline-block;\n    box-sizing: border-box;\n    min-width: 45%;\n    padding: 1em;\n    height: 3rem;\n    text-align: center;\n    border: 1px solid #ccc;\n    background-color: #fff;\n    font-size: 0.8rem;\n    box-shadow: 2px 2px 6px #ccc;\n    a {\n      display: inline-block;\n      box-sizing: border-box;\n      height: 100%;\n      width: 100%;\n    }\n  }\n  .u-card {\n    .icon {\n      display: inline-block;\n      margin-right: 0.4rem;\n      width: 1.4rem;\n      height: 1.4rem;\n      background-size: 20rem;\n    }\n    .icon-team-advanced {\n      background-position: 0 -3rem;\n      background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n    }\n    .icon-team {\n      background-position: -2.1rem -3rem;\n      background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n    }\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 388:
+/***/ 390:
 /* unknown exports provided */
 /* all exports used */
-/*!********************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler.js?{"id":"data-v-5271dec3"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Contacts.vue ***!
-  \********************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-73e40375"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Contacts.vue ***!
+  \*****************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -239,7 +239,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-5271dec3", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-73e40375", module.exports)
   }
 }
 
@@ -248,25 +248,25 @@ if (false) {
 /***/ 400:
 /* unknown exports provided */
 /* all exports used */
-/*!************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-rewriter.js?{"id":"data-v-5271dec3","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Contacts.vue ***!
-  \************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Contacts.vue ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-rewriter.js?{"id":"data-v-5271dec3","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue */ 377);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue */ 377);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("03d640cc", content, false);
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("9bdd95dc", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-5271dec3\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-5271dec3\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-73e40375\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-73e40375\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

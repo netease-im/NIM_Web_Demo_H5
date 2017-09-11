@@ -12,13 +12,13 @@ var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normali
   /* script */
   __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Room.vue */ 365),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler?{"id":"data-v-03fa316a"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Room.vue */ 382),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-429734fd"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Room.vue */ 384),
   /* scopeId */
   null,
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\Room.vue"
+Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\Room.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Room.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -29,9 +29,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-03fa316a", Component.options)
+    hotAPI.createRecord("data-v-429734fd", Component.options)
   } else {
-    hotAPI.reload("data-v-03fa316a", Component.options)
+    hotAPI.reload("data-v-429734fd", Component.options)
   }
 })()}
 
@@ -1784,12 +1784,12 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 382:
+/***/ 384:
 /* unknown exports provided */
 /* all exports used */
-/*!****************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler.js?{"id":"data-v-03fa316a"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Room.vue ***!
-  \****************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-429734fd"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Room.vue ***!
+  \*************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1823,7 +1823,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-03fa316a", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-429734fd", module.exports)
   }
 }
 
