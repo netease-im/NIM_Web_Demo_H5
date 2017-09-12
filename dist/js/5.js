@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 292:
+/***/ 293:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************!*\
@@ -10,13 +10,13 @@ webpackJsonp([5],{
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-29223ee4","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./Session.vue */ 395)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-29223ee4","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./Session.vue */ 396)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Session.vue */ 370),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Session.vue */ 371),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-29223ee4"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Session.vue */ 381),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-29223ee4"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Session.vue */ 382),
   /* scopeId */
   null,
   /* cssModules */
@@ -44,7 +44,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 370:
+/***/ 371:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************************************************************************************************************!*\
@@ -170,7 +170,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
 /* unknown exports provided */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************************************************************!*\
@@ -190,7 +190,7 @@ exports.push([module.i, "\n.p-session .vux-cell-primary {\n    max-width: 70%;\n
 
 /***/ }),
 
-/***/ 381:
+/***/ 382:
 /* unknown exports provided */
 /* all exports used */
 /*!****************************************************************************************************************************************************************************************!*\
@@ -308,7 +308,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 395:
+/***/ 396:
 /* unknown exports provided */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
@@ -319,7 +319,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-29223ee4","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./Session.vue */ 372);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-29223ee4","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./Session.vue */ 373);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM

@@ -13,7 +13,7 @@ import {resetSearchResult, searchUsers} from './search'
 import {deleteSession, setCurrSession, resetCurrSession} from './session'
 import {sendMsg, sendFileMsg, sendMsgReceipt, sendRobotMsg, revocateMsg, getHistoryMsgs, resetNoMoreHistoryMsgs, continueRobotMsg} from './msgs'
 import {markSysMsgRead, resetSysMsgs, markCustomSysMsgRead} from './sysMsgs'
-import {sendChatroomMsg, sendChatroomFileMsg, getChatroomHistoryMsgs} from './chatroomMsgs'
+import {sendChatroomMsg, sendChatroomRobotMsg, sendChatroomFileMsg, getChatroomHistoryMsgs} from './chatroomMsgs'
 import {initChatroomInfos, getChatroomInfo, getChatroomMembers, clearChatroomMembers} from './chatroomInfos'
 
 function connectNim ({state, commit, dispatch}, obj) {
@@ -128,6 +128,7 @@ export default {
   initChatroomInfos,
   resetChatroomSDK,
   sendChatroomMsg,
+  sendChatroomRobotMsg,
   sendChatroomFileMsg,
   getChatroomHistoryMsgs,
   getChatroomInfo,
