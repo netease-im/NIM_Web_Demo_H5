@@ -399,4 +399,16 @@
       }
     }
   }
+  .p-room-chat-list {
+    .u-msg {
+      .msg-text {
+        max-width: 80%;
+      }
+      .msg-link {
+        bottom: 0;
+        right: -4rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
 </style>
