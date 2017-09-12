@@ -118,12 +118,12 @@
           return false
         }
       },
-      robotInfos: {
-        type: Object,
-        default () {
-          return {}
-        }
-      }
+      // robotInfos: {
+      //   type: Object,
+      //   default () {
+      //     return {}
+      //   }
+      // }
     },
     data () {
       return {
@@ -133,9 +133,9 @@
       }
     },
     computed: {
-      // robotInfos () {
-      //   return this.$store.state.robotInfos
-      // }
+      robotInfos () {
+        return this.$store.state.robotInfos
+      }
     },
     beforeMount () {
       let item = Object.assign({}, this.rawMsg)

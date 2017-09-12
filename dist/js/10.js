@@ -1,6 +1,6 @@
 webpackJsonp([10],{
 
-/***/ 287:
+/***/ 291:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************!*\
@@ -10,9 +10,9 @@ webpackJsonp([10],{
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./General.vue */ 362),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./General.vue */ 366),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-5edb4c36"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./General.vue */ 387),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-5edb4c36"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./General.vue */ 391),
   /* scopeId */
   null,
   /* cssModules */
@@ -40,7 +40,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 362:
+/***/ 366:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************************************************************************************************************!*\
@@ -57,7 +57,7 @@ var _index = __webpack_require__(/*! vux/src/components/group/index.vue */ 113);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(/*! vux/src/components/cell/index.vue */ 138);
+var _index3 = __webpack_require__(/*! vux/src/components/cell/index.vue */ 142);
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -89,7 +89,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 387:
+/***/ 391:
 /* unknown exports provided */
 /* all exports used */
 /*!****************************************************************************************************************************************************************************************!*\
