@@ -15,7 +15,6 @@
         :msglist="msglist"
         :userInfos="userInfos"
         :myInfo="myInfo"
-        :robotInfos="robotInfos"
         v-touch:swipedown="loadMore"
       ></chat-list>
     </div>

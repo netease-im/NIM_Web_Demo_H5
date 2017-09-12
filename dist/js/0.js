@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 291:
+/***/ 295:
 /* unknown exports provided */
 /* all exports used */
 /*!********************************!*\
@@ -10,13 +10,13 @@ webpackJsonp([0],{
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-ed15f416","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./RoomChat.vue */ 404)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-ed15f416","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./RoomChat.vue */ 408)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./RoomChat.vue */ 366),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./RoomChat.vue */ 370),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-ed15f416"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./RoomChat.vue */ 395),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-ed15f416"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./RoomChat.vue */ 399),
   /* scopeId */
   null,
   /* cssModules */
@@ -44,7 +44,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 314:
+/***/ 318:
 /* unknown exports provided */
 /* all exports used */
 /*!******************************!*\
@@ -114,7 +114,7 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 315:
+/***/ 319:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************************************************************************************************************************!*\
@@ -139,7 +139,7 @@ var _configs = __webpack_require__(/*! ../../configs */ 16);
 
 var _configs2 = _interopRequireDefault(_configs);
 
-var _emoji = __webpack_require__(/*! ../../configs/emoji */ 314);
+var _emoji = __webpack_require__(/*! ../../configs/emoji */ 318);
 
 var _emoji2 = _interopRequireDefault(_emoji);
 
@@ -171,12 +171,6 @@ exports.default = {
       default: function _default() {
         return false;
       }
-    },
-    robotInfos: {
-      type: Object,
-      default: function _default() {
-        return {};
-      }
     }
   },
   data: function data() {
@@ -187,7 +181,11 @@ exports.default = {
     };
   },
 
-  computed: {},
+  computed: {
+    robotInfos: function robotInfos() {
+      return this.$store.state.robotInfos;
+    }
+  },
   beforeMount: function beforeMount() {
     var item = (0, _assign2.default)({}, this.rawMsg);
 
@@ -429,7 +427,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 316:
+/***/ 320:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************************************************************************************************************************!*\
@@ -450,11 +448,11 @@ var _configs = __webpack_require__(/*! ../../configs */ 16);
 
 var _configs2 = _interopRequireDefault(_configs);
 
-var _emoji = __webpack_require__(/*! ../../configs/emoji */ 314);
+var _emoji = __webpack_require__(/*! ../../configs/emoji */ 318);
 
 var _emoji2 = _interopRequireDefault(_emoji);
 
-var _ChatItem = __webpack_require__(/*! ./ChatItem */ 323);
+var _ChatItem = __webpack_require__(/*! ./ChatItem */ 327);
 
 var _ChatItem2 = _interopRequireDefault(_ChatItem);
 
@@ -490,12 +488,6 @@ exports.default = {
       default: function _default() {
         return {};
       }
-    },
-    robotInfos: {
-      type: Object,
-      default: function _default() {
-        return {};
-      }
     }
   },
   data: function data() {
@@ -525,7 +517,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 317:
+/***/ 321:
 /* unknown exports provided */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************************************************************************!*\
@@ -538,14 +530,14 @@ exports = module.exports = __webpack_require__(/*! ../../../~/css-loader/lib/css
 
 
 // module
-exports.push([module.i, "\n.p-chat-list .u-icon {\n    width: 1.4rem;\n    height: 1.6rem;\n    margin-right: 0.2rem;\n    vertical-align: bottom;\n}\n", "", {"version":3,"sources":["D:/web/node/NIM_Web_Demo_H5/src/pages/components/ChatList.vue"],"names":[],"mappings":";AAyFE;IACE,cAAc;IACd,eAAe;IACf,qBAAqB;IACrB,uBAAuB;CACxB","file":"ChatList.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-chat-list {\n  .u-icon {\n    width: 1.4rem;\n    height: 1.6rem;\n    margin-right: 0.2rem;\n    vertical-align: bottom;\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-chat-list .u-icon {\n    width: 1.4rem;\n    height: 1.6rem;\n    margin-right: 0.2rem;\n    vertical-align: bottom;\n}\n", "", {"version":3,"sources":["D:/web/node/NIM_Web_Demo_H5/src/pages/components/ChatList.vue"],"names":[],"mappings":";AAwFE;IACE,cAAc;IACd,eAAe;IACf,qBAAqB;IACrB,uBAAuB;CACxB","file":"ChatList.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-chat-list {\n  .u-icon {\n    width: 1.4rem;\n    height: 1.6rem;\n    margin-right: 0.2rem;\n    vertical-align: bottom;\n  }\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 318:
+/***/ 322:
 /* unknown exports provided */
 /* all exports used */
 /*!**********************************************************************************************************************************************************************************************************************************************************!*\
@@ -565,7 +557,7 @@ exports.push([module.i, "\n.p-chat-history .u-msg .msg-link[data-v-236c641c] {\n
 
 /***/ }),
 
-/***/ 319:
+/***/ 323:
 /* unknown exports provided */
 /* all exports used */
 /*!****************************************************************************************************************************************************************************************************!*\
@@ -591,7 +583,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "rawMsg": msg,
         "isRobot": _vm.isRobot,
         "userInfos": _vm.userInfos,
-        "robotInfos": _vm.robotInfos,
         "myInfo": _vm.myInfo
       },
       on: {
@@ -610,7 +601,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 320:
+/***/ 324:
 /* unknown exports provided */
 /* all exports used */
 /*!****************************************************************************************************************************************************************************************************!*\
@@ -772,7 +763,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 321:
+/***/ 325:
 /* unknown exports provided */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -783,7 +774,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatList.vue */ 317);
+var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatList.vue */ 321);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -804,7 +795,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 322:
+/***/ 326:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -815,7 +806,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatItem.vue */ 318);
+var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatItem.vue */ 322);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -836,7 +827,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 323:
+/***/ 327:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************!*\
@@ -846,13 +837,13 @@ if(false) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatItem.vue */ 322)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatItem.vue */ 326)
 
 var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatItem.vue */ 315),
+  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatItem.vue */ 319),
   /* template */
-  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-236c641c"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatItem.vue */ 320),
+  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-236c641c"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatItem.vue */ 324),
   /* scopeId */
   "data-v-236c641c",
   /* cssModules */
@@ -880,7 +871,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 324:
+/***/ 328:
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************!*\
@@ -890,13 +881,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatList.vue */ 321)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatList.vue */ 325)
 
 var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatList.vue */ 316),
+  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatList.vue */ 320),
   /* template */
-  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0f617406"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatList.vue */ 319),
+  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0f617406"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatList.vue */ 323),
   /* scopeId */
   null,
   /* cssModules */
@@ -924,7 +915,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 326:
+/***/ 330:
 /* unknown exports provided */
 /* all exports used */
 /*!*********************************************************************************************************************************************************!*\
@@ -937,7 +928,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _ChatEmoji = __webpack_require__(/*! ./ChatEmoji */ 335);
+var _ChatEmoji = __webpack_require__(/*! ./ChatEmoji */ 339);
 
 var _ChatEmoji2 = _interopRequireDefault(_ChatEmoji);
 
@@ -1207,7 +1198,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 327:
+/***/ 331:
 /* unknown exports provided */
 /* all exports used */
 /*!********************************************************************************************************************************************************!*\
@@ -1220,7 +1211,7 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _emoji = __webpack_require__(/*! ../../configs/emoji */ 314);
+var _emoji = __webpack_require__(/*! ../../configs/emoji */ 318);
 
 var _emoji2 = _interopRequireDefault(_emoji);
 
@@ -1325,7 +1316,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 328:
+/***/ 332:
 /* unknown exports provided */
 /* all exports used */
 /*!************************************************************************************************************************************************************************************************************************************************************!*\
@@ -1345,7 +1336,7 @@ exports.push([module.i, "\n.robot.m-chat-editor-main[data-v-23f73ce8] {\n  /*.u-
 
 /***/ }),
 
-/***/ 329:
+/***/ 333:
 /* unknown exports provided */
 /* all exports used */
 /*!************************************************************************************************************************************************************************************************************************************************************!*\
@@ -1365,7 +1356,7 @@ exports.push([module.i, "\n.m-chat-emoji {\n  position: absolute;\n  top: -12rem
 
 /***/ }),
 
-/***/ 330:
+/***/ 334:
 /* unknown exports provided */
 /* all exports used */
 /*!******************************************************************************************************************************************************************************************************!*\
@@ -1508,7 +1499,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 331:
+/***/ 335:
 /* unknown exports provided */
 /* all exports used */
 /*!*****************************************************************************************************************************************************************************************************!*\
@@ -1588,7 +1579,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 332:
+/***/ 336:
 /* unknown exports provided */
 /* all exports used */
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -1599,7 +1590,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-23f73ce8","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatEditor.vue */ 328);
+var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-23f73ce8","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatEditor.vue */ 332);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1620,7 +1611,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 333:
+/***/ 337:
 /* unknown exports provided */
 /* all exports used */
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -1631,7 +1622,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-7c971212","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatEmoji.vue */ 329);
+var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-7c971212","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatEmoji.vue */ 333);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1652,7 +1643,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 334:
+/***/ 338:
 /* unknown exports provided */
 /* all exports used */
 /*!*********************************************!*\
@@ -1662,13 +1653,13 @@ if(false) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-23f73ce8","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatEditor.vue */ 332)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-23f73ce8","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatEditor.vue */ 336)
 
 var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatEditor.vue */ 326),
+  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatEditor.vue */ 330),
   /* template */
-  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-23f73ce8"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatEditor.vue */ 330),
+  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-23f73ce8"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatEditor.vue */ 334),
   /* scopeId */
   "data-v-23f73ce8",
   /* cssModules */
@@ -1696,7 +1687,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 335:
+/***/ 339:
 /* unknown exports provided */
 /* all exports used */
 /*!********************************************!*\
@@ -1706,13 +1697,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-7c971212","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatEmoji.vue */ 333)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-7c971212","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatEmoji.vue */ 337)
 
 var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatEmoji.vue */ 327),
+  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatEmoji.vue */ 331),
   /* template */
-  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-7c971212"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatEmoji.vue */ 331),
+  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-7c971212"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatEmoji.vue */ 335),
   /* scopeId */
   null,
   /* cssModules */
@@ -1740,7 +1731,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 366:
+/***/ 370:
 /* unknown exports provided */
 /* all exports used */
 /*!********************************************************************************************************************************************!*\
@@ -1753,15 +1744,15 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _RoomChatList = __webpack_require__(/*! ./RoomChatList */ 406);
+var _RoomChatList = __webpack_require__(/*! ./RoomChatList */ 410);
 
 var _RoomChatList2 = _interopRequireDefault(_RoomChatList);
 
-var _RoomChatActor = __webpack_require__(/*! ./RoomChatActor */ 405);
+var _RoomChatActor = __webpack_require__(/*! ./RoomChatActor */ 409);
 
 var _RoomChatActor2 = _interopRequireDefault(_RoomChatActor);
 
-var _RoomChatMember = __webpack_require__(/*! ./RoomChatMember */ 407);
+var _RoomChatMember = __webpack_require__(/*! ./RoomChatMember */ 411);
 
 var _RoomChatMember2 = _interopRequireDefault(_RoomChatMember);
 
@@ -1814,7 +1805,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 367:
+/***/ 371:
 /* unknown exports provided */
 /* all exports used */
 /*!*************************************************************************************************************************************************!*\
@@ -1865,7 +1856,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 368:
+/***/ 372:
 /* unknown exports provided */
 /* all exports used */
 /*!************************************************************************************************************************************************!*\
@@ -1878,11 +1869,11 @@ module.exports = exports['default'];
 
 exports.__esModule = true;
 
-var _ChatEditor = __webpack_require__(/*! ./components/ChatEditor */ 334);
+var _ChatEditor = __webpack_require__(/*! ./components/ChatEditor */ 338);
 
 var _ChatEditor2 = _interopRequireDefault(_ChatEditor);
 
-var _ChatList = __webpack_require__(/*! ./components/ChatList */ 324);
+var _ChatList = __webpack_require__(/*! ./components/ChatList */ 328);
 
 var _ChatList2 = _interopRequireDefault(_ChatList);
 
@@ -1931,7 +1922,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 369:
+/***/ 373:
 /* unknown exports provided */
 /* all exports used */
 /*!**************************************************************************************************************************************************!*\
@@ -1993,7 +1984,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 376:
+/***/ 380:
 /* unknown exports provided */
 /* all exports used */
 /*!*****************************************************************************************************************************************************************************************************************************************************!*\
@@ -2013,7 +2004,7 @@ exports.push([module.i, "\n.p-room-chat-actor {\n  position: relative;\n  width:
 
 /***/ }),
 
-/***/ 379:
+/***/ 383:
 /* unknown exports provided */
 /* all exports used */
 /*!***************************************************************************************************************************************************************************************************************************************************!*\
@@ -2033,7 +2024,7 @@ exports.push([module.i, "\n.p-room-chat-list .m-chat-editor-main .u-editor-input
 
 /***/ }),
 
-/***/ 380:
+/***/ 384:
 /* unknown exports provided */
 /* all exports used */
 /*!******************************************************************************************************************************************************************************************************************************************************!*\
@@ -2053,7 +2044,7 @@ exports.push([module.i, "\n.p-room-chat-online {\n  position: relative;\n  displ
 
 /***/ }),
 
-/***/ 381:
+/***/ 385:
 /* unknown exports provided */
 /* all exports used */
 /*!************************************************************************************************************************************************************************************************************************************************!*\
@@ -2073,7 +2064,7 @@ exports.push([module.i, "\n.p-room-chat .left-arrow {\n    position: absolute;\n
 
 /***/ }),
 
-/***/ 389:
+/***/ 393:
 /* unknown exports provided */
 /* all exports used */
 /*!**********************************************************************************************************************************************************************************************!*\
@@ -2108,7 +2099,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 393:
+/***/ 397:
 /* unknown exports provided */
 /* all exports used */
 /*!*********************************************************************************************************************************************************************************************!*\
@@ -2145,7 +2136,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 394:
+/***/ 398:
 /* unknown exports provided */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************!*\
@@ -2186,7 +2177,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 395:
+/***/ 399:
 /* unknown exports provided */
 /* all exports used */
 /*!*****************************************************************************************************************************************************************************************!*\
@@ -2259,7 +2250,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 399:
+/***/ 403:
 /* unknown exports provided */
 /* all exports used */
 /*!**************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -2270,7 +2261,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-6fdeb8b0","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./RoomChatActor.vue */ 376);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-6fdeb8b0","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./RoomChatActor.vue */ 380);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2291,7 +2282,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 402:
+/***/ 406:
 /* unknown exports provided */
 /* all exports used */
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -2302,7 +2293,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-d5ccb59a","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./RoomChatList.vue */ 379);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-d5ccb59a","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./RoomChatList.vue */ 383);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2323,7 +2314,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 403:
+/***/ 407:
 /* unknown exports provided */
 /* all exports used */
 /*!***************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -2334,7 +2325,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-e2f05422","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./RoomChatMember.vue */ 380);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-e2f05422","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./RoomChatMember.vue */ 384);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2355,7 +2346,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 404:
+/***/ 408:
 /* unknown exports provided */
 /* all exports used */
 /*!*********************************************************************************************************************************************************************************************************************************************************************!*\
@@ -2366,7 +2357,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-ed15f416","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./RoomChat.vue */ 381);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-ed15f416","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./RoomChat.vue */ 385);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2387,7 +2378,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 405:
+/***/ 409:
 /* unknown exports provided */
 /* all exports used */
 /*!*************************************!*\
@@ -2397,13 +2388,13 @@ if(false) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-6fdeb8b0","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./RoomChatActor.vue */ 399)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-6fdeb8b0","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./RoomChatActor.vue */ 403)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./RoomChatActor.vue */ 367),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./RoomChatActor.vue */ 371),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-6fdeb8b0"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./RoomChatActor.vue */ 389),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-6fdeb8b0"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./RoomChatActor.vue */ 393),
   /* scopeId */
   null,
   /* cssModules */
@@ -2431,7 +2422,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 406:
+/***/ 410:
 /* unknown exports provided */
 /* all exports used */
 /*!************************************!*\
@@ -2441,13 +2432,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-d5ccb59a","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./RoomChatList.vue */ 402)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-d5ccb59a","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./RoomChatList.vue */ 406)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./RoomChatList.vue */ 368),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./RoomChatList.vue */ 372),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-d5ccb59a"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./RoomChatList.vue */ 393),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-d5ccb59a"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./RoomChatList.vue */ 397),
   /* scopeId */
   "data-v-d5ccb59a",
   /* cssModules */
@@ -2475,7 +2466,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 407:
+/***/ 411:
 /* unknown exports provided */
 /* all exports used */
 /*!**************************************!*\
@@ -2485,13 +2476,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-e2f05422","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./RoomChatMember.vue */ 403)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-e2f05422","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./RoomChatMember.vue */ 407)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./RoomChatMember.vue */ 369),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./RoomChatMember.vue */ 373),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-e2f05422"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./RoomChatMember.vue */ 394),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-e2f05422"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./RoomChatMember.vue */ 398),
   /* scopeId */
   null,
   /* cssModules */

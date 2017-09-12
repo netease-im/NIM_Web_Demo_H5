@@ -12,7 +12,6 @@
       :rawMsg="msg"
       :isRobot="isRobot"
       :userInfos="userInfos"
-      :robotInfos="robotInfos"
       :myInfo="myInfo"
       :key="msg.idClient"
       @msg-loaded="msgLoaded"
@@ -56,12 +55,12 @@
           return {}
         }
       },
-      robotInfos: {
-        type: Object,
-        default () {
-          return {}
-        }
-      }
+      // robotInfos: {
+      //   type: Object,
+      //   default () {
+      //     return {}
+      //   }
+      // }
     },
     data () {
       return {

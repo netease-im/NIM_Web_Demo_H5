@@ -118,12 +118,12 @@
           return false
         }
       },
-      robotInfos: {
-        type: Object,
-        default () {
-          return {}
-        }
-      }
+      // robotInfos: {
+      //   type: Object,
+      //   default () {
+      //     return {}
+      //   }
+      // }
     },
     data () {
       return {
@@ -133,9 +133,9 @@
       }
     },
     computed: {
-      // robotInfos () {
-      //   return this.$store.state.robotInfos
-      // }
+      robotInfos () {
+        return this.$store.state.robotInfos
+      }
     },
     beforeMount () {
       let item = Object.assign({}, this.rawMsg)
@@ -396,6 +396,18 @@
     .u-msg {
       .msg-link {
         display: none;
+      }
+    }
+  }
+  .p-room-chat-list {
+    .u-msg {
+      .msg-text {
+        max-width: 80%;
+      }
+      .msg-link {
+        bottom: 0;
+        right: -4rem;
+        font-size: 0.9rem;
       }
     }
   }

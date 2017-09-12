@@ -1,6 +1,6 @@
 webpackJsonp([9],{
 
-/***/ 289:
+/***/ 293:
 /* unknown exports provided */
 /* all exports used */
 /*!**************************************!*\
@@ -10,9 +10,9 @@ webpackJsonp([9],{
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 364),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 368),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-538fd986"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 386),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-538fd986"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 390),
   /* scopeId */
   null,
   /* cssModules */
@@ -40,7 +40,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 364:
+/***/ 368:
 /* unknown exports provided */
 /* all exports used */
 /*!**************************************************************************************************************************************************!*\
@@ -97,7 +97,7 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 386:
+/***/ 390:
 /* unknown exports provided */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************!*\

@@ -63,9 +63,19 @@ h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动�
   - 注意；**不同的后端路由规则可能会影响到资源文件的访问**
   - 可通过工程目录下的 src/configs/index.js 进行静态资源路径的全局化配置
 
+### SDK的引入
+  - SDK使用CommonJS的模式进行引入，使用webpack的dynamic requires标准进行动态加载
+  - 示例代码：
+  ```javascript
+    import config from '@/configs'
+    const SDK = require('@/sdk/' + config.sdk)
+  ```
+  - 注意，为防止sdk被二次打包，需要在webpack配置中加入exclude
+
+
 ### SDK版本替换及升级
-  - SDK文件放在 dist/nim目录下，可直接做替换
-  - 替换sdk源文件以后，需要在index.html、login.html、regist.html对sdk的script引入标签进行更改
+  - SDK文件放在 src/sdk目录下，可直接做替换
+  - 替换sdk源文件以后，需要在src/configs/index.js中sdk属性字段进行文件名替换
 
 ### 开发调试工具
 - h5 demo使用了vue全家桶进行开发，推荐使用chrome浏览器加相应的插件(Vue.js devtools)进行调试。

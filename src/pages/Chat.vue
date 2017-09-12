@@ -12,7 +12,6 @@
         type="session"
         :msglist="msglist"
         :userInfos="userInfos"
-        :robotInfos="robotInfos"
         :myInfo="myInfo"
         :isRobot="isRobot"
         @msgs-loaded="msgsLoaded"
