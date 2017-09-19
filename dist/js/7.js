@@ -1,7 +1,7 @@
 webpackJsonp([7],{
 
-/***/ 290:
-/* unknown exports provided */
+/***/ 289:
+/* no static exports found */
 /* all exports used */
 /*!********************************!*\
   !*** ./src/pages/Contacts.vue ***!
@@ -10,13 +10,13 @@ webpackJsonp([7],{
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./Contacts.vue */ 404)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./Contacts.vue */ 403)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Contacts.vue */ 365),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Contacts.vue */ 364),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-73e40375"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Contacts.vue */ 394),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-73e40375"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Contacts.vue */ 393),
   /* scopeId */
   null,
   /* cssModules */
@@ -44,8 +44,8 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 365:
-/* unknown exports provided */
+/***/ 364:
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************!*\
   !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/Contacts.vue ***!
@@ -103,8 +103,8 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 381:
-/* unknown exports provided */
+/***/ 380:
+/* no static exports found */
 /* all exports used */
 /*!************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Contacts.vue ***!
@@ -123,12 +123,12 @@ exports.push([module.i, "\n.p-contacts .add-friend {\n    background-color: #fff
 
 /***/ }),
 
-/***/ 394:
-/* unknown exports provided */
+/***/ 393:
+/* no static exports found */
 /* all exports used */
-/*!*****************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-73e40375"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Contacts.vue ***!
-  \*****************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-73e40375"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Contacts.vue ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -150,6 +150,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('span', {
     staticClass: "icon icon-team-advanced",
+    attrs: {
+      "slot": "icon"
+    },
     slot: "icon"
   })]), _vm._v(" "), _c('cell', {
     attrs: {
@@ -157,6 +160,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('span', {
     staticClass: "icon icon-team",
+    attrs: {
+      "slot": "icon"
+    },
     slot: "icon"
   })])], 1), _vm._v(" "), _c('group', {
     staticClass: "u-card",
@@ -174,6 +180,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('img', {
       staticClass: "icon",
       attrs: {
+        "slot": "icon",
         "width": "20",
         "src": _vm.userInfos[friend.account].avatar
       },
@@ -195,6 +202,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('img', {
       staticClass: "icon",
       attrs: {
+        "slot": "icon",
         "width": "20",
         "src": robot.avatar
       },
@@ -216,6 +224,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('img', {
       staticClass: "icon",
       attrs: {
+        "slot": "icon",
         "width": "20",
         "src": _vm.userInfos[friend.account].avatar
       },
@@ -245,8 +254,8 @@ if (false) {
 
 /***/ }),
 
-/***/ 404:
-/* unknown exports provided */
+/***/ 403:
+/* no static exports found */
 /* all exports used */
 /*!*********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Contacts.vue ***!
@@ -256,7 +265,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue */ 381);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue */ 380);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM

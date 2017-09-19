@@ -1,7 +1,7 @@
 webpackJsonp([10],{
 
-/***/ 291:
-/* unknown exports provided */
+/***/ 290:
+/* no static exports found */
 /* all exports used */
 /*!*******************************!*\
   !*** ./src/pages/General.vue ***!
@@ -10,9 +10,9 @@ webpackJsonp([10],{
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./General.vue */ 366),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./General.vue */ 365),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-5edb4c36"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./General.vue */ 391),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-5edb4c36"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./General.vue */ 390),
   /* scopeId */
   null,
   /* cssModules */
@@ -40,8 +40,8 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 366:
-/* unknown exports provided */
+/***/ 365:
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************************************************************************************!*\
   !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/General.vue ***!
@@ -57,7 +57,7 @@ var _index = __webpack_require__(/*! vux/src/components/group/index.vue */ 113);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(/*! vux/src/components/cell/index.vue */ 142);
+var _index3 = __webpack_require__(/*! vux/src/components/cell/index.vue */ 141);
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -89,12 +89,12 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 391:
-/* unknown exports provided */
+/***/ 390:
+/* no static exports found */
 /* all exports used */
-/*!****************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-5edb4c36"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/General.vue ***!
-  \****************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-5edb4c36"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/General.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -110,6 +110,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('img', {
     staticClass: "icon",
     attrs: {
+      "slot": "icon",
       "width": "20",
       "src": _vm.myInfo.avatar
     },

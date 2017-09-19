@@ -1,7 +1,7 @@
 webpackJsonp([9],{
 
-/***/ 293:
-/* unknown exports provided */
+/***/ 292:
+/* no static exports found */
 /* all exports used */
 /*!**************************************!*\
   !*** ./src/pages/NameCardRemark.vue ***!
@@ -10,9 +10,9 @@ webpackJsonp([9],{
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 368),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 367),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-538fd986"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 390),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-538fd986"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 389),
   /* scopeId */
   null,
   /* cssModules */
@@ -40,8 +40,8 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 368:
-/* unknown exports provided */
+/***/ 367:
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************************************************************************************************!*\
   !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/NameCardRemark.vue ***!
@@ -97,12 +97,12 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 390:
-/* unknown exports provided */
+/***/ 389:
+/* no static exports found */
 /* all exports used */
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-538fd986"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/NameCardRemark.vue ***!
-  \***********************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-538fd986"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/NameCardRemark.vue ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -118,6 +118,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h1', {
     staticClass: "m-tab-top"
   }, [_vm._v("[ 备注名 ]")]), _vm._v(" "), _c('a', {
+    attrs: {
+      "slot": "left"
+    },
     slot: "left"
   })]), _vm._v(" "), _c('group', {
     staticClass: "u-card"
@@ -137,6 +140,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "alias"
     }
   }, [_c('span', {
+    attrs: {
+      "slot": "label"
+    },
     slot: "label"
   }, [_vm._v("备注：")])])], 1), _vm._v(" "), _c('div', [_c('x-button', {
     attrs: {

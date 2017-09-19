@@ -1,7 +1,7 @@
 webpackJsonp([8],{
 
-/***/ 296:
-/* unknown exports provided */
+/***/ 295:
+/* no static exports found */
 /* all exports used */
 /*!**********************************!*\
   !*** ./src/pages/SearchUser.vue ***!
@@ -10,9 +10,9 @@ webpackJsonp([8],{
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./SearchUser.vue */ 374),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./SearchUser.vue */ 373),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-3df14b96"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./SearchUser.vue */ 387),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-3df14b96"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./SearchUser.vue */ 386),
   /* scopeId */
   null,
   /* cssModules */
@@ -40,8 +40,8 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 374:
-/* unknown exports provided */
+/***/ 373:
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************************************************************************************************!*\
   !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/SearchUser.vue ***!
@@ -53,7 +53,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _configs = __webpack_require__(/*! ../configs */ 16);
+var _configs = __webpack_require__(/*! ../configs */ 15);
 
 var _configs2 = _interopRequireDefault(_configs);
 
@@ -133,12 +133,12 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 387:
-/* unknown exports provided */
+/***/ 386:
+/* no static exports found */
 /* all exports used */
-/*!*******************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3df14b96"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/SearchUser.vue ***!
-  \*******************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-3df14b96"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/SearchUser.vue ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -165,6 +165,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("搜索用户")]), _vm._v(" "), _c('button-tab-item', {
     staticClass: "u-tab-top"
   }, [_vm._v("搜索群")])], 1), _vm._v(" "), _c('a', {
+    attrs: {
+      "slot": "left"
+    },
     slot: "left"
   })], 1), _vm._v(" "), _c('group', {
     staticClass: "u-search"
@@ -184,6 +187,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "searchText"
     }
   }, [_c('span', {
+    attrs: {
+      "slot": "label"
+    },
     slot: "label"
   }, [_vm._v("搜索：")])])], 1), _vm._v(" "), _c('div', [_c('x-button', {
     attrs: {
@@ -211,6 +217,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('img', {
       staticClass: "icon",
       attrs: {
+        "slot": "icon",
         "width": "20",
         "src": user.avatar
       },

@@ -42,7 +42,7 @@ let webpackConfig = {
       {
         test: /\.css$/,
         loader: 'style!css!postcss!postcss-cssnext',
-        include: [resolve('src/themes'), resolve('node_modules/vux/src')]
+        include: [resolve('src/themes')]
       },
       {
         test: /\.less$/,

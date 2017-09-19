@@ -1,7 +1,7 @@
 webpackJsonp([3],{
 
-/***/ 289:
-/* unknown exports provided */
+/***/ 288:
+/* no static exports found */
 /* all exports used */
 /*!***********************************!*\
   !*** ./src/pages/ChatHistory.vue ***!
@@ -10,13 +10,13 @@ webpackJsonp([3],{
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-7439346a","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./ChatHistory.vue */ 405)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-7439346a","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./ChatHistory.vue */ 404)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./ChatHistory.vue */ 364),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./ChatHistory.vue */ 363),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-7439346a"}!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./ChatHistory.vue */ 395),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-7439346a"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./ChatHistory.vue */ 394),
   /* scopeId */
   "data-v-7439346a",
   /* cssModules */
@@ -44,8 +44,8 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 318:
-/* unknown exports provided */
+/***/ 317:
+/* no static exports found */
 /* all exports used */
 /*!******************************!*\
   !*** ./src/configs/emoji.js ***!
@@ -57,7 +57,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _index = __webpack_require__(/*! ./index */ 16);
+var _index = __webpack_require__(/*! ./index */ 15);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -114,8 +114,8 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 319:
-/* unknown exports provided */
+/***/ 318:
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************************************************************************************************!*\
   !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/components/ChatItem.vue ***!
@@ -135,11 +135,11 @@ var _utils = __webpack_require__(/*! ../../utils */ 41);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _configs = __webpack_require__(/*! ../../configs */ 16);
+var _configs = __webpack_require__(/*! ../../configs */ 15);
 
 var _configs2 = _interopRequireDefault(_configs);
 
-var _emoji = __webpack_require__(/*! ../../configs/emoji */ 318);
+var _emoji = __webpack_require__(/*! ../../configs/emoji */ 317);
 
 var _emoji2 = _interopRequireDefault(_emoji);
 
@@ -427,8 +427,8 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 320:
-/* unknown exports provided */
+/***/ 319:
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************************************************************************************************!*\
   !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/components/ChatList.vue ***!
@@ -444,15 +444,15 @@ var _utils = __webpack_require__(/*! ../../utils */ 41);
 
 var _utils2 = _interopRequireDefault(_utils);
 
-var _configs = __webpack_require__(/*! ../../configs */ 16);
+var _configs = __webpack_require__(/*! ../../configs */ 15);
 
 var _configs2 = _interopRequireDefault(_configs);
 
-var _emoji = __webpack_require__(/*! ../../configs/emoji */ 318);
+var _emoji = __webpack_require__(/*! ../../configs/emoji */ 317);
 
 var _emoji2 = _interopRequireDefault(_emoji);
 
-var _ChatItem = __webpack_require__(/*! ./ChatItem */ 327);
+var _ChatItem = __webpack_require__(/*! ./ChatItem */ 326);
 
 var _ChatItem2 = _interopRequireDefault(_ChatItem);
 
@@ -517,8 +517,8 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 321:
-/* unknown exports provided */
+/***/ 320:
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/components/ChatList.vue ***!
@@ -537,8 +537,8 @@ exports.push([module.i, "\n.p-chat-list .u-icon {\n    width: 1.4rem;\n    heigh
 
 /***/ }),
 
-/***/ 322:
-/* unknown exports provided */
+/***/ 321:
+/* no static exports found */
 /* all exports used */
 /*!**********************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/components/ChatItem.vue ***!
@@ -557,12 +557,12 @@ exports.push([module.i, "\n.p-chat-history .u-msg .msg-link[data-v-236c641c] {\n
 
 /***/ }),
 
-/***/ 323:
-/* unknown exports provided */
+/***/ 322:
+/* no static exports found */
 /* all exports used */
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-0f617406"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/components/ChatList.vue ***!
-  \****************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-0f617406"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/components/ChatList.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -601,12 +601,12 @@ if (false) {
 
 /***/ }),
 
-/***/ 324:
-/* unknown exports provided */
+/***/ 323:
+/* no static exports found */
 /* all exports used */
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-236c641c"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/components/ChatItem.vue ***!
-  \****************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-236c641c"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/components/ChatItem.vue ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -763,8 +763,8 @@ if (false) {
 
 /***/ }),
 
-/***/ 325:
-/* unknown exports provided */
+/***/ 324:
+/* no static exports found */
 /* all exports used */
 /*!********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/components/ChatList.vue ***!
@@ -774,7 +774,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatList.vue */ 321);
+var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatList.vue */ 320);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -795,8 +795,8 @@ if(false) {
 
 /***/ }),
 
-/***/ 326:
-/* unknown exports provided */
+/***/ 325:
+/* no static exports found */
 /* all exports used */
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/components/ChatItem.vue ***!
@@ -806,7 +806,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatItem.vue */ 322);
+var content = __webpack_require__(/*! !../../../~/css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatItem.vue */ 321);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -827,8 +827,8 @@ if(false) {
 
 /***/ }),
 
-/***/ 327:
-/* unknown exports provided */
+/***/ 326:
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./src/pages/components/ChatItem.vue ***!
@@ -837,13 +837,13 @@ if(false) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatItem.vue */ 326)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-236c641c","scoped":true,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatItem.vue */ 325)
 
 var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatItem.vue */ 319),
+  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatItem.vue */ 318),
   /* template */
-  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-236c641c"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatItem.vue */ 324),
+  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-236c641c"}!../../../~/vux-loader/src/before-template-compiler-loader.js!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatItem.vue */ 323),
   /* scopeId */
   "data-v-236c641c",
   /* cssModules */
@@ -871,8 +871,8 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 328:
-/* unknown exports provided */
+/***/ 327:
+/* no static exports found */
 /* all exports used */
 /*!*******************************************!*\
   !*** ./src/pages/components/ChatList.vue ***!
@@ -881,13 +881,13 @@ module.exports = Component.exports
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatList.vue */ 325)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-0f617406","scoped":false,"hasInlineConfig":true}!../../../~/vux-loader/src/style-loader.js!../../../~/vue-loader/lib/selector?type=styles&index=0!./ChatList.vue */ 324)
 
 var Component = __webpack_require__(/*! ../../../~/vue-loader/lib/component-normalizer */ 1)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatList.vue */ 320),
+  __webpack_require__(/*! !babel-loader!../../../~/vux-loader/src/script-loader.js!../../../~/vue-loader/lib/selector?type=script&index=0!./ChatList.vue */ 319),
   /* template */
-  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0f617406"}!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatList.vue */ 323),
+  __webpack_require__(/*! !../../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-0f617406"}!../../../~/vux-loader/src/before-template-compiler-loader.js!../../../~/vux-loader/src/template-loader.js!../../../~/vue-loader/lib/selector?type=template&index=0!./ChatList.vue */ 322),
   /* scopeId */
   null,
   /* cssModules */
@@ -915,8 +915,8 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 364:
-/* unknown exports provided */
+/***/ 363:
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************!*\
   !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/ChatHistory.vue ***!
@@ -928,7 +928,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _ChatList = __webpack_require__(/*! ./components/ChatList */ 328);
+var _ChatList = __webpack_require__(/*! ./components/ChatList */ 327);
 
 var _ChatList2 = _interopRequireDefault(_ChatList);
 
@@ -1050,8 +1050,8 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 382:
-/* unknown exports provided */
+/***/ 381:
+/* no static exports found */
 /* all exports used */
 /*!**************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-7439346a","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/ChatHistory.vue ***!
@@ -1070,12 +1070,12 @@ exports.push([module.i, "\n.p-chat-history .m-chat-main[data-v-7439346a] {\n    
 
 /***/ }),
 
-/***/ 395:
-/* unknown exports provided */
+/***/ 394:
+/* no static exports found */
 /* all exports used */
-/*!********************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-7439346a"}!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/ChatHistory.vue ***!
-  \********************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-7439346a"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/ChatHistory.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1092,6 +1092,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h1', {
     staticClass: "m-tab-top"
   }, [_vm._v(_vm._s(_vm.sessionName))]), _vm._v(" "), _c('a', {
+    attrs: {
+      "slot": "left"
+    },
     slot: "left"
   })]), _vm._v(" "), _c('div', {
     staticClass: "m-chat-main"
@@ -1123,8 +1126,8 @@ if (false) {
 
 /***/ }),
 
-/***/ 405:
-/* unknown exports provided */
+/***/ 404:
+/* no static exports found */
 /* all exports used */
 /*!***********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-7439346a","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/ChatHistory.vue ***!
@@ -1134,7 +1137,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-7439346a","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatHistory.vue */ 382);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-7439346a","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./ChatHistory.vue */ 381);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
