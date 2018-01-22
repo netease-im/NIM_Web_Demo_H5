@@ -85,12 +85,19 @@
       transform: translate3d(0, 0, 0);
     }
   }
+  /*时间提示*/
+  .u-session-time {
+    display: inline-block;
+    position: absolute;
+    right: 1.8rem;
+    top: 1.1rem;
+  }
   /* 未读数标签 */
   .u-unread {
     display: inline-block;
     position: absolute;
     right: 0.4rem;
-    top: 0.4rem;
+    top: 1.1rem;
     padding: 2px;
     min-width: 1rem;
     min-height: 1rem;
@@ -284,6 +291,11 @@
         border-radius: 0.4rem;
       }
     }
+    .notification {
+      font-size: 0.8rem;
+      text-align: center;
+      color: $color_tip_font;
+    }
     .notify {
       color: #f50;
       font-size: 0.8rem;
@@ -315,5 +327,8 @@
       width: 100%;
       height: 100%;
     }
+  }
+  .u-circle {
+    border-radius: 50%;
   }
 }

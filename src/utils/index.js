@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import store from '../store'
 
 if(!Function.prototype.bind){
   Function.prototype.bind = function(){
@@ -235,6 +236,133 @@ Utils.generateChatroomSysMsg = function (data) {
       break
   }
   return text
+}
+
+Utils.generateTeamSysmMsg = function (data) {
+  var text, nicks = this.getNickNames(data.attach.users)
+  switch (data.attach.type) {
+    case 'updateTeam':
+      text = this.getTeamUpdateInfo(data)
+      break;
+    case 'addTeamMembers': {
+      let op = nicks.pop()
+      text = `${op}邀请${nicks.join()}加入群`
+      break;
+    }
+    case 'removeTeamMembers': {
+      let op = nicks.pop()
+      text = `${nicks.join()}被${op}移出群`
+      break;
+    }
+    case 'acceptTeamInvite': {
+      let op = nicks.pop()
+      text = `${nicks.join()}接受了${op}入群邀请`
+      break;
+    }
+    case 'passTeamApply': {
+      let op = nicks.shift()
+      if (nicks.length===1 && op===nicks[0]) {
+        // 此情况为高级群设置不需要验证，用户申请入群后，收到的群消息提示
+        text = `${op}加入群`
+      } else {
+        text = `${op}通过了${nicks}入群邀请`
+      }
+      break;
+    }
+    case 'addTeamManagers': {
+      // todo test
+      let op = nicks.pop()
+      text = `${op}新增了${nicks}为管理员`
+      break;
+    }
+    case 'removeTeamManagers': {
+      // todo test
+      let op = nicks.pop()
+      text = `${op}移除了${nicks}的管理员权限`
+      break;
+    }
+    case 'leaveTeam': {
+      text = `${nicks.join()}退出了群`
+      break;
+    }
+    case 'dismissTeam': {
+      text = `${nicks.join()}解散了群`
+      break;
+    }
+    case 'transferTeam': {
+      // todo test
+      let nicks = this.getNickNames(data.attach.users)
+      let op = nicks.shift()
+      text = `${op}转让群主给${nicks}`
+      break;
+    }
+    case 'updateTeamMute':{
+      let nicks = this.getNickNames(data.attach.users)
+      let op = nicks.shift()
+      text = `${nicks}被管理员${data.attach.mute ? '禁言' : '解除禁言'}`
+      break;
+    }
+    default:
+      break;
+  }
+  return text
+}
+
+// todo 写成私有成员方法
+Utils.getNickNames = function(users) {
+  return users.map(user => {
+    return user.account === store.state.userUID? '你' : user.nick
+  })
+}
+
+// todo 写成私有成员方法
+Utils.getTeamUpdateInfo = function(msg) {
+  let text, team = msg.attach.team, op = this.getNickNames(msg.attach.users).pop()
+  if (team['name']) {
+    text = `${op}修改群名为${team['name']}`
+  } else if (team['intro']) {
+    text = `${op}修改群介绍为${team['intro']}`
+  } 
+  // 由于群公告的交互与 Android iOS 不一致，现版本不适配群公告
+  // else if (team['announcement']) {
+  //   text = `${op}修改群公告为${team['announcement']}`
+  // } 
+  else if (team['joinMode']) {
+    text = `群身份验证模式更新为${team.joinMode === 'noVerify' ? '不需要验证' : team.joinMode === 'needVerify' ? '需要验证' : '禁止任何人加入'}`
+  } else if (team['inviteMode']) {
+    text = `邀请他人权限为${team['inviteMode'] === 'all' ? '所有人' : '管理员'}`
+  } else if (team['updateTeamMode']) {
+    text = `群资料修改权限为${team['updateTeamMode'] === 'all' ? '所有人' : '管理员'}`
+  } else if (team['beInviteMode']) {
+    text = `被邀请人身份${team['beInviteMode'] === 'noVerify' ? '不需要验证' : '需要验证'}`
+  } else {
+    text = '更新群信息'
+  }
+  return text
+}
+
+Utils.teamConfigMap = {
+  joinMode: {
+    'noVerify': '不需要验证',
+    'needVerify': '需要验证',
+    'rejectAll': '禁止任何人加入'
+  },
+  beInviteMode: {
+    'needVerify': '需要验证',
+    'noVerify': '不需要验证'
+  },
+  inviteMode: {
+    'manager': '管理员邀请',
+    'all': '所有人邀请'
+  },
+  updateTeamMode: {
+    'manager': '管理员修改',
+    'all': '所有人修改'
+  },
+  memberType: {
+    'manager': '管理员',
+    'normal': '普通成员'
+  }
 }
 
 export default Utils

@@ -50,6 +50,9 @@ export function onMsg (msg) {
     // 发送已读回执
     store.dispatch('sendMsgReceipt')
   }
+  if (msg.scene === 'team' && msg.type ==='notification') {
+    store.dispatch('onTeamNotificationMsg', msg)
+  }
 }
 
 function onSendMsgDone (error, msg) {

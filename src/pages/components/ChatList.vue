@@ -14,6 +14,7 @@
       :userInfos="userInfos"
       :myInfo="myInfo"
       :key="msg.idClient"
+      :isHistory='isHistory'
       @msg-loaded="msgLoaded"
     ></chat-item>
   </ul>
@@ -55,6 +56,12 @@
           return {}
         }
       },
+      isHistory: {
+        type: Boolean,
+        default() {
+          return false
+        }
+      }
       // robotInfos: {
       //   type: Object,
       //   default () {

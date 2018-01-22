@@ -35,11 +35,15 @@ export default {
   // 禁言列表
   // mutelist: [],
 
-  // teamlist: [],
+  teamlist: [],
   // 群自身的属性，数据结构如：{tid: {attr: ...}, ...}
   // teamAttrs: {},
   // 群对象的成员列表，数据结构如：{tid: {members: [...], ...}, ...}
-  // teamMembers: {},
+  teamMembers: {},
+  // 关闭群提醒的群id列表
+  muteTeamIds: [],
+  // 群设置传递数据
+  teamSettingConfig: {},
 
   // 消息列表
   msgs: {}, // 以sessionId作为key
@@ -82,4 +86,5 @@ export default {
   currChatroomInfo: {},
   // 聊天室成员列表
   currChatroomMembers: [],
+  
 }

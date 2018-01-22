@@ -62,7 +62,7 @@
     "vue-template-compiler": "^2.2.4",
     "vuex": "^2.2.1",
     "vuex-router-sync": "^4.1.2",
-    "vux": "2.2.2",
+    "vux": "2.7.5",
     "vux-loader": "^1.0.61",
     "webpack": "^2.2.1"
   },

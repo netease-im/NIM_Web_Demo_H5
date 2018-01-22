@@ -1,4 +1,4 @@
-/* 
+/*
  * SDK连接相关
  */
 
@@ -13,6 +13,7 @@ import {onMyInfo, onUserInfo} from './userInfo'
 import {onSessions, onUpdateSession} from './session'
 import {onRoamingMsgs, onOfflineMsgs, onMsg} from './msgs'
 import {onSysMsgs, onSysMsg, onSysMsgUnread, onCustomSysMsgs} from './sysMsgs'
+import {onTeams, onSynCreateTeam, onCreateTeam, onUpdateTeam, onTeamMembers, onUpdateTeamMember, onAddTeamMembers, onRemoveTeamMembers, onUpdateTeamManagers, onDismissTeam, onUpdateTeamMembersMute} from './team'
 
 const SDK = require('@/sdk/' + config.sdk)
 
@@ -40,6 +41,7 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     },
     onerror: function onError (event) {
       // alert(JSON.stringify(event))
+      debugger
       alert('网络连接状态异常')
       location.href = config.loginUrl
     },
@@ -51,7 +53,7 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
         // 账号或者密码错误, 请跳转到登录页面并提示错误
         case 302:
           pageUtil.turnPage('帐号或密码错误', 'login')
-          break;
+          break
         // 被踢, 请提示错误后跳转到登录页面
         case 'kicked':
           let map = {
@@ -62,7 +64,7 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
             WindowsPhone: '手机版'
           }
           let str = error.from
-          let errorMsg = `你的帐号于${util.formatDate(new Date())}被${(map[str]||'其他端')}踢出下线，请确定帐号信息安全!`
+          let errorMsg = `你的帐号于${util.formatDate(new Date())}被${(map[str] || '其他端')}踢出下线，请确定帐号信息安全!`
           pageUtil.turnPage(errorMsg, 'login')
           break
         default:
@@ -86,11 +88,18 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     onusers: onUserInfo,
     onupdateuser: onUserInfo,
     // // 群组
-    // onteams: onTeams,
-    // onsynccreateteam: onCreateTeam,
-    // onteammembers: onTeamMembers,
-    // onsyncteammembersdone: onSyncTeamMembersDone,
-    // onupdateteammember: onUpdateTeamMember,
+    onteams: onTeams,
+    onsynccreateteam: onSynCreateTeam,
+    syncTeams: true,
+    onteammembers: onTeamMembers,
+    onCreateTeam: onCreateTeam,
+    onDismissTeam: onDismissTeam,
+    onUpdateTeam: onUpdateTeam,
+    onAddTeamMembers: onAddTeamMembers,
+    onRemoveTeamMembers: onRemoveTeamMembers,
+    onUpdateTeamManagers: onUpdateTeamManagers,
+    onupdateteammember: onUpdateTeamMember,
+    onUpdateTeamMembersMute: onUpdateTeamMembersMute,
     // // 会话
     onsessions: onSessions,
     onupdatesession: onUpdateSession,

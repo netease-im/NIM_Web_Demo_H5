@@ -31,16 +31,16 @@
         <cell title="签名">{{userInfo.sign}}</cell>
       </group>
       <group v-show="isFriend" class="u-card">
-        <cell title="备注名" is-link :link="remarkLink"></cell>
+        <cell title="备注名" is-link :link="remarkLink">{{userInfo._alias}}</cell>
       </group>
-      <group class="u-card">
+      <group v-if='!isSelf' class="u-card">
         <x-switch class="u-switch" title="黑名单" v-model="isBlack" @on-change="changeBlack"></x-switch>
       </group>
       <div class="u-bottom">
         <x-button type="primary" action-type="button" @click.native="enterChat">聊天</x-button>
         <x-button v-show="isFriend" type="primary" action-type="button" @click.native="enterHistory">历史记录</x-button>
         <x-button v-show="isFriend" type="warn" action-type="button" @click.native="deleteFriend">删除好友</x-button>
-        <x-button v-show="!isFriend" type="warn" action-type="button" @click.native="addFriend">添加好友</x-button>
+        <x-button v-show="!isFriend && !isSelf" type="warn" action-type="button" @click.native="addFriend">添加好友</x-button>
       </div>
     </div>
   </div>
@@ -52,7 +52,8 @@ import util from '../utils'
 export default {
   data () {
     return {
-      isBlack: false
+      isBlack: false,
+      isSelf: false
     }
   },
   computed: {
@@ -62,11 +63,16 @@ export default {
     userInfo () {
       let info = {}
       if (this.isRobot) {
-        info = this.robotInfos[this.account] || {}
+        info = Object.assign({}, this.robotInfos[this.account])
         info.alias = info.nick || account
         info.avatar = info.originAvatar || item.avatar
+      } else if (this.account === this.$store.state.userUID) {
+        info =  Object.assign({}, this.$store.state.myInfo)
+        info.alias = info.nick
+        this.isSelf = true
       } else {
-        info = this.$store.state.userInfos[this.account] || {}
+        info = Object.assign({}, this.$store.state.userInfos[this.account])
+        info._alias = info.alias //服务器中存的别名，在备注栏展示
         info.alias = util.getFriendAlias(info)
         this.isBlack = info.isBlack
       }

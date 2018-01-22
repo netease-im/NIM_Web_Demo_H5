@@ -17,9 +17,10 @@ Vue.use(VueTouch)
 import store from './store'
 import router from './router'
 
+require('./utils/polyfill')
+
 new Vue({
   router,
   store,
   render: h => h(App),
 }).$mount('#app')
-

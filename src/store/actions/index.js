@@ -9,12 +9,13 @@ import {initNimSDK} from './initNimSDK'
 import {initChatroomSDK, resetChatroomSDK} from './initChatroomSDK'
 import {updateBlack} from './blacks'
 import {updateFriend, addFriend, deleteFriend} from './friends'
-import {resetSearchResult, searchUsers} from './search'
+import {resetSearchResult, searchUsers, searchTeam} from './search'
 import {deleteSession, setCurrSession, resetCurrSession} from './session'
 import {sendMsg, sendFileMsg, sendMsgReceipt, sendRobotMsg, revocateMsg, getHistoryMsgs, resetNoMoreHistoryMsgs, continueRobotMsg} from './msgs'
-import {markSysMsgRead, resetSysMsgs, markCustomSysMsgRead} from './sysMsgs'
+import {markSysMsgRead, resetSysMsgs, deleteSysMsgs, markCustomSysMsgRead} from './sysMsgs'
 import {sendChatroomMsg, sendChatroomRobotMsg, sendChatroomFileMsg, getChatroomHistoryMsgs} from './chatroomMsgs'
 import {initChatroomInfos, getChatroomInfo, getChatroomMembers, clearChatroomMembers} from './chatroomInfos'
+import {delegateTeamFunction, onTeamNotificationMsg, enterSettingPage, getTeamMembers} from './team'
 
 function connectNim ({state, commit, dispatch}, obj) {
   let {force} = Object.assign({}, obj)
@@ -123,6 +124,7 @@ export default {
   markSysMsgRead,
   markCustomSysMsgRead,
   resetSysMsgs,
+  deleteSysMsgs,
 
   initChatroomSDK,
   initChatroomInfos,
@@ -133,5 +135,18 @@ export default {
   getChatroomHistoryMsgs,
   getChatroomInfo,
   getChatroomMembers,
-  clearChatroomMembers
+  clearChatroomMembers,
+
+ 
+  // 搜索群
+  searchTeam,
+  // 代理sdk中的群方法
+  delegateTeamFunction,
+  // 处理群消息回调
+  onTeamNotificationMsg,
+  // 进入群信息设置页
+  enterSettingPage,
+  // 获取群成员
+  getTeamMembers
+
 }

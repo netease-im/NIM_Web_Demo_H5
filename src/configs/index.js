@@ -1,5 +1,5 @@
 let config = {
-  sdk: 'NIM_Web_SDK_v4.2.0.js',
+  sdk: 'NIM_Web_SDK_v4.7.0.js',
   // 用户自定义的登录注册地址
   loginUrl: '/webdemo/h5/login.html',
   registUrl: '/webdemo/h5/regist.html',
@@ -11,6 +11,10 @@ let config = {
   logo: 'http://yx-web.nos.netease.com/webdoc/h5/im/logo.png',
   // 默认用户头像
   defaultUserIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-icon.png',
+  // 默认普通群头像
+  defaultGroupIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-group.png',
+  // 默认高级群头像
+  defaultAdvancedIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/default-advanced.png',
   // 系统通知图标
   noticeIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/notice-icon.png',
   // 我的手机图标

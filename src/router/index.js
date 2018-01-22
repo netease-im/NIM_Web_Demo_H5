@@ -6,8 +6,8 @@ Vue.use(VueRouter)
 // 每个路由应该映射一个组件。 其中"component"是一个组件配置对象。
 const routes = [
   // 设置聊天列表页面为首页
-  { 
-    path: '/', 
+  {
+    path: '/',
     redirect: {
       name: 'session'
     }
@@ -92,12 +92,68 @@ const routes = [
       require(['../pages/SearchUser'], resolve)
     }
   },
+  // 邀请好友-加入群
+  {
+    path: '/teaminvite/:teamId',
+    name: 'teaminvite',
+    component (resolve) {
+      require(['../pages/TeamInvite'], resolve)
+    }
+  },
   // 通用页面
   {
     path: '/general',
     name: 'general',
     component (resolve) {
       require(['../pages/General'], resolve)
+    }
+  },
+  // 群列表
+  {
+    path: '/teamlist/:teamType',
+    name: 'teamlist',
+    component (resolve) {
+      require(['../pages/TeamList'], resolve)
+    }
+  },
+  // 群名片
+  {
+    path: '/teamcard/:teamId',
+    name: 'teamcard',
+    component (resolve) {
+      require(['../pages/TeamCard'], resolve)
+    }
+  },
+  // 群管理
+  {
+    path: '/teammanage/:teamId',
+    name: 'teammanage',
+    component(resolve) {
+      require(['../pages/TeamManage'], resolve)
+    }
+  },
+  // 群设置
+  { 
+    path: '/teamsetting',
+    name: 'teamsetting',
+    component(resolve) {
+      require(['../pages/TeamSetting'], resolve)
+    }
+  },
+  // 群成员列表
+  {
+    path: '/teammembers/:teamId',
+    name: 'teammembers',
+    component(resolve) {
+      require(['../pages/TeamMembers'], resolve)
+    }
+  },
+  // 群成员名片
+  {
+    path: '/teammembercard/:member',
+    name: 'teammembercard',
+    component(resolve) {
+      require(['../pages/TeamMemberCard'], resolve)
     }
   }
 ]

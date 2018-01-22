@@ -22,10 +22,21 @@ export function onSysMsg (sysMsg) {
       break
     // 对方消息撤回
     case 'deleteMsg':
-      sysMsg.sessionId = `${sysMsg.scene}-${sysMsg.from}`
+      if(sysMsg.scene === 'p2p') {
+        sysMsg.sessionId = `p2p-${sysMsg.from}`
+      } else {
+        sysMsg.sessionId = `team-${sysMsg.to}`
+      }
       onRevocateMsg(null, sysMsg)
       break
+    case 'teamInvite': //被邀请入群
+    case 'applyTeam':  // 申请入群
+    case 'rejectTeamApply':  // 申请入群被拒绝
+    case 'rejectTeamInvite': // 拒绝入群邀请
+      store.commit('updateSysMsgs', [sysMsg])
+      break
   }
+  store.commit('updateSysMsgState', sysMsg)
 }
 
 export function onSysMsgUnread (obj) {
@@ -82,4 +93,8 @@ export function markCustomSysMsgRead ({state, commit}) {
 
 export function resetSysMsgs ({state, commit}, obj) {
   commit('resetSysMsgs', obj)
+}
+
+export function deleteSysMsgs({commit}, obj) {
+  commit('deleteSysMsgs', obj)
 }

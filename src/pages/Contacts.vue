@@ -3,19 +3,21 @@
     <div class="m-cards u-search-box-wrap">
       <span class="u-search-box">
         <a href="#/searchUser/0">
-          添加好友
+          添加好友\群
         </a>
       </span>
       <span class="u-search-box">
-        搜索高级群-待开发
+        <a href='#/teaminvite/0'>
+        创建组\群
+        </a>
       </span>
     </div>
     <div id="userList" class="m-list">
       <group class="u-card" title="群">
-        <cell title="高级群-待开发">
+        <cell title="高级群" is-link link='/teamlist/advanced'>
           <span class="icon icon-team-advanced" slot="icon"></span>
         </cell>
-        <cell title="讨论组-待开发">
+        <cell title="讨论组" is-link link='/teamlist/normal'>
           <span class="icon icon-team" slot="icon"></span>
         </cell>
       </group>
@@ -31,12 +33,12 @@
       </group>
       <group class="u-card" title="机器人">
         <cell v-for="robot in robotslist" :title="robot.nick" :key="robot.account" is-link :link="robot.link">
-          <img class="icon" slot="icon" width="20" :src="robot.avatar">
+          <img class="icon u-circle" slot="icon" width="20" :src="robot.avatar">
         </cell>
       </group>
       <group class="u-card" title="黑名单">
         <cell v-for="friend in blacklist" :title="friend.alias" :key="friend.account" is-link :link="friend.link">
-          <img class="icon" slot="icon" width="20" :src="userInfos[friend.account].avatar">
+          <img class="icon u-circle" slot="icon" width="20" :src="userInfos[friend.account].avatar">
         </cell>
       </group>
     </div>
@@ -84,7 +86,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style type="text/css">

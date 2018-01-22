@@ -30,14 +30,13 @@ export default {
       alias: ''
     }
   },
+  mounted(){
+    let info = this.$store.state.userInfos[this.account] || {}
+    this.alias = info.alias
+  },
   computed: {
     account () {
       return this.$route.params.userId
-    },
-    userInfo () {
-      let info = this.$store.state.userInfos[this.account] || {}
-      this.alias = util.getFriendAlias(info)
-      return info
     }
   },
   methods: {

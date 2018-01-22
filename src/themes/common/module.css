@@ -180,6 +180,8 @@
     .m-tab-top {
       position: relative;
       padding: 0;
+      font-size: 1.3rem;
+      
       &.vux-button-group {
         margin: 4px auto;
       }
@@ -197,7 +199,8 @@
   /* 会话列表 */
   .m-article-main, .m-chat-main {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
@@ -244,7 +247,6 @@
       box-sizing: border-box;
       padding: 1rem 2%;
       width: 100%;
-      height: 100%;
       -webkit-overflow-scrolling: touch;
       overflow-y: scroll;
       overflow-x: hidden;

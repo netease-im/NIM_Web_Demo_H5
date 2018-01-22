@@ -5,6 +5,7 @@ import store from '../'
 import cookie from '../../utils/cookie'
 import util from '../../utils'
 import config from '../../configs'
+import Vue from 'Vue'
 
 export default {
   updateRefreshState (state) {
@@ -112,12 +113,6 @@ export default {
   updateSessions (state, sessions) {
     const nim = state.nim
     state.sessionlist = nim.mergeSessions(state.sessionlist, sessions)
-    state.sessionlist = state.sessionlist.filter(item => {
-      if (/^team-/.test(item.id)) {
-        return false
-      }
-      return true
-    })
     state.sessionlist.sort((a, b) => {
       return b.updateTime - a.updateTime
     })
@@ -174,7 +169,7 @@ export default {
     }
     store.commit('updateMsgByIdClient', msg)
     let tempMsgs = state.msgs[sessionId]
-    let lastMsgIndex = tempMsgs.length  - 1
+    let lastMsgIndex = tempMsgs.length - 1
     if (tempMsgs.length === 0 || msg.time >= tempMsgs[lastMsgIndex].time) {
       tempMsgs.push(msg)
     } else {
@@ -194,7 +189,7 @@ export default {
     if (!tempMsgs || tempMsgs.length === 0) {
       return
     }
-    let lastMsgIndex = tempMsgs.length  - 1
+    let lastMsgIndex = tempMsgs.length - 1
     for (let i = lastMsgIndex; i >= 0; i--) {
       let currMsg = tempMsgs[i]
       if (msg.idClient === currMsg.idClient) {
@@ -210,7 +205,7 @@ export default {
     if (!tempMsgs || tempMsgs.length === 0) {
       return
     }
-    let lastMsgIndex = tempMsgs.length  - 1
+    let lastMsgIndex = tempMsgs.length - 1
     for (let i = lastMsgIndex; i >= 0; i--) {
       let currMsg = tempMsgs[i]
       console.log(idClient, currMsg.idClient, currMsg.text)
@@ -343,9 +338,19 @@ export default {
     })
     // state.sysMsgs = nim.mergeSysMsgs(state.sysMsgs, sysMsgs)
     state.sysMsgs = [].concat(nim.mergeSysMsgs(state.sysMsgs, sysMsgs))
+    Vue.set(state, sysMsgs, state.sysMsgs)
+  },
+  // 更新消息的状态，如管理员批准或拒绝入群后，会收到新消息，更新入群申请的状态
+  updateSysMsgState (state, sysMsg) {
+    let exitMsg = state.sysMsgs.find(msg => {
+      return msg.idServer === sysMsg.idServer
+    })
+    if (exitMsg) {
+      exitMsg.state = sysMsg.state
+    }
   },
   updateSysMsgUnread (state, obj) {
-    state.sysMsgUnread = obj
+    state.sysMsgUnread = Object.assign({}, obj)
   },
   updateCustomSysMsgs (state, sysMsgs) {
     const nim = state.nim
@@ -358,6 +363,7 @@ export default {
     })
     // state.customSysMsgs = nim.mergeSysMsgs(state.customSysMsgs, sysMsgs)
     state.customSysMsgs = state.customSysMsgs.concat(sysMsgs)
+    Vue.set(state, customSysMsgs, state.customSysMsgs)
     store.commit('updateCustomSysMsgUnread', {
       type: 'add',
       unread: sysMsgs.length
@@ -387,6 +393,15 @@ export default {
         })
         break
     }
+  },
+  deleteSysMsgs (state, obj) {
+    let type = obj.type
+    let idServer = obj.idServer
+    let arr = type===0 ? state.sysMsgs : state.customSysMsgs
+    arr = arr.filter(msg=>{
+      return msg.idServer !== idServer
+    })
+    Vue.set(state, 'sysMsgs', arr)
   },
   setNoMoreHistoryMsgs (state) {
     state.noMoreHistoryMsgs = true
@@ -457,5 +472,50 @@ export default {
         }
       })
     }
+  },
+  updateTeamList (state, teams) {
+    const nim = state.nim
+    store.state.teamlist = nim.mergeTeams(store.state.teamlist, teams)
+    store.state.teamlist = nim.cutTeams(store.state.teamlist, teams.invalid)
+  },
+  updateTeamMembers (state, obj) {
+    const nim = state.nim
+    var teamId = obj.teamId
+    var members = obj.members
+    state.teamMembers = state.teamMembers || {}
+    state.teamMembers[teamId] = nim.mergeTeamMembers(state.teamMembers[teamId], members)
+    state.teamMembers[teamId] = nim.cutTeamMembers(state.teamMembers[teamId], members.invalid)
+    state.teamMembers[teamId].sort((a, b) => {
+      // 将群主和管理员排在队列前方
+      if (a.type === 'owner' || b.type === 'owner') {
+        return a.type === 'owner' ? -1 : 1
+      }
+      if (a.type === 'manager' || b.type === 'manager') {
+        return a.type === 'manager' ? -1 : b.type === 'manager' ? 1 : 0
+      }
+      return -1
+    })
+    state.teamMembers = Object.assign({}, state.teamMembers)
+  },
+  removeTeamMembersByAccounts(state, obj) {
+    var teamId = obj.teamId
+    var invalidAccounts = obj.accounts
+    if (state.teamMembers[teamId] === undefined) return
+    state.teamMembers[teamId] = state.teamMembers[teamId].filter((member, index)=>{
+      return invalidAccounts.indexOf(member.account)===-1
+    })
+    state.teamMembers = Object.assign({}, state.teamMembers)
+  },
+  updateTeamInfo(state, team) {
+    var index = state.teamlist.findIndex(item => { return item.teamId === team.teamId })
+    if (index === -1) return
+    for (const key in team) {
+      if (key !== 'teamId' && team.hasOwnProperty(key) && team[key]) {
+        state.teamlist[index][key] = team[key]
+      }
+    }
+  },
+  updateTeamSettingConfig(state, obj) {
+    state.teamSettingConfig = obj
   }
 }

@@ -49,3 +49,37 @@ export function searchUsers ({state, commit}, obj) {
     }
   })
 }
+
+export function searchTeam ({ state, commit }, obj) {
+  let { teamId, done } = obj
+  const nim = state.nim
+  nim.getTeam({
+    teamId: teamId,
+    done: function searchTeamDone (error, teams) {
+      if (error) {
+        if (error.code === 803) {
+          // 群不存在或未发生变化
+          teams = []
+        } else {
+          alert(error)
+          return
+        }
+      }
+      if (!Array.isArray(teams)) {
+        teams = [teams]
+      }
+      teams.forEach(team => {
+        if (team.avatar && team.avatar.indexOf('nim.nosdn.127') > 0 && team.avatar.indexOf('?imageView') === -1) {
+          team.avatar = team.avatar + '?imageView&thumbnail=300y300'
+        }
+      })
+      commit('updateSearchlist', {
+        type: 'team',
+        list: teams
+      })
+      if (done instanceof Function) {
+        done(teams)
+      }
+    }
+  })
+}

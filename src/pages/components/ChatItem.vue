@@ -9,6 +9,7 @@
     }">
     <div v-if="msg.type==='timeTag'">---- {{msg.showText}} ----</div>
     <div v-else-if="msg.type==='tip'" class="tip">{{msg.showText}}</div>
+    <div v-else-if="msg.type==='notification' && msg.scene==='team'" class="notification">{{msg.showText}}</div>
     <div
       v-else-if="msg.flow==='in' || msg.flow==='out'"
       :idClient="msg.idClient"
@@ -18,7 +19,7 @@
       v-touch:hold="revocateMsg"
     >
       <a class="msg-head" v-if="msg.avatar" :href="msg.link">
-        <img :src="msg.avatar">
+        <img class="icon u-circle" :src="msg.avatar">
       </a>
       <p class="msg-user" v-else-if="msg.type!=='notification'"><em>{{msg.showTime}}</em>{{msg.from}}</p>
 
@@ -118,6 +119,12 @@
           return false
         }
       },
+      isHistory: {
+        type: Boolean,
+        default() {
+          return false
+        }
+      }
       // robotInfos: {
       //   type: Object,
       //   default () {
@@ -141,6 +148,7 @@
       let item = Object.assign({}, this.rawMsg)
       // 标记用户，区分聊天室、普通消息
       if (this.type === 'session') {
+        
         if (item.flow === 'in') {
           if (item.type === 'robot' && item.content && item.content.msgOut) {
             // 机器人下行消息
@@ -151,6 +159,7 @@
           } else if (item.from !== this.$store.state.userUID) {
             item.avatar = (this.userInfos[item.from] && this.userInfos[item.from].avatar) || config.defaultUserIcon
             item.link = `#/namecard/${item.from}`
+            //todo  如果是未加好友的人发了消息，是否能看到名片
           } else {
             item.avatar = this.myInfo.avatar
           }
@@ -213,8 +222,12 @@
         item.fileLink = item.file.url
         item.showText = item.file.name
       } else if (item.type === 'notification') {
-        //对于系统通知，更新下用户信息的状态
-        item.showText = util.generateChatroomSysMsg(item)
+        if (item.scene === 'team') {
+          item.showText = util.generateTeamSysmMsg(item)
+        } else {
+          //对于系统通知，更新下用户信息的状态
+          item.showText = util.generateChatroomSysMsg(item)
+        }
       } else if (item.type === 'tip') {
         //对于系统通知，更新下用户信息的状态
         item.showText = item.tip
@@ -338,6 +351,10 @@
         }
       },
       sendRobotBlockMsg (msg, originMsg) {
+        if(this.isHistory) {
+          // 在历史消息中，不进行机器人交互
+          return
+        }
         let body = '[复杂按钮模板触发消息]'
         if (msg.text && msg.text.length === 1) {
           body = msg.text[0].text

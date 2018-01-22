@@ -12,9 +12,11 @@
 
 <script>
 import Vue from 'vue'
-import {Group, Cell, XHeader, XInput, XButton, XSwitch, Datetime, ViewBox, Search, ButtonTab, ButtonTabItem, Divider, AlertPlugin, ConfirmPlugin} from 'vux'
+import {Group, Cell, XHeader, XInput, XTextarea, XButton, XSwitch, Datetime, ViewBox, Search, ButtonTab, ButtonTabItem, Divider, Actionsheet, AlertPlugin, ConfirmPlugin} from 'vux'
 import Loading from './pages/components/Loading'
 import FullscreenImg from './pages/components/FullscreenImg'
+// ToastPlugin是对vux中的ToastPlugin在使用上的简单封装。
+import ToastPlugin from './plugins/toastPlugin'
 
 // 全局注册vux的组件
 Vue.component('Group', Group)
@@ -25,12 +27,15 @@ Vue.component('ButtonTabItem', ButtonTabItem)
 Vue.component('Divider', Divider)
 Vue.component('Search', Search)
 Vue.component('XInput', XInput)
+Vue.component('XTextarea', XTextarea)
 Vue.component('XButton', XButton)
 Vue.component('XHeader', XHeader)
 Vue.component('XSwitch', XSwitch)
+Vue.component('ActionSheet', Actionsheet)
 
 Vue.use(AlertPlugin)
 Vue.use(ConfirmPlugin)
+Vue.use(ToastPlugin)
 
 import NavBar from './pages/components/NavBar'
 import cookie from './utils/cookie'

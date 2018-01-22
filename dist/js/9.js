@@ -1,26 +1,30 @@
 webpackJsonp([9],{
 
-/***/ 292:
+/***/ 346:
 /* no static exports found */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./src/pages/NameCardRemark.vue ***!
-  \**************************************/
+/*!********************************!*\
+  !*** ./src/pages/TeamList.vue ***!
+  \********************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
+
+/* styles */
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-666d2fbd","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamList.vue */ 489)
+
+var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./NameCardRemark.vue */ 367),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamList.vue */ 437),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-538fd986"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./NameCardRemark.vue */ 389),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-666d2fbd"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamList.vue */ 472),
   /* scopeId */
-  null,
+  "data-v-666d2fbd",
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\NameCardRemark.vue"
+Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\TeamList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] NameCardRemark.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] TeamList.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -29,9 +33,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-538fd986", Component.options)
+    hotAPI.createRecord("data-v-666d2fbd", Component.options)
   } else {
-    hotAPI.reload("data-v-538fd986", Component.options)
+    hotAPI.reload("data-v-666d2fbd", Component.options)
   }
 })()}
 
@@ -40,56 +44,41 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 367:
+/***/ 437:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************************************************************************************************!*\
-  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/NameCardRemark.vue ***!
-  \**************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************!*\
+  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamList.vue ***!
+  \********************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 exports.__esModule = true;
-
-var _utils = __webpack_require__(/*! ../utils */ 41);
-
-var _utils2 = _interopRequireDefault(_utils);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 exports.default = {
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$nextTick(function () {
+      _this.teamType = _this.$route.params.teamType;
+    });
+  },
   data: function data() {
     return {
-      alias: ''
-    };
+      teamType: 'normal' };
   },
 
   computed: {
-    account: function account() {
-      return this.$route.params.userId;
-    },
-    userInfo: function userInfo() {
-      var info = this.$store.state.userInfos[this.account] || {};
-      this.alias = _utils2.default.getFriendAlias(info);
-      return info;
-    }
-  },
-  methods: {
-    setAlias: function setAlias() {
-      this.alias = this.alias.replace(/\n/g, ' ').replace(/\r/g, '');
-      if (/^\s*$/.test(this.alias)) {} else if (this.alias.length > 16) {
-        this.$vux.alert.show({
-          title: '备注不能超过16个字符'
-        });
-        return;
-      }
-      this.$store.dispatch('updateFriend', {
-        account: this.account,
-        alias: this.alias
+    teamList: function teamList() {
+      var _this2 = this;
+
+      return this.$store.state.teamlist && this.$store.state.teamlist.filter(function (team) {
+        return team.type === _this2.teamType && team.validToCurrentUser;
       });
-      window.history.go(-1);
+    },
+    pageTitle: function pageTitle() {
+      return this.teamType === 'advanced' ? '高级群' : '讨论组';
     }
   }
 };
@@ -97,17 +86,37 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 389:
+/***/ 450:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-538fd986"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/NameCardRemark.vue ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-666d2fbd","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamList.vue ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 3)(true);
+// imports
+
+
+// module
+exports.push([module.i, "\n.p-teamlist .m-list[data-v-666d2fbd] {\n    padding-top: 3.6rem;\n}\n.p-teamlist .empty-hint[data-v-666d2fbd]{\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: 5rem;\n    margin: auto;\n    text-align: center;\n}\n", "", {"version":3,"sources":["D:/web/node/NIM_Web_Demo_H5/src/pages/TeamList.vue"],"names":[],"mappings":";AA4CE;IACE,oBAAoB;CACrB;AACD;IACE,mBAAmB;IACnB,QAAQ;IACR,SAAS;IACT,UAAU;IACV,aAAa;IACb,mBAAmB;CACpB","file":"TeamList.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-teamlist {\n  .m-list {\n    padding-top: 3.6rem;\n  }\n  .empty-hint{\n    position: absolute;\n    left: 0;\n    right: 0;\n    top: 5rem;  \n    margin: auto;\n    text-align: center;\n  }\n}\n"],"sourceRoot":""}]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 472:
+/* no static exports found */
+/* all exports used */
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-666d2fbd"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamList.vue ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "g-inherit m-article"
+    staticClass: "g-inherit m-article p-teamlist"
   }, [_c('x-header', {
     staticClass: "m-tab",
     attrs: {
@@ -117,51 +126,70 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('h1', {
     staticClass: "m-tab-top"
-  }, [_vm._v("[ 备注名 ]")]), _vm._v(" "), _c('a', {
+  }, [_vm._v(_vm._s(_vm.pageTitle))]), _vm._v(" "), _c('a', {
     attrs: {
       "slot": "left"
     },
     slot: "left"
-  })]), _vm._v(" "), _c('group', {
-    staticClass: "u-card"
-  }, [_c('x-input', {
-    staticClass: "u-ipt-default",
-    attrs: {
-      "type": "text",
-      "required": false,
-      "max": 16,
-      "placeholder": "请输入备注名"
-    },
-    model: {
-      value: (_vm.alias),
-      callback: function($$v) {
-        _vm.alias = $$v
-      },
-      expression: "alias"
-    }
-  }, [_c('span', {
-    attrs: {
-      "slot": "label"
-    },
-    slot: "label"
-  }, [_vm._v("备注：")])])], 1), _vm._v(" "), _c('div', [_c('x-button', {
-    attrs: {
-      "type": "primary",
-      "action-type": "button"
-    },
-    nativeOn: {
-      "click": function($event) {
-        _vm.setAlias($event)
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "m-list"
+  }, [_c('group', _vm._l((_vm.teamList), function(team) {
+    return _c('cell', {
+      key: team.teamId,
+      attrs: {
+        "title": team.name,
+        "is-link": "",
+        "link": ("/chat/team-" + (team.teamId))
       }
-    }
-  }, [_vm._v("设置备注名")])], 1)], 1)
+    }, [_c('span', {
+      staticClass: "icon icon-team-advanced",
+      attrs: {
+        "slot": "icon"
+      },
+      slot: "icon"
+    })])
+  }))], 1), _vm._v(" "), (!_vm.teamList || _vm.teamList.length < 1) ? _c('div', {
+    staticClass: "empty-hint"
+  }, [_vm._v("暂无内容")]) : _vm._e()], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-538fd986", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-666d2fbd", module.exports)
   }
+}
+
+/***/ }),
+
+/***/ 489:
+/* no static exports found */
+/* all exports used */
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-666d2fbd","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamList.vue ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-666d2fbd","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamList.vue */ 450);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 4)("71aae44b", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-666d2fbd\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamList.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-666d2fbd\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamList.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
 }
 
 /***/ })

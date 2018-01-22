@@ -1,30 +1,30 @@
 webpackJsonp([7],{
 
-/***/ 289:
+/***/ 350:
 /* no static exports found */
 /* all exports used */
-/*!********************************!*\
-  !*** ./src/pages/Contacts.vue ***!
-  \********************************/
+/*!***********************************!*\
+  !*** ./src/pages/TeamSetting.vue ***!
+  \***********************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./Contacts.vue */ 403)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-74124c01","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamSetting.vue */ 493)
 
-var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 1)(
+var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./Contacts.vue */ 364),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamSetting.vue */ 441),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-73e40375"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./Contacts.vue */ 393),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-74124c01"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamSetting.vue */ 476),
   /* scopeId */
-  null,
+  "data-v-74124c01",
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\Contacts.vue"
+Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\TeamSetting.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Contacts.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] TeamSetting.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -33,9 +33,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-73e40375", Component.options)
+    hotAPI.createRecord("data-v-74124c01", Component.options)
   } else {
-    hotAPI.reload("data-v-73e40375", Component.options)
+    hotAPI.reload("data-v-74124c01", Component.options)
   }
 })()}
 
@@ -44,58 +44,91 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 364:
+/***/ 441:
 /* no static exports found */
 /* all exports used */
-/*!********************************************************************************************************************************************!*\
-  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/Contacts.vue ***!
-  \********************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************!*\
+  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamSetting.vue ***!
+  \***********************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 exports.__esModule = true;
+
+var _utils = __webpack_require__(/*! ../utils */ 16);
+
+var _utils2 = _interopRequireDefault(_utils);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
+  data: function data() {
+    return {
+      inputModel: '',
+      placeHolder: ''
+    };
+  },
+
   computed: {
-    friendslist: function friendslist() {
-      var _this = this;
-
-      return this.$store.state.friendslist.filter(function (item) {
-        var account = item.account;
-        var thisAttrs = _this.userInfos[account];
-        var alias = thisAttrs.alias ? thisAttrs.alias.trim() : '';
-        item.alias = alias || thisAttrs.nick || account;
-        item.link = '/namecard/' + item.account;
-        if (!thisAttrs.isFriend || thisAttrs.isBlack) {
-          return false;
+    config: function config() {
+      var config = this.$store.state.teamSettingConfig;
+      this.inputModel = config.defaultValue ? config.defaultValue : '';
+      this.placeHolder = config.placeHolder ? config.placeHolder : config.enable ? '请输入' : '无';
+      return config;
+    },
+    selects: function selects() {
+      var map = _utils2.default.teamConfigMap[this.config.updateKey];
+      var list = [];
+      for (var key in map) {
+        if (map.hasOwnProperty(key)) {
+          list.push({ 'key': key, 'value': map[key] });
         }
-        return true;
-      });
-    },
-    blacklist: function blacklist() {
-      var _this2 = this;
+      }
+      return list;
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
 
-      return this.$store.state.blacklist.filter(function (item) {
-        var account = item.account;
-        var thisAttrs = _this2.userInfos[account];
-        var alias = thisAttrs.alias ? thisAttrs.alias.trim() : '';
-        item.alias = alias || thisAttrs.nick || account;
-        item.link = '/namecard/' + item.account;
-        if (!thisAttrs.isFriend) {
-          return false;
-        }
-        return true;
+    setTimeout(function () {
+      _this.$refs.input && _this.$refs.input.focus();
+    }, 500);
+  },
+
+  methods: {
+    update: function update(value) {
+      var _this2 = this,
+          _options;
+
+      if (value === undefined && this.inputModel.length < 1) {
+        this.$toast('请输入内容后提交');
+        return;
+      }
+      var callback = this.config.confirmCallback;
+      if (callback && typeof callback === 'function') {
+        callback(this.config.teamId, this.config.updateKey, value ? value : this.inputModel);
+        return;
+      }
+      this.$store.dispatch('showLoading');
+      var action = this.config.updateInfoInTeam ? 'updateInfoInTeam' : 'updateTeam';
+      this.$store.dispatch('delegateTeamFunction', {
+        functionName: action,
+        options: (_options = {
+          teamId: this.config.teamId
+        }, _options[this.config.updateKey] = value ? value : this.inputModel, _options.done = function done(error, team) {
+          _this2.$store.dispatch('hideLoading');
+          if (error) {
+            _this2.$toast(error);
+          } else {
+            _this2.$toast('更改成功');
+            setTimeout(function () {
+              history.go(-1);
+            }, 200);
+          }
+        }, _options)
       });
-    },
-    robotslist: function robotslist() {
-      return this.$store.state.robotslist.map(function (item) {
-        item.link = '/namecard/' + item.account;
-        return item;
-      });
-    },
-    userInfos: function userInfos() {
-      return this.$store.state.userInfos;
     }
   }
 };
@@ -103,179 +136,141 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 380:
+/***/ 454:
 /* no static exports found */
 /* all exports used */
-/*!************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Contacts.vue ***!
-  \************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-74124c01","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamSetting.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 4)(true);
+exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 3)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\n.p-contacts .add-friend {\n    background-color: #fff;\n}\n.p-contacts .m-list {\n    padding-top: 8rem;\n}\n.p-contacts .u-search-box-wrap {\n    text-align: center;\n}\n.p-contacts .u-search-box {\n    position: relative;\n    display: inline-block;\n    -moz-box-sizing: border-box;\n         box-sizing: border-box;\n    min-width: 45%;\n    padding: 1em;\n    height: 3rem;\n    text-align: center;\n    border: 1px solid #ccc;\n    background-color: #fff;\n    font-size: 0.8rem;\n    box-shadow: 2px 2px 6px #ccc;\n}\n.p-contacts .u-search-box a {\n    display: inline-block;\n    -moz-box-sizing: border-box;\n         box-sizing: border-box;\n    height: 100%;\n    width: 100%;\n}\n.p-contacts .u-card .icon {\n    display: inline-block;\n    margin-right: 0.4rem;\n    width: 1.4rem;\n    height: 1.4rem;\n    background-size: 20rem;\n}\n.p-contacts .u-card .icon-team-advanced {\n    background-position: 0 -3rem;\n    background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n}\n.p-contacts .u-card .icon-team {\n    background-position: -2.1rem -3rem;\n    background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n}\n", "", {"version":3,"sources":["D:/web/node/NIM_Web_Demo_H5/src/pages/Contacts.vue"],"names":[],"mappings":";AA2FE;IACE,uBAAuB;CACxB;AACD;IACE,kBAAkB;CACnB;AACD;IACE,mBAAmB;CACpB;AACD;IACE,mBAAmB;IACnB,sBAAsB;IACtB,4BAAuB;SAAvB,uBAAuB;IACvB,eAAe;IACf,aAAa;IACb,aAAa;IACb,mBAAmB;IACnB,uBAAuB;IACvB,uBAAuB;IACvB,kBAAkB;IAClB,6BAA6B;CAO9B;AANC;IACE,sBAAsB;IACtB,4BAAuB;SAAvB,uBAAuB;IACvB,aAAa;IACb,YAAY;CACb;AAGD;IACE,sBAAsB;IACtB,qBAAqB;IACrB,cAAc;IACd,eAAe;IACf,uBAAuB;CACxB;AACD;IACE,6BAA6B;IAC7B,4EAA4E;CAC7E;AACD;IACE,mCAAmC;IACnC,4EAA4E;CAC7E","file":"Contacts.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-contacts {\n  .add-friend {\n    background-color: #fff;\n  }\n  .m-list {\n    padding-top: 8rem;\n  }\n  .u-search-box-wrap {\n    text-align: center;\n  }\n  .u-search-box {\n    position: relative;\n    display: inline-block;\n    box-sizing: border-box;\n    min-width: 45%;\n    padding: 1em;\n    height: 3rem;\n    text-align: center;\n    border: 1px solid #ccc;\n    background-color: #fff;\n    font-size: 0.8rem;\n    box-shadow: 2px 2px 6px #ccc;\n    a {\n      display: inline-block;\n      box-sizing: border-box;\n      height: 100%;\n      width: 100%;\n    }\n  }\n  .u-card {\n    .icon {\n      display: inline-block;\n      margin-right: 0.4rem;\n      width: 1.4rem;\n      height: 1.4rem;\n      background-size: 20rem;\n    }\n    .icon-team-advanced {\n      background-position: 0 -3rem;\n      background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n    }\n    .icon-team {\n      background-position: -2.1rem -3rem;\n      background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n    }\n  }\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-setting[data-v-74124c01]{\n  background-color: #e6ebf0;\n  padding-top: 4.6rem;\n}\n.weui-cell[data-v-74124c01]{\n  background-color: white;\n}\n.select img[data-v-74124c01]{\n  position: absolute;\n  right: 0;\n}\n.icon-selected[data-v-74124c01]{\n  display: inline-block;\n  width: 1.4rem;\n  height: 1.4rem;\n  background-size: 20rem;\n  background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n  background-position: -3.7rem -2.95rem;\n}\n", "", {"version":3,"sources":["D:/web/node/NIM_Web_Demo_H5/src/pages/TeamSetting.vue"],"names":[],"mappings":";AAyFA;EACE,0BAA0B;EAC1B,oBAAoB;CACrB;AACD;EACE,wBAAwB;CACzB;AAEC;EACE,mBAAmB;EACnB,SAAS;CACV;AAEH;EACE,sBAAsB;EACtB,cAAc;EACd,eAAe;EACf,uBAAuB;EACvB,4EAA4E;EAC5E,sCAAsC;CACvC","file":"TeamSetting.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-setting{\n  background-color: #e6ebf0;\n  padding-top: 4.6rem;\n}\n.weui-cell{\n  background-color: white;\n}\n.select {\n  img{\n    position: absolute;\n    right: 0;\n  }\n}\n.icon-selected{\n  display: inline-block;\n  width: 1.4rem;\n  height: 1.4rem;\n  background-size: 20rem;\n  background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n  background-position: -3.7rem -2.95rem;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 393:
+/***/ 476:
 /* no static exports found */
 /* all exports used */
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-73e40375"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/Contacts.vue ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-74124c01"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamSetting.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "g-inherit m-main p-contacts"
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
-    staticClass: "m-list",
+    staticClass: "g-inherit m-article p-setting"
+  }, [_c('x-header', {
+    staticClass: "m-tab",
     attrs: {
-      "id": "userList"
+      "left-options": {
+        backText: ' '
+      }
     }
-  }, [_c('group', {
-    staticClass: "u-card",
+  }, [_c('h1', {
+    staticClass: "m-tab-top"
+  }, [_vm._v(_vm._s(_vm.config.title))]), _vm._v(" "), _c('a', {
     attrs: {
-      "title": "群"
-    }
-  }, [_c('cell', {
-    attrs: {
-      "title": "高级群-待开发"
-    }
-  }, [_c('span', {
-    staticClass: "icon icon-team-advanced",
-    attrs: {
-      "slot": "icon"
+      "slot": "left"
     },
-    slot: "icon"
-  })]), _vm._v(" "), _c('cell', {
+    slot: "left"
+  }), _vm._v(" "), (_vm.config.inputType !== "select" && _vm.config.enable) ? _c('a', {
     attrs: {
-      "title": "讨论组-待开发"
-    }
-  }, [_c('span', {
-    staticClass: "icon icon-team",
-    attrs: {
-      "slot": "icon"
+      "slot": "right"
     },
-    slot: "icon"
-  })])], 1), _vm._v(" "), _c('group', {
-    staticClass: "u-card",
+    on: {
+      "click": function () { return _vm.update(); }
+    },
+    slot: "right"
+  }, [_vm._v("确定")]) : _vm._e()]), _vm._v(" "), _c('group', [(_vm.config.inputType === "text") ? _c('x-input', {
+    ref: "input",
     attrs: {
-      "title": "好友列表"
-    }
-  }, _vm._l((_vm.friendslist), function(friend) {
-    return _c('cell', {
-      key: friend.account,
-      attrs: {
-        "title": friend.alias,
-        "is-link": "",
-        "link": friend.link
-      }
-    }, [_c('img', {
-      staticClass: "icon",
-      attrs: {
-        "slot": "icon",
-        "width": "20",
-        "src": _vm.userInfos[friend.account].avatar
+      "placeholder": _vm.placeHolder,
+      "disabled": !_vm.config.enable,
+      "max": 10
+    },
+    model: {
+      value: (_vm.inputModel),
+      callback: function($$v) {
+        _vm.inputModel = $$v
       },
-      slot: "icon"
-    })])
-  })), _vm._v(" "), _c('group', {
-    staticClass: "u-card",
-    attrs: {
-      "title": "机器人"
+      expression: "inputModel"
     }
-  }, _vm._l((_vm.robotslist), function(robot) {
-    return _c('cell', {
-      key: robot.account,
-      attrs: {
-        "title": robot.nick,
-        "is-link": "",
-        "link": robot.link
-      }
-    }, [_c('img', {
-      staticClass: "icon",
-      attrs: {
-        "slot": "icon",
-        "width": "20",
-        "src": robot.avatar
+  }) : (_vm.config.inputType === "textarea") ? _c('x-textarea', {
+    ref: "input",
+    attrs: {
+      "placeholder": _vm.placeHolder,
+      "readonly": !_vm.config.enable,
+      "max": 30
+    },
+    model: {
+      value: (_vm.inputModel),
+      callback: function($$v) {
+        _vm.inputModel = $$v
       },
-      slot: "icon"
-    })])
-  })), _vm._v(" "), _c('group', {
-    staticClass: "u-card",
-    attrs: {
-      "title": "黑名单"
+      expression: "inputModel"
     }
-  }, _vm._l((_vm.blacklist), function(friend) {
+  }) : (_vm.config.inputType === "select") ? _vm._l((_vm.selects), function(item, index) {
     return _c('cell', {
-      key: friend.account,
+      key: index,
       attrs: {
-        "title": friend.alias,
-        "is-link": "",
-        "link": friend.link
-      }
-    }, [_c('img', {
-      staticClass: "icon",
-      attrs: {
-        "slot": "icon",
-        "width": "20",
-        "src": _vm.userInfos[friend.account].avatar
+        "value-align": "left"
       },
-      slot: "icon"
-    })])
-  }))], 1)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "m-cards u-search-box-wrap"
-  }, [_c('span', {
-    staticClass: "u-search-box"
-  }, [_c('a', {
-    attrs: {
-      "href": "#/searchUser/0"
-    }
-  }, [_vm._v("\n        添加好友\n      ")])]), _vm._v(" "), _c('span', {
-    staticClass: "u-search-box"
-  }, [_vm._v("\n      搜索高级群-待开发\n    ")])])
-}]}
+      nativeOn: {
+        "click": function($event) {
+          (function () { return _vm.update(item.key); })($event)
+        }
+      }
+    }, [_vm._v("\n      " + _vm._s(item.value) + "\n      "), (_vm.inputModel === item.key) ? _c('span', {
+      staticClass: "icon-selected",
+      attrs: {
+        "slot": "child",
+        "width": "25",
+        "height": "25"
+      },
+      slot: "child"
+    }) : _vm._e()])
+  }) : _vm._e()], 2)], 1)
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-73e40375", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-74124c01", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 403:
+/***/ 493:
 /* no static exports found */
 /* all exports used */
-/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/Contacts.vue ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-74124c01","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamSetting.vue ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-73e40375","scoped":false,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue */ 380);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-74124c01","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamSetting.vue */ 454);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("9bdd95dc", content, false);
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 4)("b793e29e", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-73e40375\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-73e40375\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Contacts.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-74124c01\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamSetting.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-74124c01\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamSetting.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

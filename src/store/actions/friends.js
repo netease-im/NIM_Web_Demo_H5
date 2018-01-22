@@ -3,6 +3,7 @@
  */
 
 import store from '../'
+import { formatUserInfo } from './userInfo' 
 
 // 好友关系，回调
 export function onFriends (friends) {
@@ -41,7 +42,7 @@ export function onUpdateFriend(error, friends) {
     }),
     done: (users) => {
       const nim = store.state.nim
-      friends = nim.mergeFriends(friends, users)
+      friends = nim.mergeFriends(friends, users).map(formatUserInfo)
       // 更新好友列表
       store.commit('updateFriends', friends)
       // 更新好友资料

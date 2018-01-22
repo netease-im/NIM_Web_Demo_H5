@@ -10,12 +10,12 @@
     ></chat-emoji>
     <group v-show="isRobotListShown" class="m-chat-emoji m-chat-robot">
       <cell v-for="robot in robotslist" :title="robot.nick" :key="robot.account" @click.native="chooseRobot(robot)">
-        <img class="icon" slot="icon" width="20" :src="robot.avatar">
+        <img class="icon u-circle" slot="icon" width="20" height="20" :src="robot.avatar">
       </cell>
     </group>
     <div class="m-chat-editor-main" :class="{robot:isRobot}">
       <span class="u-editor-input">
-        <textarea v-model="msgToSent"></textarea>
+        <textarea v-model="msgToSent" @focus='onInputFocus'></textarea>
       </span>
       <span class="u-editor-icons">
         <span v-if="!isRobot" class="u-editor-icon" @click.stop="showEmoji">
@@ -38,6 +38,7 @@
 import ChatEmoji from './ChatEmoji'
 import util from '../../utils'
 import config from '../../configs'
+import pageUtil from '../../utils/page'
 
 export default {
   components: {
@@ -57,6 +58,14 @@ export default {
       default () {
         return false
       }
+    },
+    invalid: {
+      type: Boolean,
+      default: false
+    },
+    invalidHint: {
+      type: String,
+      default: '您无权限发送消息'
     }
   },
   watch: {
@@ -107,9 +116,13 @@ export default {
   },
   methods: {
     sendTextMsg () {
+      if (this.invalid) {
+        this.$toast(this.invalidHint)
+        return
+      }
       if (/^\s*$/.test(this.msgToSent)) {
         this.$vux.alert.show({
-          title: '请不要刷屏'
+          title: '请不要发送空消息'
         })
         return
       } else if (this.msgToSent.length > 800) {
@@ -221,6 +234,10 @@ export default {
       this.msgToSent = ''
     },
     sendPlayMsg () {
+      if (this.invalid) {
+        this.$toast(this.invalidHint)
+        return
+      }
       // 发送猜拳消息
       if (this.type === 'session') {
         this.$store.dispatch('sendMsg', {
@@ -249,6 +266,10 @@ export default {
       }
     },
     sendFileMsg () {
+      if (this.invalid) {
+        this.$toast(this.invalidHint)
+        return
+      }
       let ipt = this.$refs.fileToSent
       if (ipt.value) {
         if (this.type === 'session') {
@@ -286,6 +307,13 @@ export default {
     },
     hideRobotList () {
       this.isRobotListShown = false
+    },
+    onInputFocus(e) {
+      setTimeout(() => {
+        // todo fixme 解决iOS输入框被遮挡问题，但会存在空白缝隙
+        e.target.scrollIntoView()
+        pageUtil.scrollChatListDown()
+      }, 200)
     }
   }
 }

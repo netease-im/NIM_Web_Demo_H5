@@ -18,8 +18,8 @@
         v-touch:swipeleft="showDelBtn"
         v-touch:swiperight="hideDelBtn"
         @click.native="enterChat(session)" >
-        <img class="icon" slot="icon" width="24" :src="session.avatar">
-        <span>
+        <img class="icon u-circle" slot="icon" width="24" :src="session.avatar">
+        <span class='u-session-time'>
           {{session.updateTimeShow}}
         </span>
         <span v-show="session.unread > 0" class="u-unread">{{session.unread}}</span>
@@ -43,13 +43,16 @@ export default {
       delSessionId: null,
       stopBubble: false,
       noticeIcon: config.noticeIcon,
-      myPhoneIcon: config.myPhoneIcon
+      myPhoneIcon: config.myPhoneIcon,
+      myGroupIcon: config.defaultGroupIcon,
+      myAdvancedIcon: config.defaultAdvancedIcon
     }
   },
   computed: {
     sysMsgUnread () {
       let temp = this.$store.state.sysMsgUnread
       let sysMsgUnread = temp.addFriend || 0
+      sysMsgUnread += temp.team || 0
       let customSysMsgUnread = this.$store.state.customSysMsgUnread
       return sysMsgUnread + customSysMsgUnread
     },
@@ -80,12 +83,26 @@ export default {
             item.name = util.getFriendAlias(userInfo)
             item.avatar = userInfo.avatar
           }
+        } else if (item.scene === 'team') {
+          let teamInfo = null
+          teamInfo = this.$store.state.teamlist.find(team => {
+            return team.teamId === item.to
+          })
+          if (teamInfo) {
+            item.name = teamInfo.name
+            item.avatar = teamInfo.avatar || (teamInfo.type === 'normal' ? this.myGroupIcon : this.myAdvancedIcon)
+          } else {
+            item.name = `群${item.to}`
+            item.avatar = item.avatar || this.myGroupIcon
+          }
         }
         let lastMsg = item.lastMsg || {}
         if (lastMsg.type === 'text') {
           item.lastMsgShow = lastMsg.text || ''
         } else if (lastMsg.type === 'custom') {
           item.lastMsgShow = util.parseCustomMsg(lastMsg)
+        } else if (lastMsg.scene === 'team' && lastMsg.type === 'notification') {
+          item.lastMsgShow = util.generateTeamSysmMsg(lastMsg)
         } else if (util.mapMsgType(lastMsg)) {
           item.lastMsgShow = `[${util.mapMsgType(lastMsg)}]`
         } else {

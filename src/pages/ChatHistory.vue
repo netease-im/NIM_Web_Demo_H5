@@ -15,6 +15,7 @@
         :msglist="msglist"
         :userInfos="userInfos"
         :myInfo="myInfo"
+        :isHistory='true'
         v-touch:swipedown="loadMore"
       ></chat-list>
     </div>
@@ -73,7 +74,7 @@ export default {
           return util.getFriendAlias(userInfo)
         }
       } else if (/^team-/.test(sessionId)) {
-        return '群'
+        return '历史记录'
       }
     },
     // 判断是否是机器人
