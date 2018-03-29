@@ -1,30 +1,30 @@
 webpackJsonp([8],{
 
-/***/ 348:
+/***/ 336:
 /* no static exports found */
 /* all exports used */
-/*!**************************************!*\
-  !*** ./src/pages/TeamMemberCard.vue ***!
-  \**************************************/
+/*!***********************************!*\
+  !*** ./src/pages/TeamSetting.vue ***!
+  \***********************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-6b45b6ae","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamMemberCard.vue */ 490)
+__webpack_require__(/*! !vue-style-loader!css-loader?sourceMap!../../~/vue-loader/lib/style-compiler/index?{"id":"data-v-521605f3","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector?type=styles&index=0!./TeamSetting.vue */ 482)
 
 var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normalizer */ 2)(
   /* script */
-  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamMemberCard.vue */ 439),
+  __webpack_require__(/*! !babel-loader!../../~/vux-loader/src/script-loader.js!../../~/vue-loader/lib/selector?type=script&index=0!./TeamSetting.vue */ 429),
   /* template */
-  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-6b45b6ae"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamMemberCard.vue */ 473),
+  __webpack_require__(/*! !../../~/vue-loader/lib/template-compiler/index?{"id":"data-v-521605f3"}!../../~/vux-loader/src/before-template-compiler-loader.js!../../~/vux-loader/src/template-loader.js!../../~/vue-loader/lib/selector?type=template&index=0!./TeamSetting.vue */ 461),
   /* scopeId */
-  "data-v-6b45b6ae",
+  "data-v-521605f3",
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\NIM_Web_Demo_H5\\src\\pages\\TeamMemberCard.vue"
+Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\TeamSetting.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] TeamMemberCard.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] TeamSetting.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -33,9 +33,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6b45b6ae", Component.options)
+    hotAPI.createRecord("data-v-521605f3", Component.options)
   } else {
-    hotAPI.reload("data-v-6b45b6ae", Component.options)
+    hotAPI.reload("data-v-521605f3", Component.options)
   }
 })()}
 
@@ -44,26 +44,18 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 439:
+/***/ 429:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************************************************************************************************!*\
-  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamMemberCard.vue ***!
-  \**************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************!*\
+  !*** ./~/babel-loader/lib!./~/vux-loader/src/script-loader.js!./~/vue-loader/lib/selector.js?type=script&index=0!./src/pages/TeamSetting.vue ***!
+  \***********************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 exports.__esModule = true;
-
-var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _configs = __webpack_require__(/*! ../configs */ 5);
-
-var _configs2 = _interopRequireDefault(_configs);
 
 var _utils = __webpack_require__(/*! ../utils */ 16);
 
@@ -74,167 +66,68 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   data: function data() {
     return {
-      avatar: _configs2.default.defaultUserIcon,
-      teamId: '',
-      account: '',
-      mute: false,
-      selfType: 'normal'
+      inputModel: '',
+      placeHolder: ''
     };
   },
 
   computed: {
-    member: function member() {
-      var _this = this;
-
-      var parseReg = /(\d+)-(\w+)/;
-      var result = parseReg.exec(this.$route.params.member);
-      var teamId = result[1];
-      this.teamId = teamId;
-      var account = result[2];
-      this.account = account;
-      var member = {};
-      this.$store.state.teamMembers[teamId] && this.$store.state.teamMembers[teamId].forEach(function (item) {
-        if (item.account === account) {
-          member = (0, _assign2.default)(member, item);
-        }
-        if (item.account === _this.$store.state.userUID) {
-          _this.selfType = item.type;
-        }
-      });
-      var userInfo = this.$store.state.userInfos[member.account];
-      if (member.account === this.$store.state.userUID) {
-        userInfo = this.$store.state.myInfo;
-      }
-      member.avatar = userInfo ? userInfo.avatar : member.avatar || this.avatar;
-      member.alias = userInfo ? userInfo.nick : member.account || 'account';
-      this.mute = !!member.mute;
-      return member;
+    config: function config() {
+      var config = this.$store.state.teamSettingConfig;
+      this.inputModel = config.defaultValue ? config.defaultValue : '';
+      this.placeHolder = config.placeHolder ? config.placeHolder : config.enable ? '请输入' : '无';
+      return config;
     },
-    memberType: function memberType() {
-      if (this.member) {
-        switch (this.member.type) {
-          case 'owner':
-            return '群主';
-          case 'manager':
-            return '管理员';
-          case 'normal':
-            return '普通成员';
+    selects: function selects() {
+      var map = _utils2.default.teamConfigMap[this.config.updateKey];
+      var list = [];
+      for (var key in map) {
+        if (map.hasOwnProperty(key)) {
+          list.push({ 'key': key, 'value': map[key] });
         }
       }
-      return '普通成员';
-    },
-    infoInTeam: function infoInTeam() {
-      return {
-        nickInTeam: this.member.nickInTeam,
-        memberType: this.member.type
-      };
-    },
-    hasSetMemberTypePermission: function hasSetMemberTypePermission() {
-      return this.selfType === 'owner' && this.member.type !== 'owner';
-    },
-    hasMuteOrRemovePermission: function hasMuteOrRemovePermission() {
-      if (this.selfType === 'owner') {
-        return this.member.type !== 'owner';
-      }
-      if (this.selfType === 'manager') {
-        return this.member.type === 'normal';
-      }
-      return false;
-    },
-    isSelf: function isSelf() {
-      return this.member.account === this.$store.state.userUID;
-    },
-    hasSetNickPermission: function hasSetNickPermission() {
-      return this.selfType !== 'normal' || this.isSelf;
+      return list;
     }
   },
+  mounted: function mounted() {
+    var _this = this;
+
+    setTimeout(function () {
+      _this.$refs.input && _this.$refs.input.focus();
+    }, 500);
+  },
+
   methods: {
-    changeMute: function changeMute() {
-      var _this2 = this;
+    update: function update(value) {
+      var _this2 = this,
+          _options;
 
-      this.$store.dispatch('delegateTeamFunction', {
-        functionName: 'updateMuteStateInTeam',
-        options: {
-          teamId: this.teamId,
-          account: this.account,
-          mute: this.mute,
-          done: function done(error, obj) {
-            if (error) {
-              _this2.$toast(error);
-            } else {
-              _this2.$toast(_this2.mute ? '已禁言' : '已取消禁言');
-            }
-          }
-        }
-      });
-    },
-    getUpdateCallBcak: function getUpdateCallBcak() {
-      var _this3 = this;
-
-      var account = this.member.account;
-      var store = this.$store;
-      var toast = this.$toast;
-
-      var doneCallBack = function doneCallBack(error, obj) {
-        if (error) {
-          _this3.$toast(error);
-        } else {
-          _this3.$toast('更改成功');
-          setTimeout(function () {
-            history.go(-1);
-          }, 200);
-        }
-        store.dispatch('hideLoading');
-      };
-      return function (teamId, updateKey, newValue) {
-        store.dispatch('showLoading');
-        var action = null;
-        var opts = {};
-        if (updateKey === 'nickInTeam') {
-          action = 'updateNickInTeam';
-          opts.account = account;
-          opts.nickInTeam = newValue;
-        } else if (updateKey === 'memberType') {
-          action = newValue === 'manager' ? 'addTeamManagers' : 'removeTeamManagers';
-          opts.accounts = [account];
-        }
-        store.dispatch('delegateTeamFunction', {
-          functionName: action,
-          options: (0, _assign2.default)({
-            teamId: teamId,
-            done: doneCallBack
-          }, opts)
-        });
-      };
-    },
-    onEditItemClick: function onEditItemClick(title, inputType, updateKey, confirmCallback) {
-      var updateSelfNick = this.isSelf && updateKey === 'nickInTeam';
-      this.$store.dispatch('enterSettingPage', {
-        title: title,
-        inputType: inputType,
-        updateKey: updateKey,
-        teamId: this.teamId,
-        updateInfoInTeam: updateSelfNick ? true : false,
-        defaultValue: this.infoInTeam[updateKey],
-        confirmCallback: updateSelfNick ? null : confirmCallback,
-        enable: true
-      });
-    },
-    remove: function remove() {
-      var _this4 = this;
-
+      if (value === undefined && this.inputModel.length < 1) {
+        this.$toast('请输入内容后提交');
+        return;
+      }
+      var callback = this.config.confirmCallback;
+      if (callback && typeof callback === 'function') {
+        callback(this.config.teamId, this.config.updateKey, value ? value : this.inputModel);
+        return;
+      }
       this.$store.dispatch('showLoading');
+      var action = this.config.updateInfoInTeam ? 'updateInfoInTeam' : 'updateTeam';
       this.$store.dispatch('delegateTeamFunction', {
-        functionName: 'removeTeamMembers',
-        options: {
-          teamId: this.teamId,
-          accounts: [this.member.account],
-          done: function done(error, obj) {
-            _this4.$toast(error ? error : '移除成功');
-            history.go(-1);
-            _this4.$store.dispatch('hideLoading');
+        functionName: action,
+        options: (_options = {
+          teamId: this.config.teamId
+        }, _options[this.config.updateKey] = value ? value : this.inputModel, _options.done = function done(error, team) {
+          _this2.$store.dispatch('hideLoading');
+          if (error) {
+            _this2.$toast(error);
+          } else {
+            _this2.$toast('更改成功');
+            setTimeout(function () {
+              history.go(-1);
+            }, 200);
           }
-        }
+        }, _options)
       });
     }
   }
@@ -243,12 +136,12 @@ module.exports = exports['default'];
 
 /***/ }),
 
-/***/ 451:
+/***/ 439:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-6b45b6ae","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamMemberCard.vue ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-521605f3","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamSetting.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 3)(true);
@@ -256,24 +149,24 @@ exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-ba
 
 
 // module
-exports.push([module.i, "\n.g-body[data-v-6b45b6ae]{\n}\n.g-avatar[data-v-6b45b6ae]{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn[data-v-6b45b6ae]{\n  width: 80%;\n  margin: 1rem 10%;\n}\n", "", {"version":3,"sources":["D:/web/node/NIM_Web_Demo_H5/src/pages/TeamMemberCard.vue"],"names":[],"mappings":";AA0LA;CAEC;AACD;EACE,kBAAkB;EAClB,YAAY;EACZ,mBAAmB;CACpB;AACD;EACE,WAAW;EACX,iBAAiB;CAClB","file":"TeamMemberCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.g-body{\n  \n}\n.g-avatar{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn{\n  width: 80%;\n  margin: 1rem 10%;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.p-setting[data-v-521605f3]{\n  background-color: #e6ebf0;\n  padding-top: 4.6rem;\n}\n.weui-cell[data-v-521605f3]{\n  background-color: white;\n}\n.select img[data-v-521605f3]{\n  position: absolute;\n  right: 0;\n}\n.icon-selected[data-v-521605f3]{\n  display: inline-block;\n  width: 1.4rem;\n  height: 1.4rem;\n  background-size: 20rem;\n  background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n  background-position: -3.7rem -2.95rem;\n}\n", "", {"version":3,"sources":["D:/web/node/nim-web-demo-h5/src/pages/TeamSetting.vue"],"names":[],"mappings":";AAyFA;EACE,0BAA0B;EAC1B,oBAAoB;CACrB;AACD;EACE,wBAAwB;CACzB;AAEC;EACE,mBAAmB;EACnB,SAAS;CACV;AAEH;EACE,sBAAsB;EACtB,cAAc;EACd,eAAe;EACf,uBAAuB;EACvB,4EAA4E;EAC5E,sCAAsC;CACvC","file":"TeamSetting.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.p-setting{\n  background-color: #e6ebf0;\n  padding-top: 4.6rem;\n}\n.weui-cell{\n  background-color: white;\n}\n.select {\n  img{\n    position: absolute;\n    right: 0;\n  }\n}\n.icon-selected{\n  display: inline-block;\n  width: 1.4rem;\n  height: 1.4rem;\n  background-size: 20rem;\n  background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);\n  background-position: -3.7rem -2.95rem;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 473:
+/***/ 461:
 /* no static exports found */
 /* all exports used */
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-6b45b6ae"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamMemberCard.vue ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-loader/lib/template-compiler?{"id":"data-v-521605f3"}!./~/vux-loader/src/before-template-compiler-loader.js!./~/vux-loader/src/template-loader.js!./~/vue-loader/lib/selector.js?type=template&index=0!./src/pages/TeamSetting.vue ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "g-inherit m-article p-membercard"
+    staticClass: "g-inherit m-article p-setting"
   }, [_c('x-header', {
     staticClass: "m-tab",
     attrs: {
@@ -283,108 +176,101 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('h1', {
     staticClass: "m-tab-top"
-  }, [_vm._v("群名片")]), _vm._v(" "), _c('a', {
+  }, [_vm._v(_vm._s(_vm.config.title))]), _vm._v(" "), _c('a', {
     attrs: {
       "slot": "left"
     },
     slot: "left"
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "g-body"
-  }, [_c('div', {
-    staticClass: "g-avatar"
-  }, [_c('img', {
-    staticClass: "icon u-circle",
+  }), _vm._v(" "), (_vm.config.inputType !== "select" && _vm.config.enable) ? _c('a', {
     attrs: {
-      "slot": "icon",
-      "width": "50",
-      "height": "50",
-      "src": _vm.member && _vm.member.avatar
-    },
-    slot: "icon"
-  }), _vm._v(" "), _c('div', [_vm._v(_vm._s(_vm.member && _vm.member.alias))])]), _vm._v(" "), _c('group', {
-    staticClass: "m-group"
-  }, [_c('cell', {
-    attrs: {
-      "title": "群昵称",
-      "value": _vm.member.nickInTeam || '未设置',
-      "is-link": ""
-    },
-    nativeOn: {
-      "click": function($event) {
-        (function () { return _vm.hasSetNickPermission ? _vm.onEditItemClick('修改群昵称', 'text', 'nickInTeam', _vm.getUpdateCallBcak()) : _vm.$toast('无权限'); })($event)
-      }
-    }
-  }), _vm._v(" "), _c('cell', {
-    attrs: {
-      "title": "身份",
-      "value": _vm.memberType,
-      "is-link": ""
-    },
-    nativeOn: {
-      "click": function($event) {
-        (function () { return _vm.hasSetMemberTypePermission ? _vm.onEditItemClick('身份', 'select', 'memberType', _vm.getUpdateCallBcak()) : _vm.$toast('无权限'); })($event)
-      }
-    }
-  }), _vm._v(" "), (_vm.hasMuteOrRemovePermission) ? _c('x-switch', {
-    staticClass: "u-switch",
-    attrs: {
-      "title": "设置禁言"
+      "slot": "right"
     },
     on: {
-      "on-change": _vm.changeMute
+      "click": function () { return _vm.update(); }
+    },
+    slot: "right"
+  }, [_vm._v("确定")]) : _vm._e()]), _vm._v(" "), _c('group', [(_vm.config.inputType === "text") ? _c('x-input', {
+    ref: "input",
+    attrs: {
+      "placeholder": _vm.placeHolder,
+      "disabled": !_vm.config.enable,
+      "max": 10
     },
     model: {
-      value: (_vm.mute),
+      value: (_vm.inputModel),
       callback: function($$v) {
-        _vm.mute = $$v
+        _vm.inputModel = $$v
       },
-      expression: "mute"
+      expression: "inputModel"
     }
-  }) : _vm._e()], 1), _vm._v(" "), (_vm.hasMuteOrRemovePermission) ? _c('x-button', {
-    staticClass: "u-btn",
+  }) : (_vm.config.inputType === "textarea") ? _c('x-textarea', {
+    ref: "input",
     attrs: {
-      "mini": "",
-      "type": "warn"
+      "placeholder": _vm.placeHolder,
+      "readonly": !_vm.config.enable,
+      "max": 30
     },
-    nativeOn: {
-      "click": function($event) {
-        _vm.remove($event)
-      }
+    model: {
+      value: (_vm.inputModel),
+      callback: function($$v) {
+        _vm.inputModel = $$v
+      },
+      expression: "inputModel"
     }
-  }, [_vm._v("移出本群")]) : _vm._e()], 1)], 1)
+  }) : (_vm.config.inputType === "select") ? _vm._l((_vm.selects), function(item, index) {
+    return _c('cell', {
+      key: index,
+      attrs: {
+        "value-align": "left"
+      },
+      nativeOn: {
+        "click": function($event) {
+          (function () { return _vm.update(item.key); })($event)
+        }
+      }
+    }, [_vm._v("\n      " + _vm._s(item.value) + "\n      "), (_vm.inputModel === item.key) ? _c('span', {
+      staticClass: "icon-selected",
+      attrs: {
+        "slot": "child",
+        "width": "25",
+        "height": "25"
+      },
+      slot: "child"
+    }) : _vm._e()])
+  }) : _vm._e()], 2)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6b45b6ae", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-521605f3", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 490:
+/***/ 482:
 /* no static exports found */
 /* all exports used */
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-6b45b6ae","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamMemberCard.vue ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/vue-style-loader!./~/css-loader?sourceMap!./~/vue-loader/lib/style-compiler?{"id":"data-v-521605f3","scoped":true,"hasInlineConfig":true}!./~/vux-loader/src/style-loader.js!./~/vue-loader/lib/selector.js?type=styles&index=0!./src/pages/TeamSetting.vue ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-6b45b6ae","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamMemberCard.vue */ 451);
+var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-loader/lib/style-compiler?{"id":"data-v-521605f3","scoped":true,"hasInlineConfig":true}!../../~/vux-loader/src/style-loader.js!../../~/vue-loader/lib/selector.js?type=styles&index=0!./TeamSetting.vue */ 439);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 4)("5e07c060", content, false);
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 4)("09be82cb", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6b45b6ae\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamMemberCard.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-6b45b6ae\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamMemberCard.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-521605f3\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamSetting.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-521605f3\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vux-loader/src/style-loader.js!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TeamSetting.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

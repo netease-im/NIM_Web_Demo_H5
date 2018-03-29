@@ -83,6 +83,7 @@
       <span v-else-if="msg.type==='notification'" class="msg-text notify">{{msg.showText}}</span>
       <span v-else class="msg-text" v-html="msg.showText"></span>
       <span v-if="msg.status==='fail'" class="msg-failed"><i class="weui-icon-warn"></i></span>
+      <a v-if="teamMsgUnRead >=0" class='msg-unread' :href='`#/msgReceiptDetail/${msg.to}-${msg.idServer}`'>{{teamMsgUnRead>0 ? `${teamMsgUnRead}人未读`: '全部已读'}}</a>
     </div>
   </li>
 </template>
@@ -142,6 +143,14 @@
     computed: {
       robotInfos () {
         return this.$store.state.robotInfos
+      },
+      teamMsgUnRead() {
+        var obj = !this.isHistory 
+        && this.msg.needMsgReceipt 
+        && this.msg.flow==='out' 
+        && this.$store.state.teamMsgReads.find(item => item.idServer === this.msg.idServer)
+        
+        return obj ? parseInt(obj.unread) : -1
       }
     },
     beforeMount () {
@@ -403,6 +412,9 @@
             this.currentAudio = null
           }
         }
+      },
+      toMsgUnReadDetail() {
+        this.href = '#/msgReceiptDetail/' + this.msg.idServer
       }
     }
   }
@@ -427,5 +439,14 @@
         font-size: 0.9rem;
       }
     }
+  }
+
+  .msg-unread {
+    position: relative;
+    float: right;
+    top: 0.3rem;
+    right: 0.5rem;
+    font-size: 0.9rem;
+    color: #0091e4;
   }
 </style>

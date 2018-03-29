@@ -274,7 +274,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0.2rem;
-      padding-right: 10rem;
+      padding-right: 11rem;
       width: 100%;
       height: $height_editor;
       textarea {
@@ -295,7 +295,7 @@
       display: inline-block;
       right: 0;
       top: 0;
-      width: 10rem;
+      width: 11rem;
       height: $height_editor;
       .u-editor-icon {
         position: relative;

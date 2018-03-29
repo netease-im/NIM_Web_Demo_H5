@@ -155,6 +155,22 @@ const routes = [
     component(resolve) {
       require(['../pages/TeamMemberCard'], resolve)
     }
+  },
+  // 发送群消息回执页
+  {
+    path: '/teamSendMsgReceipt/:teamId',
+    name: 'TeamSeamMsgReceipt',
+    component(resolve) {
+      require(['../pages/TeamSendMsgReceipt'], resolve)
+    }
+  },
+  // 群消息回执详情页
+  {
+    path: '/msgReceiptDetail/:msgInfo',
+    name: 'msgReceiptDetail',
+    component(resolve) {
+      require(['../pages/TeamMsgReceiptDetail'], resolve)
+    }
   }
 ]
 

@@ -15,7 +15,7 @@ import {sendMsg, sendFileMsg, sendMsgReceipt, sendRobotMsg, revocateMsg, getHist
 import {markSysMsgRead, resetSysMsgs, deleteSysMsgs, markCustomSysMsgRead} from './sysMsgs'
 import {sendChatroomMsg, sendChatroomRobotMsg, sendChatroomFileMsg, getChatroomHistoryMsgs} from './chatroomMsgs'
 import {initChatroomInfos, getChatroomInfo, getChatroomMembers, clearChatroomMembers} from './chatroomInfos'
-import {delegateTeamFunction, onTeamNotificationMsg, enterSettingPage, getTeamMembers} from './team'
+import { delegateTeamFunction, onTeamNotificationMsg, enterSettingPage, getTeamMembers, checkTeamMsgReceipt, getTeamMsgReads} from './team'
 
 function connectNim ({state, commit, dispatch}, obj) {
   let {force} = Object.assign({}, obj)
@@ -147,6 +147,10 @@ export default {
   // 进入群信息设置页
   enterSettingPage,
   // 获取群成员
-  getTeamMembers
+  getTeamMembers,
+  // 群消息回执检查
+  checkTeamMsgReceipt,
+  // 查询群消息回执已读列表
+  getTeamMsgReads,
 
 }

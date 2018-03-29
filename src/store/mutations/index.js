@@ -276,6 +276,7 @@ export default {
           }
           state.currSessionMsgs.push(msg)
         })
+        store.dispatch('checkTeamMsgReceipt', state.currSessionMsgs)
       }
     } else if (type === 'put') { // 追加一条消息
       let newMsg = obj.msg
@@ -284,7 +285,7 @@ export default {
       if (lenCurrMsgs > 0) {
         lastMsgTime = state.currSessionMsgs[lenCurrMsgs - 1].time
       }
-      if (newMsg) {
+      if (newMsg) { 
         if ((newMsg.time - lastMsgTime) > 1000 * 60 * 5) {
           state.currSessionMsgs.push({
             type: 'timeTag',
@@ -292,6 +293,7 @@ export default {
           })
         }
         state.currSessionMsgs.push(newMsg)
+        store.dispatch('checkTeamMsgReceipt', [newMsg])
       }
     } else if (type === 'concat') {
       // 一般用于历史消息拼接
@@ -314,6 +316,7 @@ export default {
       if (obj.msgs[0]) {
         state.currSessionLastMsg = obj.msgs[0]
       }
+      store.dispatch('checkTeamMsgReceipt', currSessionMsgs)
     } else if (type === 'replace') {
       let msgLen = state.currSessionMsgs.length
       let lastMsgIndex = msgLen - 1
@@ -517,5 +520,60 @@ export default {
   },
   updateTeamSettingConfig(state, obj) {
     state.teamSettingConfig = obj
-  }
+  },
+  updateSentReceipedMap(state, obj) {
+    if (!obj || obj.length<1) {
+      return
+    }
+    var teamId = obj[0].teamId
+    if (!state.sentReceipedMap[teamId]) {
+      state.sentReceipedMap[teamId] = []
+    }
+    state.sentReceipedMap[teamId].push(...obj.map(msg => msg.idServer))
+  },
+  updateReceiptQueryList(state, obj) {
+    if (state.currReceiptQueryTeamId !== obj.teamId) {
+      state.receiptQueryList = []
+      state.teamMsgReads = []
+      state.currReceiptQueryTeamId = obj.teamId
+    }
+    var needQuery = obj.msgs
+    .filter(msg => 
+      msg.needMsgReceipt && msg.from === state.myInfo.account &&  !state.receiptQueryList.find(item => item.idServer === msg.idServer)
+    )
+    .map(msg => {
+      return {
+        teamId: obj.teamId,
+        idServer: msg.idServer
+      }
+    })
+    if (needQuery.length>0) {
+      state.receiptQueryList.push(...needQuery)
+    }
+    if (needQuery.length > 0) {
+      store.dispatch('getTeamMsgReads', needQuery)
+    }
+  },
+  updateTeamMsgReads(state, obj) {
+    state.teamMsgReads.push(...obj.teamMsgReceipts)
+  },
+  updateSingleTeamMsgReads(state, obj) {
+    state.teamMsgReads.forEach(item => {
+      if (item.idServer === obj.idServer) {
+        item.unread = obj.unread
+        item.read = obj.read
+      }
+    })
+    // 更新已读未读账号列表
+    var unreadAccounts = state.teamMsgReadsDetail.unreadAccounts
+    var findIndex = unreadAccounts.findIndex(account => account === obj.account)
+    if (findIndex >= 0) {
+      unreadAccounts.splice(findIndex, 1)
+      state.teamMsgReadsDetail.readAccounts.push(obj.account)
+    }
+  },
+  initMsgReceiptDetail(state, obj) {
+    state.teamMsgReadsDetail.readAccounts = obj.readAccounts
+    state.teamMsgReadsDetail.unreadAccounts =  obj.unreadAccounts
+  },
 }

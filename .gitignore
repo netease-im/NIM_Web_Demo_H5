@@ -3,3 +3,5 @@ node_modules
 *.sublime*
 *.log*
 *.lock
+.eslintrc.js
+package-lock.json

@@ -105,6 +105,15 @@ export function onUpdateTeamManagers(obj) {
   })
 }
 
+export function onTeamMsgReceipt(obj) {
+  obj.teamMsgReceipts.forEach(item => {
+    if (item.teamId === store.state.currReceiptQueryTeamId) {
+      store.commit('updateSingleTeamMsgReads', item)
+    }
+  })
+  console.log('群消息回执通知' + obj)
+}
+
 // 进入可配置的群信息设置页，进入前改变state中的配置信息，进入页面后读取配置信息更新视图
 export function enterSettingPage({commit}, obj) {
   commit('updateTeamSettingConfig', obj)
@@ -124,7 +133,7 @@ export function delegateTeamFunction({state}, {functionName, options}) {
   if (functionName && nim[functionName] && typeof nim[functionName] === 'function') {
     nim[functionName](options)
   } else {
-    throw(`Theare is not property of '${functionName}' in nim or '${functionName}' is not a function`)
+    throw(`There is not property of '${functionName}' in nim or '${functionName}' is not a function`)
   }
 }
 
@@ -149,6 +158,61 @@ export function getTeamMembers({ state }, teamId) {
         setTimeout(() => {
           getTeamMembers(store, teamId)
         }, 200);
+      }
+    }
+  })
+}
+
+export function checkTeamMsgReceipt({state}, msgs) {
+  var result = /team-(\d+)/.exec(state.currSessionId)
+  if (!result) {
+    return null
+  }
+  var teamId = result[1]
+
+  var needToPeceiptList= getMsgNeedToReceipt(state, teamId, msgs)
+  if (needToPeceiptList && needToPeceiptList.length>0) {
+    nim.sendTeamMsgReceipt({
+      teamMsgReceipts: needToPeceiptList,
+      done: (err, obj, content) => {
+        console.log('标记群组消息已读' + (!err ? '成功' : '失败'));
+        if (!err) {
+          store.commit('updateSentReceipedMap', needToPeceiptList)
+        }
+      }
+    })
+  }
+
+  store.commit('updateReceiptQueryList', {
+    teamId: teamId,
+    msgs: msgs
+  })
+}
+
+// 查询需要发送回执的消息
+function getMsgNeedToReceipt(state, teamId, msgs) {
+  var sentReceipedList = state.sentReceipedMap[teamId] || []
+  var needToReceipt = msgs.filter(msg => {
+    // 需要回执，且未发送过
+    return msg.needMsgReceipt && msg.from !== state.myInfo.account &&  !sentReceipedList.find(id => id === msg.idServer)     
+  }).map(msg => {
+    return {
+      teamId: teamId,
+      idServer: msg.idServer
+    }
+  })
+  return needToReceipt
+}
+
+export function getTeamMsgReads({ state }, needQuery) {
+  nim.getTeamMsgReads({
+    teamMsgReceipts: needQuery,
+    done: (error, obj, content) => {
+      if (error) {
+        console.log('获取群组消息已读' + error)
+      }else {
+        console.log('获取群组消息已读：', content)
+        store.commit('updateTeamMsgReads', content)
       }
     }
   })

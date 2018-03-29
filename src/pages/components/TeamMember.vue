@@ -38,6 +38,10 @@ export default {
     showAllMode: {
       type: Boolean,
       default: false
+    },
+    filterAccount: {
+      type: Array
+      // [account1, account2]。 若设置了，则只显示该数组中的群成员, 应用场景：群消息回执中, 对已读未读进行了分组。
     }
   },
   data(){
@@ -99,9 +103,13 @@ export default {
       return []
     },
     membersInDisplay() {
-      if(this.advanced || this.showAllMode) {
+      if (this.filterAccount) {
+        return this.members.filter(member=>{
+          return !!this.filterAccount.find(account => account === member.account)
+        })
+      } else if(this.advanced || this.showAllMode) {
         return this.members
-      }else {
+      } else {
         return this.members.slice(0, this.hasInvitePermission ? 3 : 4)
       }
     },

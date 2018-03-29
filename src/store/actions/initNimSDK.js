@@ -13,7 +13,7 @@ import {onMyInfo, onUserInfo} from './userInfo'
 import {onSessions, onUpdateSession} from './session'
 import {onRoamingMsgs, onOfflineMsgs, onMsg} from './msgs'
 import {onSysMsgs, onSysMsg, onSysMsgUnread, onCustomSysMsgs} from './sysMsgs'
-import {onTeams, onSynCreateTeam, onCreateTeam, onUpdateTeam, onTeamMembers, onUpdateTeamMember, onAddTeamMembers, onRemoveTeamMembers, onUpdateTeamManagers, onDismissTeam, onUpdateTeamMembersMute} from './team'
+import { onTeams, onSynCreateTeam, onCreateTeam, onUpdateTeam, onTeamMembers, onUpdateTeamMember, onAddTeamMembers, onRemoveTeamMembers, onUpdateTeamManagers, onDismissTeam, onUpdateTeamMembersMute, onTeamMsgReceipt} from './team'
 
 const SDK = require('@/sdk/' + config.sdk)
 
@@ -100,6 +100,7 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     onUpdateTeamManagers: onUpdateTeamManagers,
     onupdateteammember: onUpdateTeamMember,
     onUpdateTeamMembersMute: onUpdateTeamMembersMute,
+    onTeamMsgReceipt: onTeamMsgReceipt,
     // // 会话
     onsessions: onSessions,
     onupdatesession: onUpdateSession,

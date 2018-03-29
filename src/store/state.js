@@ -44,7 +44,21 @@ export default {
   muteTeamIds: [],
   // 群设置传递数据
   teamSettingConfig: {},
-
+  
+  // 已发送群消息回执Map,key为群Id
+  sentReceipedMap: {},
+  // 当前群消息回执查询的群id
+  currReceiptQueryTeamId: null,
+  // 群消息回执查询的消息列表
+  receiptQueryList: [],
+  // 群消息回执查询结果列表
+  teamMsgReads: [], 
+  // 群消息已读未读账号列表
+  teamMsgReadsDetail: {
+    readAccounts: [],
+    unreadAccounts: []
+  },
+  
   // 消息列表
   msgs: {}, // 以sessionId作为key
   msgsMap: {}, // 以idClient作为key，诸如消息撤回等的消息查找
@@ -86,5 +100,5 @@ export default {
   currChatroomInfo: {},
   // 聊天室成员列表
   currChatroomMembers: [],
-  
+
 }

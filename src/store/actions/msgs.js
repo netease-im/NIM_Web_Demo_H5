@@ -140,7 +140,8 @@ export function sendMsg ({state, commit}, obj) {
         scene: obj.scene,
         to: obj.to,
         text: obj.text,
-        done: onSendMsgDone
+        done: onSendMsgDone,
+        needMsgReceipt: obj.needMsgReceipt || false
       })
       break
     case 'custom':

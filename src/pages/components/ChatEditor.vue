@@ -25,9 +25,10 @@
           <i class="u-icon-img"><img :src="icon2"></i>
           <input type="file" ref="fileToSent">
         </span>
-        <span v-if="!isRobot" class="u-editor-icon" @click.stop="sendPlayMsg">
+        <span v-if="!isRobot && !advancedTeam" class="u-editor-icon" @click.stop="sendPlayMsg">
           <i class="u-icon-img"><img :src="icon3"></i>
         </span>
+        <span v-if='advancedTeam' class="u-editor-send u-editor-receipt" @click="turnToMsgReceipt">回执</span>
         <span class="u-editor-send" @click="sendTextMsg">发 送</span>
       </span>
     </div>
@@ -66,6 +67,10 @@ export default {
     invalidHint: {
       type: String,
       default: '您无权限发送消息'
+    },
+    advancedTeam: {
+      type: Boolean,
+      default: false
     }
   },
   watch: {
@@ -314,6 +319,13 @@ export default {
         e.target.scrollIntoView()
         pageUtil.scrollChatListDown()
       }, 200)
+    },
+    turnToMsgReceipt() {
+      if (this.invalid) {
+        this.$toast(this.invalidHint)
+        return
+      }
+      location = `#/teamSendMsgReceipt/${this.to}`
     }
   }
 }
@@ -335,5 +347,13 @@ export default {
         margin-right: 0.5rem;
       }
     }
+  }
+
+  .u-editor-send.u-editor-receipt {
+    background-color: #fefefe;
+    border: #ccc solid 1px;
+    color: black;
+    padding: 0.1rem;
+    margin-left: .1rem;
   }
 </style>

@@ -27,6 +27,7 @@
         :isRobot="isRobot"
         :invalid="teamInvalid || muteInTeam"
         :invalidHint="sendInvalidHint"
+        :advancedTeam="teamInfo && teamInfo.type === 'advanced'"
       ></chat-editor>
     </div>
   </div>
