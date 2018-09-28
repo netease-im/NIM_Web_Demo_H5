@@ -18,7 +18,7 @@ var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normali
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\NameCardRemark.vue"
+Component.options.__file = "D:\\Project\\javascript\\nim-web-demo-h5\\src\\pages\\NameCardRemark.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NameCardRemark.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -150,7 +150,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     nativeOn: {
       "click": function($event) {
-        _vm.setAlias($event)
+        return _vm.setAlias($event)
       }
     }
   }, [_vm._v("设置备注名")])], 1)], 1)

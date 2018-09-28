@@ -25,11 +25,16 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
   dispatch('showLoading')
   // 初始化SDK
   window.nim = state.nim = SDK.NIM.getInstance({
-    // debug: true && { api: 'info', style: 'font-size:12px;color:blue;background-color:rgba(0,0,0,0.1)' },
+    debug: true,
     appKey: config.appkey,
     account: loginInfo.uid,
     token: loginInfo.sdktoken,
+    transports: ['websocket'],
     db: false,
+    // logFunc: new SDK.NIM.LoggerPlugin({
+    //   url: '/webdemo/h5/getlogger',
+    //   level: 'info'
+    // }),
     syncSessionUnread: true,
     syncRobots: true,
     autoMarkRead: true, // 默认为true

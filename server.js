@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 const ejs = require('ejs')
-
+const fs = require('fs')
 const app = express()
  
 // 将请求响应解析到body的中间件
@@ -42,6 +42,20 @@ app.get('/webdemo/h5/index.html', function (req, res, next) {
 app.get('/', function (req, res, next) {
   res.redirect('/webdemo/h5/index.html')
 })
+
+app.post('/webdemo/h5/getlogger', (req, res) => {
+  req.setEncoding('utf8');
+  req.rawBody = '';
+  req.on('data', chunk => {
+    req.rawBody += chunk;
+  });
+  req.on('end', () => {
+    let body = req.rawBody;
+    fs.appendFile('sdklog.log', body, () => {
+      res.end();
+    });
+  });
+});
 
 // 修改侦听服务器端口
 const port = 2001

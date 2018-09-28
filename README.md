@@ -86,6 +86,10 @@ h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动�
   - h5 demo 默认配置的是在开发环境中使用"source-map"
   - ![vue-sourcemap-1](http://yx-web.nos.netease.com/webdoc/h5/docs/vue-sourcemap-1.png)
 - 为了方便开发者在手机上调试，在webdemo的index.html增加了vconsole.js调试工具，可以在手机端查看console.log输出
+- 利用服务器端调试
+  - 对于某些安卓机型或者WebView环境，上述调试工具会产生兼容性问题或者其他不方便调试的情况，可以使用sdk提供的`LoggerPlugin`插件，将相关日志`post`到服务器，使用文件日志的方式存储下来。
+  - Demo在`store/actions/initNimSDK.js`文件中已经做了示例（已注释），用户可以进行相关尝试。
+  - 相关文档详见：[web sdk 日志分析](https://dev.yunxin.163.com/docs/product/IM%E5%8D%B3%E6%97%B6%E9%80%9A%E8%AE%AF/SDK%E5%BC%80%E5%8F%91%E9%9B%86%E6%88%90/Web%E5%BC%80%E5%8F%91%E9%9B%86%E6%88%90/%E5%88%9D%E5%A7%8B%E5%8C%96)
 
 ## h5 demo 所使用的开发工具
 ### vue

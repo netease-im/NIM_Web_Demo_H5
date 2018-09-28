@@ -22,6 +22,7 @@ export function initChatroomSDK ({ state, commit, dispatch }, obj) {
         appKey: config.appkey,
         account: state.userUID,
         token: state.sdktoken,
+        transports: ['websocket'],
         chatroomId,
         chatroomAddresses: address,
         onconnect: function onChatroomConnect (chatroom) {

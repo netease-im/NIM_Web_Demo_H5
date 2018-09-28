@@ -18,7 +18,7 @@ var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normali
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\Room.vue"
+Component.options.__file = "D:\\Project\\javascript\\nim-web-demo-h5\\src\\pages\\Room.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Room.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -455,7 +455,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 22)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 23)))
 
 /***/ }),
 
@@ -646,7 +646,7 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../process/browser.js */ 22)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../../process/browser.js */ 23)))
 
 /***/ }),
 
@@ -1720,7 +1720,7 @@ var _axios = __webpack_require__(/*! axios */ 389);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _configs = __webpack_require__(/*! ../configs */ 5);
+var _configs = __webpack_require__(/*! ../configs */ 6);
 
 var _configs2 = _interopRequireDefault(_configs);
 

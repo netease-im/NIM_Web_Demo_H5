@@ -18,7 +18,7 @@ var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normali
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\SearchUser.vue"
+Component.options.__file = "D:\\Project\\javascript\\nim-web-demo-h5\\src\\pages\\SearchUser.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] SearchUser.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -53,7 +53,7 @@ module.exports = Component.exports
 
 exports.__esModule = true;
 
-var _configs = __webpack_require__(/*! ../configs */ 5);
+var _configs = __webpack_require__(/*! ../configs */ 6);
 
 var _configs2 = _interopRequireDefault(_configs);
 
@@ -214,7 +214,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     nativeOn: {
       "click": function($event) {
-        _vm.searchUser($event)
+        return _vm.searchUser($event)
       }
     }
   }, [_vm._v("搜索")])], 1), _vm._v(" "), _c('group', {

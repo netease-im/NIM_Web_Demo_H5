@@ -5,3 +5,4 @@ node_modules
 *.lock
 .eslintrc.js
 package-lock.json
+.history

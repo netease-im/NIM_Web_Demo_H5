@@ -22,7 +22,7 @@ var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normali
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\web\\node\\nim-web-demo-h5\\src\\pages\\TeamMemberCard.vue"
+Component.options.__file = "D:\\Project\\javascript\\nim-web-demo-h5\\src\\pages\\TeamMemberCard.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TeamMemberCard.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -61,7 +61,7 @@ var _assign = __webpack_require__(/*! babel-runtime/core-js/object/assign */ 8);
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _configs = __webpack_require__(/*! ../configs */ 5);
+var _configs = __webpack_require__(/*! ../configs */ 6);
 
 var _configs2 = _interopRequireDefault(_configs);
 
@@ -251,12 +251,12 @@ module.exports = exports['default'];
   \*****************************************************************************************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 3)(true);
+exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-base.js */ 4)(true);
 // imports
 
 
 // module
-exports.push([module.i, "\n.g-body[data-v-43fe6512]{\n}\n.g-avatar[data-v-43fe6512]{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn[data-v-43fe6512]{\n  width: 80%;\n  margin: 1rem 10%;\n}\n", "", {"version":3,"sources":["D:/web/node/nim-web-demo-h5/src/pages/TeamMemberCard.vue"],"names":[],"mappings":";AA0LA;CAEC;AACD;EACE,kBAAkB;EAClB,YAAY;EACZ,mBAAmB;CACpB;AACD;EACE,WAAW;EACX,iBAAiB;CAClB","file":"TeamMemberCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.g-body{\n  \n}\n.g-avatar{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn{\n  width: 80%;\n  margin: 1rem 10%;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.g-body[data-v-43fe6512]{\n}\n.g-avatar[data-v-43fe6512]{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn[data-v-43fe6512]{\n  width: 80%;\n  margin: 1rem 10%;\n}\n", "", {"version":3,"sources":["D:/Project/javascript/nim-web-demo-h5/src/pages/TeamMemberCard.vue"],"names":[],"mappings":";AA0LA;CAEC;AACD;EACE,kBAAkB;EAClB,YAAY;EACZ,mBAAmB;CACpB;AACD;EACE,WAAW;EACX,iBAAiB;CAClB","file":"TeamMemberCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.g-body{\n  \n}\n.g-avatar{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn{\n  width: 80%;\n  margin: 1rem 10%;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -311,7 +311,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     nativeOn: {
       "click": function($event) {
-        (function () { return _vm.hasSetNickPermission ? _vm.onEditItemClick('修改群昵称', 'text', 'nickInTeam', _vm.getUpdateCallBcak()) : _vm.$toast('无权限'); })($event)
+        return (function () { return _vm.hasSetNickPermission ? _vm.onEditItemClick('修改群昵称', 'text', 'nickInTeam', _vm.getUpdateCallBcak()) : _vm.$toast('无权限'); })($event)
       }
     }
   }), _vm._v(" "), _c('cell', {
@@ -322,7 +322,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     nativeOn: {
       "click": function($event) {
-        (function () { return _vm.hasSetMemberTypePermission ? _vm.onEditItemClick('身份', 'select', 'memberType', _vm.getUpdateCallBcak()) : _vm.$toast('无权限'); })($event)
+        return (function () { return _vm.hasSetMemberTypePermission ? _vm.onEditItemClick('身份', 'select', 'memberType', _vm.getUpdateCallBcak()) : _vm.$toast('无权限'); })($event)
       }
     }
   }), _vm._v(" "), (_vm.hasMuteOrRemovePermission) ? _c('x-switch', {
@@ -348,7 +348,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     nativeOn: {
       "click": function($event) {
-        _vm.remove($event)
+        return _vm.remove($event)
       }
     }
   }, [_vm._v("移出本群")]) : _vm._e()], 1)], 1)
@@ -378,7 +378,7 @@ var content = __webpack_require__(/*! !../../~/css-loader?sourceMap!../../~/vue-
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 4)("aebd23ce", content, false);
+var update = __webpack_require__(/*! ../../~/vue-style-loader/lib/addStylesClient.js */ 5)("aebd23ce", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
