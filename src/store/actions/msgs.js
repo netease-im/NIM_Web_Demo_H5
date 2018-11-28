@@ -175,9 +175,11 @@ export function sendFileMsg ({state, commit}, obj) {
       // console.log(data.percentageText)
     },
     uploaderror: function () {
+      fileInput.value = ''
       console && console.log('上传失败')
     },
     uploaddone: function(error, file) {
+      fileInput.value = ''
       // console.log(error);
       // console.log(file);
     },

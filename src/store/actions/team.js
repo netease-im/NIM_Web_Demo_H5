@@ -5,6 +5,7 @@ export function onTeams(teams) {
   if (!Array.isArray(teams)) {
     teams = [teams]
   }
+  teams = teams.filter(item => !!item)
   teams.forEach(team=>{
     if (team.validToCurrentUser === undefined) {
       team.validToCurrentUser = true
@@ -21,11 +22,11 @@ export function onTeamMembers(obj) {
   store.commit('updateTeamMembers', obj)
 }
 
-export function onCreateTeam({team, owner}) {
+export function onCreateTeam(team) {
   onTeams(team)
   onTeamMembers({
     teamId: team.teamId,
-    members: [owner]
+    members: [team.owner]
   })
 }
 

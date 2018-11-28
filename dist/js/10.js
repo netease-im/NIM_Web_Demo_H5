@@ -22,7 +22,7 @@ var Component = __webpack_require__(/*! ../../~/vue-loader/lib/component-normali
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Project\\javascript\\nim-web-demo-h5\\src\\pages\\TeamMemberCard.vue"
+Component.options.__file = "/Users/fangyan/x/nim-web-demo-h5/src/pages/TeamMemberCard.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TeamMemberCard.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -256,7 +256,7 @@ exports = module.exports = __webpack_require__(/*! ../../~/css-loader/lib/css-ba
 
 
 // module
-exports.push([module.i, "\n.g-body[data-v-43fe6512]{\n}\n.g-avatar[data-v-43fe6512]{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn[data-v-43fe6512]{\n  width: 80%;\n  margin: 1rem 10%;\n}\n", "", {"version":3,"sources":["D:/Project/javascript/nim-web-demo-h5/src/pages/TeamMemberCard.vue"],"names":[],"mappings":";AA0LA;CAEC;AACD;EACE,kBAAkB;EAClB,YAAY;EACZ,mBAAmB;CACpB;AACD;EACE,WAAW;EACX,iBAAiB;CAClB","file":"TeamMemberCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.g-body{\n  \n}\n.g-avatar{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn{\n  width: 80%;\n  margin: 1rem 10%;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.g-body[data-v-43fe6512]{\n}\n.g-avatar[data-v-43fe6512]{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn[data-v-43fe6512]{\n  width: 80%;\n  margin: 1rem 10%;\n}\n", "", {"version":3,"sources":["/Users/fangyan/x/nim-web-demo-h5/src/pages/TeamMemberCard.vue"],"names":[],"mappings":";AA0LA;CAEC;AACD;EACE,kBAAkB;EAClB,YAAY;EACZ,mBAAmB;CACpB;AACD;EACE,WAAW;EACX,iBAAiB;CAClB","file":"TeamMemberCard.vue","sourcesContent":["\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.g-body{\n  \n}\n.g-avatar{\n  margin: 2rem auto;\n  width: 100%;\n  text-align: center;\n}\n.u-btn{\n  width: 80%;\n  margin: 1rem 10%;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
