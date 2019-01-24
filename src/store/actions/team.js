@@ -26,7 +26,8 @@ export function onCreateTeam(team) {
   onTeams(team)
   onTeamMembers({
     teamId: team.teamId,
-    members: [team.owner]
+    members: []
+    // members: [team.owner]
   })
 }
 

@@ -30,7 +30,7 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
     account: loginInfo.uid,
     token: loginInfo.sdktoken,
     transports: ['websocket'],
-    db: false,
+    db: config.useDb,
     // logFunc: new SDK.NIM.LoggerPlugin({
     //   url: '/webdemo/h5/getlogger',
     //   level: 'info'
@@ -132,4 +132,5 @@ export function initNimSDK ({ state, commit, dispatch }, loginInfo) {
       }
     }
   })
+  window.nim.useDb = config.useDb
 }

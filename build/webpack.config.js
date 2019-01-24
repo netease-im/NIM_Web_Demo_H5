@@ -91,6 +91,9 @@ let webpackConfig = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
     // 全局挂载插件
     new webpack.ProvidePlugin({})
   ]
@@ -98,6 +101,7 @@ let webpackConfig = {
 
 // 生成环境要压缩
 if (process.env.NODE_ENV === 'production') {
+  webpackConfig.resolve.alias['vue$'] = 'vue/dist/vue.min.js'
   webpackConfig.plugins.push(
     // 压缩JS
     new webpack.optimize.UglifyJsPlugin({

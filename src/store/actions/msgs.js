@@ -127,6 +127,22 @@ export function revocateMsg ({state, commit}, msg) {
     }
   })
 }
+export function updateLocalMsg ({state, commit}, msg) {
+  store.commit('updateCurrSessionMsgs', {
+    type: 'replace',
+    idClient: msg.idClient,
+    msg: msg
+  })
+  state.nim.updateLocalMsg({
+    idClient: msg.idClient,
+    localCustom: msg.localCustom
+  })
+  store.commit('replaceMsg', {
+    sessionId: msg.sessionId,
+    idClient: msg.idClient,
+    msg: msg
+  })
+}
 
 // 发送普通消息
 export function sendMsg ({state, commit}, obj) {
@@ -158,19 +174,18 @@ export function sendMsg ({state, commit}, obj) {
 // 发送文件消息
 export function sendFileMsg ({state, commit}, obj) {
   const nim = state.nim
-  let {scene, to, fileInput} = obj
-  let type = 'file'
-  if (/\.(png|jpg|bmp|jpeg|gif)$/i.test(fileInput.value)) {
-    type = 'image'
-  } else if (/\.(mov|mp4|ogg|webm)$/i.test(fileInput.value)) {
-    type = 'video'
+  let { type } = obj
+  if (!type) {
+    type = 'file'
+    if (/\.(png|jpg|bmp|jpeg|gif)$/i.test(fileInput.value)) {
+      type = 'image'
+    } else if (/\.(mov|mp4|ogg|webm)$/i.test(fileInput.value)) {
+      type = 'video'
+    }
   }
   store.dispatch('showLoading')
-  nim.sendFile({
-    scene,
-    to,
+  const data = Object.assign({
     type,
-    fileInput,
     uploadprogress: function (data) {
       // console.log(data.percentageText)
     },
@@ -189,7 +204,8 @@ export function sendFileMsg ({state, commit}, obj) {
     done: function (error, msg) {
       onSendMsgDone (error, msg)
     }
-  })
+  }, obj)
+  nim.sendFile(data)
 }
 
 // 发送机器人消息

@@ -175,6 +175,7 @@ export default {
   methods: {
     onClickBack () {
       // location.href = '#/contacts'
+      window.stopPlayAudio && window.stopPlayAudio()
       window.history.go(-1)
     },
     msgsLoaded () {

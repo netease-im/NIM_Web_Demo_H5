@@ -1,9 +1,20 @@
 const path = require('path')
 const express = require('express')
+var https = require('https');
+var http = require('http');
 const ejs = require('ejs')
 const fs = require('fs')
 const app = express()
- 
+
+//同步读取密钥和签名证书
+var options = {
+  key:fs.readFileSync('./ssh/key.pem'),
+  cert:fs.readFileSync('./ssh/cert.pem')
+}
+
+var httpsServer = https.createServer(options, app)
+var httpServer = http.createServer(app)
+
 // 将请求响应解析到body的中间件
 const bodyParser = require('body-parser')
 // 解析 Content-Type:application/x-www-form-urlencoded 的请求到 req.body
@@ -57,7 +68,8 @@ app.post('/webdemo/h5/getlogger', (req, res) => {
   });
 });
 
-// 修改侦听服务器端口
-const port = 2001
-app.listen(port)
-console.info(`Listen on Port ${port}`)
+httpsServer.listen(2000);
+httpServer.listen(2001);
+
+console.info(`Https Listen on Port 2000`)
+console.info(`Http Listen on Port 2001`)

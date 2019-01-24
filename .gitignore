@@ -6,3 +6,5 @@ node_modules
 .eslintrc.js
 package-lock.json
 .history
+dist/
+h5/

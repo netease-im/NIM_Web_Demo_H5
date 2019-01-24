@@ -7,13 +7,13 @@
       ---- 已无更多记录 ----
     </li>
     <chat-item
-      v-for="msg in msglist"
+      v-for="(msg, index) in msglist"
       :type="type"
       :rawMsg="msg"
       :isRobot="isRobot"
       :userInfos="userInfos"
       :myInfo="myInfo"
-      :key="msg.idClient"
+      :key="(msg.idClient || index)"
       :isHistory='isHistory'
       @msg-loaded="msgLoaded"
     ></chat-item>

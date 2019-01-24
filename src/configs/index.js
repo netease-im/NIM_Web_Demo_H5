@@ -1,5 +1,5 @@
 let config = {
-  sdk: 'NIM_Web_SDK_v5.8.0',
+  sdk: 'NIM_Web_SDK_v6.1.0',
   // 用户自定义的登录注册地址
   loginUrl: '/webdemo/h5/login.html',
   registUrl: '/webdemo/h5/regist.html',
@@ -20,7 +20,8 @@ let config = {
   // 我的手机图标
   myPhoneIcon: 'http://yx-web.nos.netease.com/webdoc/h5/im/my-phone.png',
   // 本地消息显示数量，会影响性能
-  localMsglimit: 36
+  localMsglimit: 36,
+  useDb: false
 }
 
 const env = 'online'
