@@ -366,7 +366,7 @@ export default {
     })
     // state.customSysMsgs = nim.mergeSysMsgs(state.customSysMsgs, sysMsgs)
     state.customSysMsgs = state.customSysMsgs.concat(sysMsgs)
-    Vue.set(state, customSysMsgs, state.customSysMsgs)
+    Vue.set(state, sysMsgs, state.customSysMsgs)
     store.commit('updateCustomSysMsgUnread', {
       type: 'add',
       unread: sysMsgs.length
