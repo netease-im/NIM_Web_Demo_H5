@@ -29,6 +29,10 @@ export default {
   computed: {
     config(){
       var config = this.$store.state.teamSettingConfig
+      if (!config.teamId) { // 在此页面刷新直接回到上一页
+        history.go(-1)
+        return
+      }
       this.inputModel = config.defaultValue ? config.defaultValue : ''
       this.placeHolder = config.placeHolder ? config.placeHolder : config.enable? '请输入':'无'
       return config
@@ -64,7 +68,7 @@ export default {
       this.$store.dispatch('showLoading')
       var action = this.config.updateInfoInTeam? 'updateInfoInTeam' : 'updateTeam'
       this.$store.dispatch('delegateTeamFunction',{
-        functionName: action, 
+        functionName: action,
         options: {
           teamId: this.config.teamId,
           [this.config.updateKey]: value ? value: this.inputModel,

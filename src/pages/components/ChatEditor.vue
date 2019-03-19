@@ -37,9 +37,9 @@
         <span v-if="!isRobot" class="u-editor-icon" @click.stop="showEmoji">
           <i class="u-icon-img"><img :src="icon1"></i>
         </span>
-        <span v-if="!isRobot" class="u-editor-icon" @change="sendFileMsg">
+        <span v-if="!isRobot" class="u-editor-icon">
           <i class="u-icon-img"><img :src="icon2"></i>
-          <input type="file" ref="fileToSent">
+          <input type="file" ref="fileToSent" @change="sendFileMsg">
         </span>
         <span v-if="!isRobot && !advancedTeam" class="u-editor-icon" @click.stop="sendPlayMsg">
           <i class="u-icon-img"><img :src="icon3"></i>
