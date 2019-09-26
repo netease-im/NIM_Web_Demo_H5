@@ -31,8 +31,8 @@ h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动�
 - 开发环境前端实时编译
   - 本示例由于使用了let、箭头描述符等，需要使用nodejs 6及以上版本
   - 本示例demo使用webpack + babel作为前端模块化管理和打包工具
-    - 控制台执行 npm install 安装相关依赖（仅需在工程第一次初始化时运行）
-    - 控制台执行 npm run dev 运行工程打包工作
+    - 控制台执行 `npm install` 安装相关依赖（仅需在工程第一次初始化时运行）
+    - 控制台执行 `npm run devbuild` 运行工程打包工作 (如果想开发实时编译，请运行 `npm run dev`, watch源代码)
       - **如果编译报postcss 未定义的错误**，控制台执行 npm install postcss-cli -g 用于demo皮肤及个性化样式生成，不报错则无需执行
 
 - 开发环境后端服务
