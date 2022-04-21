@@ -3,7 +3,7 @@
 ## 介绍
 云信WEB DEMO HTML5-VUE版本 (以下简称h5 demo)，是一套使用[网易云信WEB端SDK](http://dev.netease.im/docs/product/IM即时通讯/SDK开发集成/Web开发集成)，以[VUE前端框架](https://cn.vuejs.org/v2/guide/)作为前端UI及缓存数据框架，进行开发的手机移动端适配DEMO。
 h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动端渠道推广他们的即时通讯产品(如微信、手机微博、手机浏览器等)，或通过WebView嵌入到嵌入式设备中，作为混合APP进行发布。
-- h5 demo 体验地址：[体验地址](http://app.netease.im/webdemo/h5/index.html)
+- h5 demo 体验地址：[体验地址](https://yiyong.netease.im/yiyong-static/statics/web-im-h5/login.html)
 - h5 demo 工程地址：[工程地址](https://github.com/netease-im/NIM_Web_Demo_H5)
 - ![demo示例](http://yx-web.nos.netease.com/webdoc/h5/docs/h5demo-example-1.jpg)
 - h5 demo 快速部署：从工程地址中下载源码，进入目录运行命令行"npm run server"，访问"http://127.0.0.1:2001/webdemo/h5/index.html"即可。
