@@ -16,7 +16,7 @@
     <div class='m-selected'>
       <div class='avators' ref='avators'>
         <img class='u-circle' v-for='friend in selected' :key='friend.account' width="30" height="30" :src='userInfos[friend.account].avatar' @click='unSelect(friend)'>
-        <img width="30" height="30" src='http://yx-web.nos.netease.com/webdoc/h5/im/team_invite_dot_avatar.png'>
+        <img width="30" height="30" src='http://yx-web-nosdn.netease.im/webdoc/h5/im/team_invite_dot_avatar.png'>
       </div>
       <x-button class='btn' type="primary" :mini='true' action-type="button" @click.native='onNext'>{{`确认(${selected.length})`}}</x-button>
     </div>
@@ -254,7 +254,7 @@ export default {
         width: 1.4rem;
         height: 1.4rem;
         background-size: 20rem;
-        background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);
+        background-image: url(http://yx-web-nosdn.netease.im/webdoc/h5/im/icons.png);
         background-position: -5rem .2rem;
       }
 

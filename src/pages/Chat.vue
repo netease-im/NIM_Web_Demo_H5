@@ -222,7 +222,7 @@ export default {
     margin-right: .8rem;
     width: 1.7rem;
     height: 1.7rem;
-    background: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);
+    background: url(http://yx-web-nosdn.netease.im/webdoc/h5/im/icons.png);
     background-size: 20rem;
     background-position: -5.8rem -11.3rem;
   }

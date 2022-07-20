@@ -17,11 +17,11 @@
   - 为了方便开发者自定义自己希望的皮肤，h5 demo对一些常用配置做了抽象(按照scss预处理语法)
     - 以下则为通过更换不同theme.css文件生成的皮肤示例
   - 主题示例1
-    ![主题示例1](http://yx-web.nos.netease.com/webdoc/h5/docs/h5demo-theme-1.jpg)
+    ![主题示例1](http://yx-web-nosdn.netease.im/webdoc/h5/docs/h5demo-theme-1.jpg)
   - 主题示例2
-    ![主题示例2](http://yx-web.nos.netease.com/webdoc/h5/docs/h5demo-theme-2.jpg)
+    ![主题示例2](http://yx-web-nosdn.netease.im/webdoc/h5/docs/h5demo-theme-2.jpg)
   - 主题示例3
-    ![主题示例3](http://yx-web.nos.netease.com/webdoc/h5/docs/h5demo-theme-3.jpg)
+    ![主题示例3](http://yx-web-nosdn.netease.im/webdoc/h5/docs/h5demo-theme-3.jpg)
   - 如果开发者仅仅需要更改特定页面的样式而不希望影响到公共组件，则可以到src/pages/*.vue直接更改style标签
 
 3. 路由的配置

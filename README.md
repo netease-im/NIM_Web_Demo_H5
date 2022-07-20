@@ -5,7 +5,7 @@
 h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动端渠道推广他们的即时通讯产品(如微信、手机微博、手机浏览器等)，或通过WebView嵌入到嵌入式设备中，作为混合APP进行发布。
 - h5 demo 体验地址：[体验地址](https://yiyong.netease.im/yiyong-static/statics/web-im-h5/login.html)
 - h5 demo 工程地址：[工程地址](https://github.com/netease-im/NIM_Web_Demo_H5)
-- ![demo示例](http://yx-web.nos.netease.com/webdoc/h5/docs/h5demo-example-1.jpg)
+- ![demo示例](http://yx-web-nosdn.netease.im/webdoc/h5/docs/h5demo-example-1.jpg)
 - h5 demo 快速部署：从工程地址中下载源码，进入目录运行命令行"npm run server"，访问"http://127.0.0.1:2001/webdemo/h5/index.html"即可。
 
 ## 起步
@@ -80,11 +80,11 @@ h5 demo的推出，使得云信SDK的开发者们可以更便捷的利用移动�
 ### 开发调试工具
 - h5 demo使用了vue全家桶进行开发，推荐使用chrome浏览器加相应的插件(Vue.js devtools)进行调试。
   - 如果谷歌被墙，可以从该地址下载[https://github.com/vuejs/vue-devtools](https://github.com/vuejs/vue-devtools)
-  - ![vue-devtool-1](http://yx-web.nos.netease.com/webdoc/h5/docs/vue-devtool-1.png)
-  - ![vue-devtool-2](http://yx-web.nos.netease.com/webdoc/h5/docs/vue-devtool-2.png)
+  - ![vue-devtool-1](http://yx-web-nosdn.netease.im/webdoc/h5/docs/vue-devtool-1.png)
+  - ![vue-devtool-2](http://yx-web-nosdn.netease.im/webdoc/h5/docs/vue-devtool-2.png)
 - 于此同时，开发者也可以在webpack配置文件(build/webpack.config.js)中开启自己喜欢的source-map，对代码进行断点调试。
   - h5 demo 默认配置的是在开发环境中使用"source-map"
-  - ![vue-sourcemap-1](http://yx-web.nos.netease.com/webdoc/h5/docs/vue-sourcemap-1.png)
+  - ![vue-sourcemap-1](http://yx-web-nosdn.netease.im/webdoc/h5/docs/vue-sourcemap-1.png)
 - 为了方便开发者在手机上调试，在webdemo的index.html增加了vconsole.js调试工具，可以在手机端查看console.log输出
 - 利用服务器端调试
   - 对于某些安卓机型或者WebView环境，上述调试工具会产生兼容性问题或者其他不方便调试的情况，可以使用sdk提供的`LoggerPlugin`插件，将相关日志`post`到服务器，使用文件日志的方式存储下来。

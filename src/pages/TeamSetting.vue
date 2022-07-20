@@ -109,7 +109,7 @@ export default {
     width: 1.4rem;
     height: 1.4rem;
     background-size: 20rem;
-    background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);
+    background-image: url(http://yx-web-nosdn.netease.im/webdoc/h5/im/icons.png);
     background-position: -3.7rem -2.95rem;
   }
 </style>

@@ -128,11 +128,11 @@ export default {
       }
       .icon-team-advanced {
         background-position: 0 -3rem;
-        background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);
+        background-image: url(http://yx-web-nosdn.netease.im/webdoc/h5/im/icons.png);
       }
       .icon-team {
         background-position: -2.1rem -3rem;
-        background-image: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);
+        background-image: url(http://yx-web-nosdn.netease.im/webdoc/h5/im/icons.png);
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="m-members" :class='{"s-bg-white": advanced && !showAllMode}'>
     <a v-if='hasInvitePermission && !showAllMode' class='u-member' :href='"#/teaminvite/" + teamId'>
-      <img class='avatar' src="http://yx-web.nos.netease.com/webdoc/h5/im/team_member_add.png" alt="">
+      <img class='avatar' src="http://yx-web-nosdn.netease.im/webdoc/h5/im/team_member_add.png" alt="">
       <span>添加</span>
     </a>
     <a class='u-member' v-for='member in membersInDisplay' :key='member.account' @click='onMemberClick(member)'>
@@ -12,11 +12,11 @@
     </a>
     <template v-if='!advanced'>
       <a class='u-member' :href='"#/teaminvite/" + teamId'>
-        <img class='avatar' src="http://yx-web.nos.netease.com/webdoc/h5/im/team_member_add.png" alt="">
+        <img class='avatar' src="http://yx-web-nosdn.netease.im/webdoc/h5/im/team_member_add.png" alt="">
         <span>添加</span>
       </a>
       <div v-if='hasManagePermission' class='u-member' @click='triggerRemove()'>
-        <img class='avatar' src="http://yx-web.nos.netease.com/webdoc/h5/im/team_member_delete.png" alt="">
+        <img class='avatar' src="http://yx-web-nosdn.netease.im/webdoc/h5/im/team_member_delete.png" alt="">
         <span>移除</span>
       </div>
     </template>
@@ -194,7 +194,7 @@ export default {
       right: 0;
       width: 2rem;
       height: 2rem;
-      background: url(http://yx-web.nos.netease.com/webdoc/h5/im/icons.png);
+      background: url(http://yx-web-nosdn.netease.im/webdoc/h5/im/icons.png);
       background-position: -10.3rem 0;
       background-size: 20rem
     }
